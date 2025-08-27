@@ -1,0 +1,42 @@
+{
+  "name": "maktownflyers",
+  "version": "1.0.0",
+  "description": "Official Webapp of Maktown Flyers by AGO SOO McAGO",
+  "main": "app.js",
+  "scripts": {
+    "sass": "sass -w public/scss/:public/css",
+    "server": "nodemon app.js",
+    "start": "run-p sass server"
+  },
+  "keywords": [
+    "Maktown",
+    "Flyers",
+    "Mani",
+    "Mo",
+    "AGO",
+    "SOO",
+    "McAGO"
+  ],
+  "author": "AGO SOO McAGO",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "connect-mongo": "^5.1.0",
+    "cookie-parser": "^1.4.7",
+    "dotenv": "^17.2.1",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "express-ejs-layouts": "^2.5.1",
+    "express-fileupload": "^1.5.2",
+    "express-session": "^1.18.2",
+    "jsonwebtoken": "^9.0.2",
+    "method-override": "^3.0.0",
+    "mongoose": "^8.18.0",
+    "multer": "^2.0.2",
+    "npm-run-all": "^4.1.5",
+    "sass": "^1.91.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}

@@ -1,0 +1,13 @@
+#adminpanel {
+    @include flexrow;
+    background: var(--TRANSPARENT);
+    margin-top: $marginxxll;
+    padding: $paddingsm;
+
+    button {
+        cursor: pointer;
+        background: var(--BRANDII);
+        padding: $paddingxsi;
+        font-weight: bold;
+    }
+}

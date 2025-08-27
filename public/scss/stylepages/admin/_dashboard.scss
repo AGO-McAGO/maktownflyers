@@ -1,0 +1,66 @@
+#dashboard {
+    @include center;
+    @include flexcolumn;
+    @include card;
+    background: var(--BRANDII);
+    color: var(--TEXTII);
+    margin-bottom: $marginxxl;
+    padding: $paddingsm;
+
+    .adminaddupdatebtn {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-bottom: $marginxxl;
+        
+        .addplayer, .addstaff, .updateabout, .staff { @include adminloginbtn; padding: $paddingxsi; font-size: $font-sizexsi; background: var(--BRANDV); }
+        .addplayer:hover, .addstaff:hover, .updateabout:hover, .staff:hover { background: var(--BRANDIII); }
+
+    }
+
+    .table {
+        overflow-x: auto;
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+            width: 100%;
+            margin-bottom: $marginxxl;
+            padding-bottom: $paddinglg;
+
+            caption { font-size: $font-sizexl; color: var(--BRANDIII); text-align: left; }
+
+            thead { background: var(--BRANDV); color: var(--BRANDII); }
+
+            th { border-left: 0.1rem groove var(--BRANDII); }
+            th, td { padding: $paddingxsi; text-align: left; }
+
+            td img { border-radius: $border-radiussm; height: 8rem; }
+
+            tr:nth-child(even){background-color: var(--TEXTI); }
+
+            .actions, .actionsbtn { width: 10rem; }
+            .actionsbtn {
+                @include flexrow;
+                margin-top: $marginxl;
+
+                .tooltip {
+                    @include tooltip;
+
+                    .deletebtn { @include deletebtn; font-size: $font-sizexsi; padding: $paddingxsi $paddingxsii; }
+
+                    .warning { @include tooltiptext; }
+                    .warning::before { @include tooltiptextbefore; }
+                }
+                .tooltip:hover .warning { @include tooltiphover; }
+
+                .updatebtn { @include adminloginbtn; font-size: $font-sizexsi; padding: $paddingxsi $paddingxsii; }
+                .updatebtn:hover { @include adminloginbtnhover; }
+
+            }
+
+        }
+
+    }
+
+}

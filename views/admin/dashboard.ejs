@@ -1,0 +1,55 @@
+<section id="dashboard">
+
+  <section class="adminaddupdatebtn">
+    <a href="addplayer"> <button class="addplayer"> Add Player </button> </a>
+    <a href="addstaff"> <button class="addstaff"> Add Staff </button> </a>
+    <a href="staff"> <button class="staff"> Team Staff </button> </a>
+    <!-- <a href="updateabout"> <button class="updateabout"> Update Aboutpage </button> </a> -->
+  </section>
+  
+  <section>
+    <div class="table">
+
+      <table>
+
+        <caption> Team Roster </caption>
+
+        <thead>
+          <tr>
+            <th> Photo </th>
+            <th> Name </th>
+            <th> Position </th>
+            <th class="actions"> Actions </th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <%
+            if(players != "") { %>
+              <% players.forEach(function(player, index) { %>
+                <tr>
+                  <td> <img src="/images/uploads/players/<%= player.playerphoto %>" alt="<%= player.playername %>" width="150" height="175" /> </td>
+                  <td> <%- player.playername %> </td>
+                  <td> <%- player.playerposition %> </td>
+                  <td class="actionsbtn">
+                    <form class="dl" action="/deleteplayer/<%= player._id %>?_method=DELETE" method="POST">
+                      <div class="tooltip">
+                        <input type="submit" value="Delete" class="deletebtn" /> <span class="warning"> This Action Is Irreversible! </span>
+                      </div>
+                    </form>
+                    <a href="/updateplayer/<%= player._id %>"> <button class="updatebtn"> Update </button> </a>
+                  </td>
+                </tr>
+                <% }) %>
+              <% } else { %>
+              <p class="noplayers"> No players found! </p>
+            <% }
+          %>
+        </tbody>
+
+      </table>
+
+    </div>
+  </section>
+
+</section>

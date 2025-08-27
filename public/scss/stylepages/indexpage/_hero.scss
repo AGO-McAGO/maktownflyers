@@ -1,0 +1,42 @@
+#hero {
+    @include center;
+    @include flexcolumn;
+    @include card;
+    gap: 5rem;
+    padding: $paddingxl $paddinglg;
+    color: var(--BRANDI);
+    text-shadow: $textshadowii;
+    margin-bottom: $marginxl;
+    background: var(--BRANDII) url("../../images/hero.png") no-repeat center /cover;
+
+    .herohead, .herop { font-size: $font-sizesm; }
+
+    .starthere {
+        @include buttons;
+        padding: $paddingxsii $paddinglg;
+        background: var(--BRANDIV);
+        color: var(--BRANDII);
+        margin-top: $marginxsi;
+    }
+
+    button:hover { @include buttonsbodyhover; }
+    button:after { @include buttonsbodyafter; background: var(--BRANDIII); }
+    button:hover:after { @include buttonsbodyhoverafter; }
+
+}
+
+//! Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+    #hero { flex-direction: row; justify-content: center; padding: $paddingxl $paddinglg; }
+}
+
+//! Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+    #hero { padding: $paddingxl $paddingxl; }
+}
+
+//! Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+    #hero { padding: $paddingxl $paddingxxl; }
+    .herop { width: 40%; }
+}

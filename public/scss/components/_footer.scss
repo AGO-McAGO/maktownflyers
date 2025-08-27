@@ -1,0 +1,94 @@
+footer {
+  @include flexcolumn;
+  gap: 1rem;
+  background: var(--BRANDI);
+  color: var(--BRANDII);
+  padding: $paddinglg $paddingxsii;
+  margin-top: $marginxl;
+
+  .footerdv { @include center;}
+
+  h4 { margin-bottom: $marginxsii; color: var(--BRANDIII); font-size: $font-sizesm; }
+  p { margin-bottom: $marginxsii; }
+
+  .all {
+    @include flexcolumn;
+    gap: 2.5rem;
+
+    .getintouch {
+      @include flexcolumn;
+      gap: 1rem;
+
+      img { border-radius: $border-radiusxsi; width: 5rem; height: 3rem; }
+
+      .socialmedia {
+        @include flexrow;
+        justify-content: flex-start;
+        gap: 1.5rem;
+        align-items: center;
+        margin-bottom: $marginxl;
+
+        .youtube { color: var(--YOUTUBE); }
+        .tiktok { color: var(--TIKTOK); }
+        .xtwitter { color: var(--XTWITTER); background-color: var(--BRANDII); }
+        .instagram { color: var(--INSTAGRAM); }
+        .facebook { color: var(--FACEBOOK); }
+
+      }
+
+    }
+
+    .quicklinks {
+      @include flexcolumn;
+      gap: 1.5rem;
+
+      a { color: var(--BRANDII); }
+
+    }
+
+  }
+
+  .copyrights {
+    @include flexcolumn;
+    align-items: center;
+    gap: 1rem;
+    font-size: $font-sizexsi;
+    margin-top: $marginlg;
+
+    .crest { color: var(--BRANDII); font-size: $font-sizesm; font-weight: bold; }
+
+  }
+
+  .designer { font-weight: bold; }
+
+}
+
+//! Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+
+  .all {
+    flex-direction: row !important;
+
+    .getintouch { width: 50% !important; }
+  
+    .quicklinks { flex-direction: row !important; justify-content: space-between !important; width: 50% !important; }
+
+  }
+
+  .copyrights { flex-direction: row !important; justify-content: space-between !important; }
+
+}
+
+//! Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .copyrights { font-size: $font-sizexsii !important; }
+}
+
+//! Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+
+  .all .getintouch { width: 60% !important; }
+
+  .all .quicklinks { width: 40% !important; }
+
+}

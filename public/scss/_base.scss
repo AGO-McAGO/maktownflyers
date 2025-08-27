@@ -1,0 +1,20 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; scroll-padding: 7rem; } //TODO remove scroll padding if disrupts scroll destination
+
+body {
+  min-height: 100vh;
+  font-family: $font-familyii;
+  font-size: $font-sizexsii;
+  background: var(--BRANDII);
+  color: var(--BRANDI);
+}
+
+ul { padding: 0; list-style-type: none; }
+li { list-style-type: none; }
+
+a { text-decoration: none; }
+
+img { max-width: 100%; height: auto; }
+
+main { margin-top: $marginxxll; }

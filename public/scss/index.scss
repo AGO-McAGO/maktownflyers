@@ -1,0 +1,28 @@
+@import "colours";
+
+@import "variables";
+
+@import "mixins";
+@import "base";
+
+//! Components
+@import "components/buttons";
+@import "components/footer";
+@import "components/header";
+@import "components/nav";
+
+//! Pages
+// admin pages
+@import "stylepages/admin/addplayerorstaff";
+@import "stylepages/admin/adminpanel";
+@import "stylepages/admin/dashboard";
+@import "stylepages/admin/login"; //? rules for errorpages are in this file
+
+// homepage
+@import "stylepages/indexpage/news";
+@import "stylepages/indexpage/connect";
+@import "stylepages/indexpage/hero";
+
+// otherpages
+@import "stylepages/otherpages/team";
+@import "stylepages/otherpages/connect";

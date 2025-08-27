@@ -1,0 +1,52 @@
+<section id="dashboard">
+
+  <section class="adminaddupdatebtn">
+    <a href="addstaff"> <button class="addstaff"> Add Staff </button> </a>
+  </section>
+  
+  <section>
+    <div class="table">
+
+      <table>
+
+        <caption> Team Staff </caption>
+
+        <thead>
+          <tr>
+            <th> Photo </th>
+            <th> Name </th>
+            <th> Role </th>
+            <th class="actions"> Actions </th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <%
+            if(staffs != "") { %>
+              <% staffs.forEach(function(staff, index) { %>
+                <tr>
+                  <td> <img src="/images/uploads/staff/<%= staff.staffphoto %>" alt="<%= staff.staffname %>" width="150" height="175" /> </td>
+                  <td> <%- staff.staffname %> </td>
+                  <td> <%- staff.staffrole %> </td>
+                  <td class="actionsbtn">
+                    <form class="dl" action="/deletestaff/<%= staff._id %>?_method=DELETE" method="POST">
+                      <div class="tooltip">
+                        <input type="submit" value="Delete" class="deletebtn" /> <span class="warning"> This Action Is Irreversible! </span>
+                      </div>
+                    </form>
+                    <a href="/updatestaff/<%= staff._id %>"> <button class="updatebtn"> Update </button> </a>
+                  </td>
+                </tr>
+                <% }) %>
+              <% } else { %>
+              <p class="nostaffs"> No staff found! </p>
+            <% }
+          %>
+        </tbody>
+
+      </table>
+
+    </div>
+  </section>
+
+</section>

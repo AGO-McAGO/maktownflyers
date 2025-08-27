@@ -1,0 +1,1172 @@
+:root {
+  --BLACK: #000000;
+  --WHITE: #ffffff;
+  --BRANDI: var(--BLACK);
+  --BRANDII: var(--WHITE);
+  --BRANDIII: #ad0000;
+  --BRANDIV: #f00c0c;
+  --BRANDV: #3e3535;
+  --ACCENT: #e67514;
+  --DOLLAR: #70bb65;
+  --ERROR: #f00303;
+  --NAIRAI: #008b2c;
+  --NAIRAII: #1b7339;
+  --TEXTI: #d0d0d0;
+  --TEXTII: #515151;
+  --TRANSPARENT: #00000070;
+  --XTWITTER: var(--BLACK);
+  --TWITTERI: #1DA1F2;
+  --TWITTERII: #55acee;
+  --FACEBOOK: #3b5998;
+  --INSTAGRAM: #e1306c;
+  --WHATSAPP: #25d366;
+  --LINKEDINI: #0077b5;
+  --LINKEDINII: #0a66c2;
+  --YOUTUBE: #ff0000;
+  --TIKTOK: #fe2c55;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding: 7rem;
+}
+
+body {
+  min-height: 100vh;
+  font-family: garamond;
+  font-size: 1.2rem;
+  background: var(--BRANDII);
+  color: var(--BRANDI);
+}
+
+ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+main {
+  margin-top: 5rem;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background: var(--BRANDI);
+  color: var(--BRANDII);
+  padding: 1.5rem 0.7rem;
+  margin-top: 2rem;
+}
+footer .footerdv {
+  max-width: 90%;
+  min-width: 90%;
+  margin: auto;
+}
+footer h4 {
+  margin-bottom: 0.7rem;
+  color: var(--BRANDIII);
+  font-size: 1.7rem;
+}
+footer p {
+  margin-bottom: 0.7rem;
+}
+footer .all {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+footer .all .getintouch {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+footer .all .getintouch img {
+  border-radius: 0.1rem;
+  width: 5rem;
+  height: 3rem;
+}
+footer .all .getintouch .socialmedia {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  justify-content: flex-start;
+  gap: 1.5rem;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+footer .all .getintouch .socialmedia .youtube {
+  color: var(--YOUTUBE);
+}
+footer .all .getintouch .socialmedia .tiktok {
+  color: var(--TIKTOK);
+}
+footer .all .getintouch .socialmedia .xtwitter {
+  color: var(--XTWITTER);
+  background-color: var(--BRANDII);
+}
+footer .all .getintouch .socialmedia .instagram {
+  color: var(--INSTAGRAM);
+}
+footer .all .getintouch .socialmedia .facebook {
+  color: var(--FACEBOOK);
+}
+footer .all .quicklinks {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+footer .all .quicklinks a {
+  color: var(--BRANDII);
+}
+footer .copyrights {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.8rem;
+  margin-top: 1.5rem;
+}
+footer .copyrights .crest {
+  color: var(--BRANDII);
+  font-size: 1.7rem;
+  font-weight: bold;
+}
+footer .designer {
+  font-weight: bold;
+}
+
+@media (min-width: 768px) {
+  .all {
+    flex-direction: row !important;
+  }
+  .all .getintouch {
+    width: 50% !important;
+  }
+  .all .quicklinks {
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    width: 50% !important;
+  }
+  .copyrights {
+    flex-direction: row !important;
+    justify-content: space-between !important;
+  }
+}
+@media (min-width: 992px) {
+  .copyrights {
+    font-size: 1.2rem !important;
+  }
+}
+@media (min-width: 1200px) {
+  .all .getintouch {
+    width: 60% !important;
+  }
+  .all .quicklinks {
+    width: 40% !important;
+  }
+}
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 5rem;
+  background-color: var(--BRANDI);
+  z-index: 3;
+}
+header .headeritems {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 90%;
+  min-width: 90%;
+  margin: auto;
+}
+header .headeritems #maktowncrest {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  justify-content: center;
+}
+header .headeritems #maktowncrest img {
+  border-radius: 0.1rem;
+  width: 7rem;
+  height: 4rem;
+}
+header .headeritems #maktowncrest .crestname {
+  color: var(--BRANDII);
+  font-weight: bold;
+}
+header .headeritems .navbutton {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.7rem;
+  background-color: var(--BRANDIII);
+  border-radius: 50%;
+  cursor: pointer;
+  height: 3.7rem;
+  width: 3.7rem;
+  transition: all 0.4s;
+  border: none;
+  outline: none;
+}
+header .headeritems .navbutton.open {
+  background-color: var(--BRANDII);
+}
+header .headeritems .linei, header .headeritems .lineii, header .headeritems .lineiii {
+  width: 2.7rem;
+  height: 0.2rem;
+  transition: all 0.4s;
+  background-color: var(--BRANDII);
+}
+header .headeritems .navbutton.open .linei {
+  transform: rotate(-45deg) translate(-0.7rem, 0.75rem);
+  background-color: var(--BRANDIII);
+}
+header .headeritems .navbutton.open .lineii {
+  width: 0;
+  opacity: 0;
+}
+header .headeritems .navbutton.open .lineiii {
+  width: 0;
+  opacity: 0;
+}
+
+nav {
+  width: 100%;
+  height: 100vh;
+  background: var(--BRANDI);
+  margin-top: 5rem;
+  padding: 1rem;
+  position: absolute;
+  top: -100vh;
+  z-index: 2;
+  transition: top ease-in 0.4s;
+}
+nav .links {
+  max-width: 90%;
+  min-width: 90%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+nav .links .link {
+  background: var(--BRANDII);
+  color: var(--BRANDI);
+  border: none;
+  border-radius: 0.2rem;
+  font-size: 0.8rem;
+  font-weight: bold;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  padding: 0.4rem 0.7rem;
+  transition: all 0.5s;
+  color: var(--BRANDIII);
+  z-index: 1;
+}
+nav .links button:hover {
+  color: var(--BRANDII);
+  transform: translateY(-0.27rem);
+}
+nav .links button:after {
+  content: "";
+  background: var(--BRANDI);
+  position: absolute;
+  z-index: -1;
+  left: -20%;
+  right: -20%;
+  top: 0;
+  bottom: 0;
+  transform: skewX(-45deg) scale(0, 1);
+  transition: all 0.3s;
+  z-index: -1;
+}
+nav .links button:hover:after {
+  transform: skewX(-45deg) scale(1, 1);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  background: var(--BRANDIII);
+}
+
+nav.open {
+  top: 0;
+}
+
+#addplayer, #updateplayer, #addstaff, #updatestaff {
+  max-width: 90%;
+  min-width: 90%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  background: var(--BRANDII);
+  padding: 1.5rem 0.4rem;
+}
+#addplayer a, #updateplayer a, #addstaff a, #updatestaff a {
+  background: var(--BRANDII);
+  color: var(--BRANDIV);
+  padding: 0.4rem;
+  font-weight: bold;
+  width: 5.5rem;
+  margin-bottom: 0.5rem;
+}
+#addplayer h1, #updateplayer h1, #addstaff h1, #updatestaff h1 {
+  font-size: 2rem;
+  color: var(--BRANDIII);
+  text-align: center;
+}
+#addplayer .tooltip, #updateplayer .tooltip, #addstaff .tooltip, #updatestaff .tooltip {
+  position: relative;
+  display: block;
+}
+#addplayer .tooltip .deletebtn, #updateplayer .tooltip .deletebtn, #addstaff .tooltip .deletebtn, #updatestaff .tooltip .deletebtn {
+  background: var(--ERROR);
+  color: var(--BRANDI);
+  padding: 0.4rem;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1.2rem;
+  border: none;
+  width: 100%;
+}
+#addplayer .tooltip .warning, #updateplayer .tooltip .warning, #addstaff .tooltip .warning, #updatestaff .tooltip .warning {
+  background: var(--ERROR);
+  color: var(--BRANDII);
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 0.7rem 0.4rem;
+  border-radius: 0.2rem;
+  z-index: 1;
+  left: 50%;
+  bottom: 2.5rem;
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.5s;
+  transform: translateX(-50%) translateY(-4rem);
+}
+#addplayer .tooltip .warning::before, #updateplayer .tooltip .warning::before, #addstaff .tooltip .warning::before, #updatestaff .tooltip .warning::before {
+  content: "";
+  bottom: -0.2rem;
+  width: 0.7rem;
+  height: 0.7rem;
+  position: absolute;
+  background: var(--ERROR);
+  transform: rotate(45deg);
+  left: 50%;
+}
+#addplayer .tooltip:hover .warning, #updateplayer .tooltip:hover .warning, #addstaff .tooltip:hover .warning, #updatestaff .tooltip:hover .warning {
+  visibility: visible;
+  opacity: 1;
+  transform: translateX(-50%) translateY(0rem);
+}
+#addplayer form, #updateplayer form, #addstaff form, #updatestaff form {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 0.4rem;
+}
+#addplayer form article, #updateplayer form article, #addstaff form article, #updatestaff form article {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+#addplayer form article label, #updateplayer form article label, #addstaff form article label, #updatestaff form article label {
+  color: var(--BRANDIII);
+}
+#addplayer form article input, #updateplayer form article input, #addstaff form article input, #updatestaff form article input {
+  padding: 0.4rem;
+  font-weight: bold;
+  border: none;
+  color: var(--BRANDII);
+  background: var(--TEXTII);
+  transition: ease-in 0.4s;
+  width: 100%;
+}
+#addplayer form article input:focus, #updateplayer form article input:focus, #addstaff form article input:focus, #updatestaff form article input:focus {
+  background: var(--BRANDI);
+  outline: none;
+}
+#addplayer form .adminaddbtn, #addplayer form .adminupdatebtn, #updateplayer form .adminaddbtn, #updateplayer form .adminupdatebtn, #addstaff form .adminaddbtn, #addstaff form .adminupdatebtn, #updatestaff form .adminaddbtn, #updatestaff form .adminupdatebtn {
+  background: var(--BRANDII);
+  color: var(--BRANDI);
+  border: none;
+  border-radius: 0.2rem;
+  font-size: 0.8rem;
+  font-weight: bold;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  padding: 0.4rem 0.7rem;
+  transition: all 0.5s;
+  padding: 0.4rem 1.5rem;
+  background: var(--BRANDIV);
+  color: var(--BRANDII);
+  font-size: 1.2rem;
+}
+#addplayer form .adminaddbtn:hover, #addplayer form .adminupdatebtn:hover, #updateplayer form .adminaddbtn:hover, #updateplayer form .adminupdatebtn:hover, #addstaff form .adminaddbtn:hover, #addstaff form .adminupdatebtn:hover, #updatestaff form .adminaddbtn:hover, #updatestaff form .adminupdatebtn:hover {
+  color: var(--BRANDII);
+  transform: translateY(-0.27rem);
+  background: var(--BRANDIII);
+}
+
+#adminpanel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--TRANSPARENT);
+  margin-top: 5rem;
+  padding: 1rem;
+}
+#adminpanel button {
+  cursor: pointer;
+  background: var(--BRANDII);
+  padding: 0.4rem;
+  font-weight: bold;
+}
+
+#dashboard {
+  max-width: 90%;
+  min-width: 90%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  padding: 0.7rem;
+  box-shadow: 0.0625rem 0.1875rem 0.3125rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  background: var(--BRANDII);
+  color: var(--TEXTII);
+  margin-bottom: 4.5rem;
+  padding: 1rem;
+}
+#dashboard .adminaddupdatebtn {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 4.5rem;
+}
+#dashboard .adminaddupdatebtn .addplayer, #dashboard .adminaddupdatebtn .addstaff, #dashboard .adminaddupdatebtn .updateabout, #dashboard .adminaddupdatebtn .staff {
+  background: var(--BRANDII);
+  color: var(--BRANDI);
+  border: none;
+  border-radius: 0.2rem;
+  font-size: 0.8rem;
+  font-weight: bold;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  padding: 0.4rem 0.7rem;
+  transition: all 0.5s;
+  padding: 0.4rem 1.5rem;
+  background: var(--BRANDIV);
+  color: var(--BRANDII);
+  font-size: 1.2rem;
+  padding: 0.4rem;
+  font-size: 0.8rem;
+  background: var(--BRANDV);
+}
+#dashboard .adminaddupdatebtn .addplayer:hover, #dashboard .adminaddupdatebtn .addstaff:hover, #dashboard .adminaddupdatebtn .updateabout:hover, #dashboard .adminaddupdatebtn .staff:hover {
+  background: var(--BRANDIII);
+}
+#dashboard .table {
+  overflow-x: auto;
+}
+#dashboard .table table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  margin-bottom: 4.5rem;
+  padding-bottom: 1.5rem;
+}
+#dashboard .table table caption {
+  font-size: 4rem;
+  color: var(--BRANDIII);
+  text-align: left;
+}
+#dashboard .table table thead {
+  background: var(--BRANDV);
+  color: var(--BRANDII);
+}
+#dashboard .table table th {
+  border-left: 0.1rem groove var(--BRANDII);
+}
+#dashboard .table table th, #dashboard .table table td {
+  padding: 0.4rem;
+  text-align: left;
+}
+#dashboard .table table td img {
+  border-radius: 0.5rem;
+  height: 8rem;
+}
+#dashboard .table table tr:nth-child(even) {
+  background-color: var(--TEXTI);
+}
+#dashboard .table table .actions, #dashboard .table table .actionsbtn {
+  width: 10rem;
+}
+#dashboard .table table .actionsbtn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+#dashboard .table table .actionsbtn .tooltip {
+  position: relative;
+  display: block;
+}
+#dashboard .table table .actionsbtn .tooltip .deletebtn {
+  background: var(--ERROR);
+  color: var(--BRANDI);
+  padding: 0.4rem;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1.2rem;
+  border: none;
+  font-size: 0.8rem;
+  padding: 0.4rem 0.7rem;
+}
+#dashboard .table table .actionsbtn .tooltip .warning {
+  background: var(--ERROR);
+  color: var(--BRANDII);
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 0.7rem 0.4rem;
+  border-radius: 0.2rem;
+  z-index: 1;
+  left: 50%;
+  bottom: 2.5rem;
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.5s;
+  transform: translateX(-50%) translateY(-4rem);
+}
+#dashboard .table table .actionsbtn .tooltip .warning::before {
+  content: "";
+  bottom: -0.2rem;
+  width: 0.7rem;
+  height: 0.7rem;
+  position: absolute;
+  background: var(--ERROR);
+  transform: rotate(45deg);
+  left: 50%;
+}
+#dashboard .table table .actionsbtn .tooltip:hover .warning {
+  visibility: visible;
+  opacity: 1;
+  transform: translateX(-50%) translateY(0rem);
+}
+#dashboard .table table .actionsbtn .updatebtn {
+  background: var(--BRANDII);
+  color: var(--BRANDI);
+  border: none;
+  border-radius: 0.2rem;
+  font-size: 0.8rem;
+  font-weight: bold;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  padding: 0.4rem 0.7rem;
+  transition: all 0.5s;
+  padding: 0.4rem 1.5rem;
+  background: var(--BRANDIV);
+  color: var(--BRANDII);
+  font-size: 1.2rem;
+  font-size: 0.8rem;
+  padding: 0.4rem 0.7rem;
+}
+#dashboard .table table .actionsbtn .updatebtn:hover {
+  color: var(--BRANDII);
+  transform: translateY(-0.27rem);
+  background: var(--BRANDIII);
+}
+
+#adminlogin {
+  max-width: 90%;
+  min-width: 90%;
+  margin: auto;
+  background: var(--BRANDII);
+  padding: 1.5rem;
+}
+#adminlogin h1 {
+  font-size: 2.5rem;
+  color: var(--BRANDIII);
+  margin-bottom: 1.5rem;
+}
+#adminlogin form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+#adminlogin form .inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  width: 100%;
+}
+#adminlogin form .inputs div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.1rem;
+}
+#adminlogin form .inputs div label {
+  color: var(--BRANDIII);
+}
+#adminlogin form .inputs div input {
+  padding: 0.4rem;
+  font-weight: bold;
+  border: none;
+  color: var(--BRANDII);
+  background: var(--TEXTII);
+  transition: ease-in 0.4s;
+  width: 70%;
+  border-radius: 0rem 0.2rem 0.2rem 0rem;
+}
+#adminlogin form .inputs div input:focus {
+  background: var(--BRANDI);
+  outline: none;
+}
+#adminlogin form .loginbtn {
+  background: var(--BRANDII);
+  color: var(--BRANDI);
+  border: none;
+  border-radius: 0.2rem;
+  font-size: 0.8rem;
+  font-weight: bold;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  padding: 0.4rem 0.7rem;
+  transition: all 0.5s;
+  padding: 0.4rem 1.5rem;
+  background: var(--BRANDIV);
+  color: var(--BRANDII);
+  font-size: 1.2rem;
+}
+#adminlogin form .loginbtn:hover {
+  color: var(--BRANDII);
+  transform: translateY(-0.27rem);
+  background: var(--BRANDIII);
+}
+
+#errorpages, #feedback {
+  max-width: 90%;
+  min-width: 90%;
+  margin: auto;
+  padding: 0.7rem;
+  box-shadow: 0.0625rem 0.1875rem 0.3125rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  color: var(--ERROR);
+  background: var(--BRANDII);
+  padding: 4rem 1.5rem;
+}
+#errorpages h1, #feedback h1 {
+  margin-bottom: 2rem;
+}
+#errorpages button, #feedback button {
+  background: var(--BRANDII);
+  color: var(--BRANDI);
+  border: none;
+  border-radius: 0.2rem;
+  font-size: 0.8rem;
+  font-weight: bold;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  padding: 0.4rem 0.7rem;
+  transition: all 0.5s;
+  padding: 0.4rem 1.5rem;
+  background: var(--BRANDIV);
+  color: var(--BRANDII);
+  font-size: 1.2rem;
+}
+#errorpages button:hover, #feedback button:hover {
+  color: var(--BRANDII);
+  transform: translateY(-0.27rem);
+  background: var(--BRANDIII);
+}
+
+#news {
+  max-width: 90%;
+  min-width: 90%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  padding: 0.7rem;
+  box-shadow: 0.0625rem 0.1875rem 0.3125rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  gap: 2rem;
+  padding: 4rem 1.5rem;
+  color: var(--TEXTII);
+  margin-bottom: 2rem;
+  background: var(--WHITE);
+}
+#news h2 {
+  font-size: 2.5rem;
+  color: var(--BRANDIII);
+}
+#news .about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .about {
+    flex-direction: row !important;
+    align-items: flex-start !important;
+    justify-content: flex-end !important;
+    gap: 2rem !important;
+  }
+  .about figure {
+    width: 30% !important;
+  }
+  .about article {
+    width: 50% !important;
+  }
+}
+#connect {
+  max-width: 90%;
+  min-width: 90%;
+  margin: auto;
+  padding: 0.7rem;
+  box-shadow: 0.0625rem 0.1875rem 0.3125rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  color: var(--BRANDII);
+  background: var(--BRANDI) !important;
+  padding: 1rem 1.5rem;
+  margin-bottom: 2rem;
+}
+#connect h3 {
+  font-size: 2.5rem;
+}
+#connect form {
+  padding: 0.7rem;
+  box-shadow: 0.0625rem 0.1875rem 0.3125rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+#connect form article {
+  display: flex;
+  flex-direction: column;
+  gap: 7rem;
+}
+#connect form article .input {
+  background: transparent;
+  border-color: transparent;
+  color: var(--BRANDII);
+  border-bottom: 0.2rem groove var(--BRANDII);
+  border-radius: 0rem;
+  width: 100%;
+  padding-bottom: 1rem;
+  font-size: 1.2rem;
+  transition: all 0.8s;
+}
+#connect form article textarea {
+  resize: none;
+}
+#connect form article .input:focus {
+  outline: none;
+  background: transparent;
+  border-color: transparent;
+  box-shadow: none;
+  color: var(--BRANDII);
+  border-bottom: 0.2rem groove var(--BRANDIII);
+}
+#connect form article .label {
+  color: var(--BRANDIII);
+  display: block;
+  margin-top: -4.5rem;
+  margin-left: 0rem;
+  font-size: 1.2rem;
+  transition: all 0.8s;
+}
+#connect form article .textarealabel {
+  margin-top: -6rem;
+}
+#connect form article .input:placeholder-shown + .label {
+  transform: translate(1.25rem, 1.25rem);
+  opacity: 0;
+  visibility: hidden;
+}
+#connect form .send {
+  margin: 1rem 0rem;
+}
+#connect form .send .sendbtn {
+  background: var(--BRANDII);
+  color: var(--BRANDI);
+  border: none;
+  border-radius: 0.2rem;
+  font-size: 0.8rem;
+  font-weight: bold;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  padding: 0.4rem 0.7rem;
+  transition: all 0.5s;
+  padding: 0.4rem 1.5rem;
+  background: var(--BRANDIV);
+  color: var(--BRANDII);
+  font-size: 1.2rem;
+}
+#connect form .send input:hover {
+  color: var(--BRANDII);
+  transform: translateY(-0.27rem);
+  background: var(--BRANDIII);
+}
+
+@media (min-width: 768px) {
+  #connect {
+    flex-direction: row !important;
+    justify-content: space-between !important;
+  }
+  #connect form {
+    width: 60%;
+  }
+}
+#hero {
+  max-width: 90%;
+  min-width: 90%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  padding: 0.7rem;
+  box-shadow: 0.0625rem 0.1875rem 0.3125rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  gap: 5rem;
+  padding: 4rem 1.5rem;
+  color: var(--BRANDI);
+  text-shadow: 0.07rem 0.1rem 0.1rem var(--WHITE);
+  margin-bottom: 2rem;
+  background: var(--BRANDII) url("../../images/hero.png") no-repeat center/cover;
+}
+#hero .herohead, #hero .herop {
+  font-size: 1.7rem;
+}
+#hero .starthere {
+  background: var(--BRANDII);
+  color: var(--BRANDI);
+  border: none;
+  border-radius: 0.2rem;
+  font-size: 0.8rem;
+  font-weight: bold;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  padding: 0.4rem 0.7rem;
+  transition: all 0.5s;
+  padding: 0.7rem 1.5rem;
+  background: var(--BRANDIV);
+  color: var(--BRANDII);
+  margin-top: 0.5rem;
+}
+#hero button:hover {
+  color: var(--BRANDII);
+  transform: translateY(-0.27rem);
+}
+#hero button:after {
+  content: "";
+  background: var(--BRANDI);
+  position: absolute;
+  z-index: -1;
+  left: -20%;
+  right: -20%;
+  top: 0;
+  bottom: 0;
+  transform: skewX(-45deg) scale(0, 1);
+  transition: all 0.3s;
+  background: var(--BRANDIII);
+}
+#hero button:hover:after {
+  transform: skewX(-45deg) scale(1, 1);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+@media (min-width: 768px) {
+  #hero {
+    flex-direction: row;
+    justify-content: center;
+    padding: 4rem 1.5rem;
+  }
+}
+@media (min-width: 992px) {
+  #hero {
+    padding: 4rem 4rem;
+  }
+}
+@media (min-width: 1200px) {
+  #hero {
+    padding: 4rem 10rem;
+  }
+  .herop {
+    width: 40%;
+  }
+}
+.teamrosterhead {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-top: 7rem;
+}
+
+#teamroster {
+  max-width: 90%;
+  min-width: 90%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 0.7rem;
+  box-shadow: 0.0625rem 0.1875rem 0.3125rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  gap: 2.5rem;
+  padding: 4rem 1.5rem;
+  color: var(--TEXTII);
+  margin-bottom: 2rem;
+  background: var(--WHITE);
+}
+#teamroster article {
+  padding: 0.7rem;
+  box-shadow: 0.0625rem 0.1875rem 0.3125rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 0;
+  border-radius: 1rem;
+  height: 20rem;
+}
+#teamroster article .playerimg img {
+  border-radius: 1rem 0 0 0;
+  height: 15rem;
+}
+#teamroster article .playerimg figcaption {
+  color: var(--BRANDI);
+  margin-left: 1rem;
+}
+#teamroster article .playerinfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 0 1rem 1rem 0;
+  height: inherit;
+  background-color: var(--BRANDIV);
+  color: var(--BRANDII);
+  text-align: center;
+}
+#teamroster article .playerinfo .dv {
+  padding: 0.4rem;
+}
+#teamroster article .playerinfo .dv span {
+  font-weight: bold;
+}
+#teamroster article .playerinfo .number {
+  padding: 1.5rem;
+  background-color: var(--BRANDI);
+  color: var(--BRANDII);
+  font-weight: bold;
+  border-radius: 0 1rem 0 0;
+  width: 100%;
+}
+
+#teamstaff {
+  max-width: 90%;
+  min-width: 90%;
+  margin: auto;
+  margin-top: 4.5rem;
+  margin-bottom: 4.5rem;
+}
+#teamstaff h2 {
+  color: var(--BRANDII);
+  background-color: var(--BRANDI);
+  padding: 1rem;
+}
+#teamstaff section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+  padding: 4rem 1.5rem;
+  color: var(--TEXTII);
+  margin-bottom: 2rem;
+  background: var(--WHITE);
+}
+#teamstaff section article {
+  padding: 0.7rem;
+  box-shadow: 0.0625rem 0.1875rem 0.3125rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  background: var(--BRANDI);
+  padding: 0;
+  border-radius: 1rem;
+  height: 20rem;
+}
+#teamstaff section article .playerimg {
+  color: var(--BRANDII);
+}
+#teamstaff section article .playerimg img {
+  border-radius: 1rem 1rem 0 0;
+  height: 15rem;
+}
+#teamstaff section article .playerimg figcaption {
+  margin-left: 0.5rem;
+}
+#teamstaff section article .playerimg figcaption h4 {
+  color: var(--BRANDIV);
+  margin-bottom: 1rem;
+}
+#teamstaff section article .playerimg figcaption small {
+  padding: 0.4rem;
+  border: 0.01rem solid var(--BRANDIV);
+}
+
+#connect {
+  padding: 0.7rem;
+  box-shadow: 0.0625rem 0.1875rem 0.3125rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  color: var(--BRANDII);
+  background: var(--TRANSPARENT);
+  padding: 1rem 1.5rem;
+  margin-bottom: 2rem;
+}
+#connect h3 {
+  font-size: 2.5rem;
+}
+#connect form {
+  padding: 0.7rem;
+  box-shadow: 0.0625rem 0.1875rem 0.3125rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+#connect form article {
+  display: flex;
+  flex-direction: column;
+  gap: 7rem;
+}
+#connect form article .input {
+  background: transparent;
+  border-color: transparent;
+  color: var(--BRANDII);
+  border-bottom: 0.2rem groove var(--BRANDII);
+  border-radius: 0rem;
+  width: 100%;
+  padding-bottom: 1rem;
+  font-size: 1.2rem;
+  transition: all 0.8s;
+}
+#connect form article textarea {
+  resize: none;
+}
+#connect form article .input:focus {
+  outline: none;
+  background: transparent;
+  border-color: transparent;
+  box-shadow: none;
+  color: var(--BRANDII);
+  border-bottom: 0.2rem groove var(--BRANDIII);
+}
+#connect form article .label {
+  color: var(--BRANDIII);
+  display: block;
+  margin-top: -4.5rem;
+  margin-left: 0rem;
+  font-size: 1.2rem;
+  transition: all 0.8s;
+}
+#connect form article .textarealabel {
+  margin-top: -6rem;
+}
+#connect form article .input:placeholder-shown + .label {
+  transform: translate(1.25rem, 1.25rem);
+  opacity: 0;
+  visibility: hidden;
+}
+#connect form .send {
+  margin: 1rem 0rem;
+}
+#connect form .send .sendbtn {
+  background: var(--BRANDII);
+  color: var(--BRANDI);
+  border: none;
+  border-radius: 0.2rem;
+  font-size: 0.8rem;
+  font-weight: bold;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  padding: 0.4rem 0.7rem;
+  transition: all 0.5s;
+  padding: 0.4rem 1.5rem;
+  background: var(--BRANDIV);
+  color: var(--BRANDII);
+  font-size: 1.2rem;
+}
+#connect form .send input:hover {
+  color: var(--BRANDII);
+  transform: translateY(-0.27rem);
+  background: var(--BRANDIII);
+}
+
+@media (min-width: 768px) {
+  #connect {
+    flex-direction: row !important;
+    justify-content: space-between !important;
+  }
+  #connect form {
+    width: 60%;
+  }
+}
+
+/*# sourceMappingURL=index.css.map */

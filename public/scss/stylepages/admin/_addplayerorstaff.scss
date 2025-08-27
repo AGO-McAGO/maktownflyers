@@ -1,0 +1,57 @@
+#addplayer, #updateplayer, #addstaff, #updatestaff {
+    @include center;
+    @include flexcolumn;
+    background: var(--BRANDII);
+    padding: $paddinglg $paddingxsi;
+
+    a {
+        background: var(--BRANDII);
+        color: var(--BRANDIV);
+        padding: $paddingxsi;
+        font-weight: bold;
+        width: 5.5rem;
+        margin-bottom: $marginxsi;
+    }
+
+    h1 { font-size: $marginxl; color: var(--BRANDIII); text-align: center; }
+
+    .tooltip {
+        @include tooltip;
+
+        .deletebtn { @include deletebtn; width: 100%; }
+
+        .warning { @include tooltiptext; }
+        .warning::before { @include tooltiptextbefore; }
+
+    }
+    .tooltip:hover .warning { @include tooltiphover; }
+
+    form {
+        margin-top: $marginxl;
+        @include flexcolumn;
+        gap: 2rem;
+        padding: $paddingxsi;
+
+        article {
+            @include flexcolumn;
+            gap: 1.5rem;
+
+            label { color: var(--BRANDIII); }
+
+            input { @include forminput; width: 100%; }
+
+            input:focus { @include forminputfocus; }
+
+        }
+
+        .adminaddbtn, .adminupdatebtn { @include adminloginbtn; }
+        .adminaddbtn:hover, .adminupdatebtn:hover { @include adminloginbtnhover; }
+
+    }
+
+}
+
+//! Medium devices (tablets, 768px and up)*/
+// @media (min-width: 768px) {
+//     #addpplayer, #updatepplayer { width: 50%; margin: $marginxl auto; }
+// }

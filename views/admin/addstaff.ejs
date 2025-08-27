@@ -1,0 +1,34 @@
+<section id="addstaff">
+
+  <a href="/dashboard"> &larr; Back </a>
+
+  <h1> Add Staff </h1>
+
+  <div>
+
+    <form action="/addstaff" enctype="multipart/form-data" method="POST">
+
+      <article>
+        <div>
+          <label for="staffname"> <b> Staff Name </b> </label> <br />
+          <input type="text" name="staffname" placeholder="Staff Name ...." />
+        </div>
+
+        <div>
+          <label for="staffrole"> <b> Staff Role </b> </label> <br />
+          <input type="text" name="staffrole" placeholder="Staff Role ...." />
+          <small> E.g. Head Coach, Assistant Coach, Team Physician, Team Executive, e.t.c. </small>
+        </div>
+
+        <div>
+          <label for="staffphoto"> <b> Choose Staff Photo </b> </label>
+          <input type="file" name="staffphoto" id="staffphoto" accept="image/*">
+        </div>
+      </article>
+
+      <div> <input type="submit" value="Add Staff" class="adminaddbtn" /> </div>
+
+    </form>
+  </div>
+
+</section>

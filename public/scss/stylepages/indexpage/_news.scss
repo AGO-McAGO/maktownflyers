@@ -1,0 +1,31 @@
+#news {
+    @include center;
+    @include flexcolumn;
+    @include card;
+    gap: 2rem;
+    padding: $paddingxl $paddinglg;
+    color: var(--TEXTII);
+    margin-bottom: $marginxl;
+    background: var(--WHITE);
+
+    h2 { font-size: $font-sizelg; color: var(--BRANDIII); }
+
+    .about { @include flexcolumn; align-items: center; gap: 2rem; }
+
+}
+
+//! Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+
+    .about {
+        flex-direction: row !important;
+        align-items: flex-start !important;
+        justify-content: flex-end !important;
+        gap: 2rem !important;
+
+        figure { width: 30% !important; }
+        article { width: 50% !important; }
+
+    }
+
+}

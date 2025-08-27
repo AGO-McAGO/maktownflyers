@@ -1,0 +1,60 @@
+#adminlogin {
+    @include center;
+    background: var(--BRANDII);
+    padding: $paddinglg;
+
+    h1 { font-size: $font-sizelg; color: var(--BRANDIII); margin-bottom: $marginlg; }
+
+    form {
+        @include flexcolumn;
+        gap: 1.5rem;
+
+        .inputs {
+            @include flexcolumn;
+            gap: 2.5rem;
+            width: 100%;
+
+            div {
+                @include flexrow;
+                gap: 0.1rem;
+
+                label { color: var(--BRANDIII); }
+
+                input { @include forminput; width: 70%; border-radius: 0rem $border-radiusxsii $border-radiusxsii 0rem; }
+                input:focus { @include forminputfocus; }
+
+            }
+
+        }
+
+        .loginbtn { @include adminloginbtn; }
+        .loginbtn:hover { @include adminloginbtnhover; }
+
+    }
+
+}
+
+//! Admin errorpages (authentication and login feedback)
+#errorpages, #feedback {
+    @include center;
+    @include card;
+    color: var(--ERROR);
+    background: var(--BRANDII);
+    padding: $paddingxl $paddinglg;
+
+    h1 { margin-bottom: $marginxl; }
+
+    button { @include adminloginbtn; }
+    button:hover { @include adminloginbtnhover; }
+
+}
+
+//! Medium devices (tablets, 768px and up)
+// @media (min-width: 768px) {
+//     #adminlogin form { width: 70%; margin: $marginxl auto; }
+// }
+
+//! Large devices (desktops, 992px and up)
+// @media (min-width: 992px) {
+//     #adminlogin form { width: 50%; }
+// }
