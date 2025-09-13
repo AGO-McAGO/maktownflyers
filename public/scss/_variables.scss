@@ -16,6 +16,7 @@ $marginlg: 1.5rem;
 $marginxl: 2rem;
 $marginxxl: 4.5rem;
 $marginxxll: 5rem;
+$marginmain: 7rem;
 
 
 // border
@@ -27,13 +28,19 @@ $border-radiusxsi: 0.1rem;
 $border-radiusxsii: 0.2rem;
 $border-radiussm: 0.5rem;
 $border-radiuslg: 1rem;
+$border-radiusxl: 2rem;
 $border-circle: 50%;
+
+$border-brand: 0.05rem groove var(--BRANDIV); 
 
 
 // fonts
-$font-familyi: "Times New Roman", monospace;
-$font-familyii: garamond;
-$font-familyiii: "century expanded";
+$font-familyi: "Gupter";
+$font-familyii: "Rubik Wet Paint";
+$font-familyiii: "Shojumaru";
+$font-familyiv: garamond;
+$font-familyv: "century expanded";
+$font-familyvi: "Tilt Prism";
 
 $font-sizexsi: 0.8rem;
 $font-sizexsii: 1.2rem;
@@ -52,3 +59,4 @@ $textshadowii: 0.07rem 0.1rem 0.1rem var(--WHITE);
 
 // backgrounds
 $backgrounddarken: #00000070;
+$backgrounddarker: #000000e7;

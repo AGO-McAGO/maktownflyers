@@ -1,0 +1,32 @@
+<section id="history">
+  
+  <h1> Franchise History </h1>
+  
+  <article>
+    
+    <% if(franchisehistory != "") { %>
+      <% franchisehistory.forEach( history => { %>
+        
+        <div class="franchisehistory">
+          <div class="history"> <p> <%= history.franchisehistorytextone %> </p> </div>
+          <div class="history"> <p> <%= history.franchisehistorytexttwo %> </p> </div>
+          <div class="history"> <p> <%= history.franchisehistorytextthree %> </p> </div>
+          <div class="history"> <p> <%= history.franchisehistorytextfour %> </p> </div>
+        </div>
+
+
+        <div class="aboutimg">
+          <figure>
+            <img src="images/uploads/about/<%= history.aboutphoto %>" alt="<%= history.aboutname %>" width="225" height="200" />
+            <figcaption> <h2> <%= history.aboutname %> </h2> <small> <%= history.aboutqualifications %> </small> </figcaption>
+          </figure>
+        </div>
+
+      <% } ) %>
+    <% } else { %>
+        <p> No History Yet! </p>
+    <% } %>
+
+  </article>
+
+</section>

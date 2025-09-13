@@ -1,0 +1,39 @@
+#photos {
+    @include card;
+    @include center;
+    padding: $paddinglg;
+    color: var(--TEXTII);
+    margin-bottom: $marginxxl;
+    background: $backgrounddarker;
+    text-align: center;
+
+    .maktownflyersphotos {
+        column-count: 1;
+
+        .mediaimg {
+            margin-bottom: $marginsm;
+
+            //TODO add an X to close the lightbox
+            img { cursor: pointer; transition: all .5s; width: inherit; }
+            img:hover { transform: scale(1.1); }
+
+        }
+
+    }
+
+}
+
+//! Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+    #photos .maktownflyersphotos { column-count: 2; }
+}
+
+//! Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+    #photos .maktownflyersphotos { column-count: 4; }
+}
+
+//! Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+    #photos .maktownflyersphotos { column-count: 5; }
+}

@@ -1,42 +1,44 @@
 #hero {
     @include center;
-    @include flexcolumn;
-    @include card;
-    gap: 5rem;
-    padding: $paddingxl $paddinglg;
-    color: var(--BRANDI);
-    text-shadow: $textshadowii;
-    margin-bottom: $marginxl;
-    background: var(--BRANDII) url("../../images/hero.png") no-repeat center /cover;
+    margin-bottom: $marginxxl;
 
-    .herohead, .herop { font-size: $font-sizesm; }
+    article {
+        background: rgba(0, 0, 0, 0.5);
+        @include flexrow;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+        min-height: 100vh;
+        border-radius: $border-radiussm;
 
-    .starthere {
-        @include buttons;
-        padding: $paddingxsii $paddinglg;
-        background: var(--BRANDIV);
-        color: var(--BRANDII);
-        margin-top: $marginxsi;
+        h1 {
+            font-family: $font-familyii;
+            font-size: $font-sizesm;
+            letter-spacing: 0.5rem;
+            color: var(--BRANDII);
+            top: 5rem;
+            left: 2rem;
+            position: absolute;
+        }
+
+        small { color: var(--BRANDII); font-family: $font-familyiii; font-size: $font-sizelg; }
+
+        video {
+            z-index: -1;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            min-width: 100%;
+            min-height: 100%;
+        }
+
     }
-
-    button:hover { @include buttonsbodyhover; }
-    button:after { @include buttonsbodyafter; background: var(--BRANDIII); }
-    button:hover:after { @include buttonsbodyhoverafter; }
 
 }
 
 //! Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
-    #hero { flex-direction: row; justify-content: center; padding: $paddingxl $paddinglg; }
-}
-
-//! Large devices (desktops, 992px and up)
-@media (min-width: 992px) {
-    #hero { padding: $paddingxl $paddingxl; }
-}
-
-//! Extra large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) {
-    #hero { padding: $paddingxl $paddingxxl; }
-    .herop { width: 40%; }
+  #hero article h1 { font-size: $font-sizelg !important; }
+  #hero article small { font-size: $font-sizexl !important; }
 }

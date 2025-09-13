@@ -1,0 +1,68 @@
+.adminpages {
+    @include center;
+    @include flexcolumn;
+    gap: 2rem;
+    background: var(--BRANDII);
+    
+
+    .link { border: $border-brand; }
+
+    .watch {
+        display: grid;
+        place-content: center start;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 5rem 2rem;
+        width: 100%;
+        padding: $paddingsm;
+
+        article {
+            @include card;
+            @include flexcolumn;
+            gap: 2rem;
+            width: inherit;
+            background: $backgrounddarker;
+            
+            .video {
+                @include flexcolumn;
+                gap: 0.5rem;
+                color: var(--BRANDII);
+                font-weight: bold;
+                border-radius: $border-radiussm $border-radiussm 0rem 0rem;
+
+                video { aspect-ratio: 16 / 9; width: 100%; border-radius: $border-radiussm $border-radiussm 0rem 0rem; }
+
+            }
+        
+            .actionsbtn {
+                @include flexrow;
+                
+                .tooltip {
+                    @include tooltip;
+
+                    .deletebtn { @include deletebtn; font-size: $font-sizexsi; padding: $paddingxsi $paddingxsii; }
+
+                    .warning { @include tooltiptext; }
+                    .warning::before { @include tooltiptextbefore; }
+                }
+                .tooltip:hover .warning { @include tooltiphover; }
+
+                .updatebtn { @include adminloginbtn; font-size: $font-sizexsi; padding: $paddingxsi $paddingxsii; }
+                .updatebtn:hover { @include adminloginbtnhover; }
+
+            }
+
+        }
+
+    }
+
+}
+
+//! Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+    .adminpages .watch { grid-template-columns: repeat(2, 1fr); }
+}
+
+//! Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+    .adminpages .watch { grid-template-columns: repeat(4, 1fr); }
+}

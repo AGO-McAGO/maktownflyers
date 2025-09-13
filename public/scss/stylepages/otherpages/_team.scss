@@ -2,12 +2,12 @@
 
 
 #teamroster {
+    @include card;
     @include center;
     @include flexrow;
     align-items: flex-start;
     justify-content: center;
     flex-wrap: wrap;
-    @include card;
     gap: 2.5rem;
     padding: $paddingxl $paddinglg;
     color: var(--TEXTII);
@@ -85,11 +85,11 @@
             border-radius: $border-radiuslg;
             height: 20rem;
         
-            .playerimg{
+            .staffimg{
                 color: var(--BRANDII);
-                
+
                 img { border-radius: $border-radiuslg $border-radiuslg 0 0 ; height: 15rem; }
-                
+
                 figcaption {
                     margin-left: $marginxsi;
 
@@ -98,25 +98,11 @@
                     small{ padding: $paddingxsi; border: 0.01rem solid var(--BRANDIV); }
 
                 }
+
             }
+
         }
 
     }
 
 }
-
-//! Medium devices (tablets, 768px and up)
-// @media (min-width: 768px) {
-
-//     .about {
-//         flex-direction: row !important;
-//         align-items: flex-start !important;
-//         justify-content: flex-end !important;
-//         gap: 2rem !important;
-
-//         figure { width: 30% !important; }
-//         article { width: 50% !important; }
-
-//     }
-
-// }

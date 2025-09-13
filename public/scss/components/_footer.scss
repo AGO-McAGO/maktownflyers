@@ -5,7 +5,7 @@ footer {
   color: var(--BRANDII);
   padding: $paddinglg $paddingxsii;
   margin-top: $marginxl;
-
+  
   .footerdv { @include center;}
 
   h4 { margin-bottom: $marginxsii; color: var(--BRANDIII); font-size: $font-sizesm; }
@@ -54,8 +54,9 @@ footer {
     gap: 1rem;
     font-size: $font-sizexsi;
     margin-top: $marginlg;
+    margin-bottom: $marginxl;
 
-    .crest { color: var(--BRANDII); font-size: $font-sizesm; font-weight: bold; }
+    .crest { color: var(--BRANDII); font-size: $font-sizexsii; font-weight: bold; }
 
   }
 

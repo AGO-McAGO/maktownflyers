@@ -1,0 +1,43 @@
+.adminforms {
+    @include center;
+    @include flexcolumn;
+    gap: 2rem;
+    background: var(--BRANDII);
+    
+    .link { border: $border-brand; }
+
+    h1 { color: var(--BRANDIII); }
+    
+    div {
+        
+        form {
+            @include flexcolumn;
+            gap: 2rem;
+            
+            article {
+                @include flexcolumn;
+                gap: 2rem;
+
+                label { color: var(--BRANDIII); }
+
+                input, textarea { @include forminput; width: 100%; }
+
+                input:focus, textarea:focus { @include forminputfocus; }
+
+                textarea { height: 10rem; resize: none; }
+        
+            }
+        
+            .adminformbtn { @include adminloginbtn; }
+            .adminformbtn:hover { @include adminloginbtnhover; }
+    
+        }
+    
+    }
+
+}
+
+//! Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+    .adminforms div form { width: 70%; }
+}

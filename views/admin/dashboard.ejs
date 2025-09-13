@@ -1,10 +1,19 @@
 <section id="dashboard">
 
-  <section class="adminaddupdatebtn">
-    <a href="addplayer"> <button class="addplayer"> Add Player </button> </a>
-    <a href="addstaff"> <button class="addstaff"> Add Staff </button> </a>
-    <a href="staff"> <button class="staff"> Team Staff </button> </a>
-    <!-- <a href="updateabout"> <button class="updateabout"> Update Aboutpage </button> </a> -->
+  <section class="adminaddbtn">
+    <a href="addplayer"> <button class="link"> Add Player </button> </a>
+    <a href="addstaff"> <button class="link"> Add Staff </button> </a>
+    <a href="addteampost"> <button class="link"> Publish Post </button> </a>
+    <a href="addteamvideo"> <button class="link"> Upload Video </button> </a>
+  </section>
+
+  <hr />
+  
+  <section class="adminviewbtn">
+    <a href="teamposts"> <button class="link"> All Posts </button> </a>
+    <a href="teamvideos"> <button class="link"> All Videos </button> </a>
+    <a href="staff"> <button class="link"> Team Staff </button> </a>
+    <a href="franchisehistory"> <button class="link"> Franchise History </button> </a>
   </section>
   
   <section>
@@ -24,6 +33,7 @@
         </thead>
 
         <tbody>
+
           <%
             if(players != "") { %>
               <% players.forEach(function(player, index) { %>
@@ -45,6 +55,7 @@
               <p class="noplayers"> No players found! </p>
             <% }
           %>
+
         </tbody>
 
       </table>

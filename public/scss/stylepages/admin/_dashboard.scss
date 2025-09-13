@@ -4,19 +4,19 @@
     @include card;
     background: var(--BRANDII);
     color: var(--TEXTII);
-    margin-bottom: $marginxxl;
     padding: $paddingsm;
 
-    .adminaddupdatebtn {
-        display: flex;
+    .adminaddbtn, .adminviewbtn {
+        @include flexrow;
         flex-wrap: wrap;
-        gap: 1rem;
-        margin-bottom: $marginxxl;
-        
-        .addplayer, .addstaff, .updateabout, .staff { @include adminloginbtn; padding: $paddingxsi; font-size: $font-sizexsi; background: var(--BRANDV); }
-        .addplayer:hover, .addstaff:hover, .updateabout:hover, .staff:hover { background: var(--BRANDIII); }
+        align-content: space-between;
+        gap: 2rem;
 
+        .link { border: $border-brand; display: inline; }
+        
     }
+
+    hr { margin: 2rem 0rem; }
 
     .table {
         overflow-x: auto;

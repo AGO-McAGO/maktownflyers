@@ -1,0 +1,79 @@
+.adminpages {
+    @include center;
+    @include flexcolumn;
+    gap: 2rem;
+    background: var(--BRANDII);
+    
+
+    .link { border: $border-brand; }
+    
+    .adminteamposts {
+        @include flexcolumn;
+        gap: 2.5rem;
+        background: var(--WHITE);
+        
+        article {
+            @include card;
+            @include flexcolumn;
+            gap: 2.5rem;
+            width: 100%;
+            
+            
+            .filebody {
+                width: inherit;
+                
+                
+                .file {
+                    border-radius: $border-radiuslg $border-radiuslg 0 0;
+                    width: inherit;
+                
+                    img { border-radius: $border-radiuslg $border-radiuslg 0 0; width: 100%; }
+
+                }
+
+            }
+
+            .actionsbtn {
+                @include flexrow;
+                
+                .tooltip {
+                    @include tooltip;
+
+                    .deletebtn { @include deletebtn; font-size: $font-sizexsi; padding: $paddingxsi $paddingxsii; }
+
+                    .warning { @include tooltiptext; }
+                    .warning::before { @include tooltiptextbefore; }
+                }
+                .tooltip:hover .warning { @include tooltiphover; }
+
+                .updatebtn { @include adminloginbtn; font-size: $font-sizexsi; padding: $paddingxsi $paddingxsii; }
+                .updatebtn:hover { @include adminloginbtnhover; }
+
+            }
+
+        }
+
+    }
+
+}
+
+//! Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+    
+    .adminpages .adminteamposts article .filebody {
+        @include flexrow;
+        align-items: flex-start;
+        
+        .file {
+            border-radius: $border-radiuslg 0 0 $border-radiuslg;
+            width: 40% !important;
+            
+            img { border-radius: $border-radiuslg 0 0 $border-radiuslg; }
+        
+        }
+        
+        .teambody {  width: 55% !important; }
+
+    }
+
+}

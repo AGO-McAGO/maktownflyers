@@ -1,0 +1,36 @@
+#history {
+    @include card;
+    @include center;
+
+    h1 { font-size: $font-sizelg; color: var(--BRANDIV); }
+
+    article {
+        @include flexcolumn;
+        gap: 2rem;
+        
+        .franchisehistory { @include flexcolumn; gap: 1rem; }
+
+        .aboutimg{
+            @include card;
+            
+            img { border-radius: $border-radiussm $border-radiussm 0 0; width: 100%; }
+        
+        }
+    
+    }
+
+}
+
+//! Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+    
+    #history article {
+        @include flexrow;
+        flex-direction: row;
+        align-items: flex-start;
+        
+        .franchisehistory { width: 70%; }
+
+    }
+
+}

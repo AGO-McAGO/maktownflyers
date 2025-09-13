@@ -1,9 +1,10 @@
 @import "colours";
 
 @import "variables";
-
+@import "fonts";
+@import "lightbox";
 @import "mixins";
-@import "base";
+
 
 //! Components
 @import "components/buttons";
@@ -11,18 +12,27 @@
 @import "components/header";
 @import "components/nav";
 
+@import "base";
+
 //! Pages
 // admin pages
-@import "stylepages/admin/addplayerorstaff";
+@import "stylepages/admin/adminforms";
+@import "stylepages/admin/adminpages";
 @import "stylepages/admin/adminpanel";
 @import "stylepages/admin/dashboard";
 @import "stylepages/admin/login"; //? rules for errorpages are in this file
+@import "stylepages/admin/teamposts";
+@import "stylepages/admin/teamvideos";
 
-// homepage
-@import "stylepages/indexpage/news";
-@import "stylepages/indexpage/connect";
+// index/homepage
 @import "stylepages/indexpage/hero";
+@import "stylepages/indexpage/photos";
+@import "stylepages/indexpage/teamposts";
+@import "stylepages/indexpage/watch";
 
 // otherpages
-@import "stylepages/otherpages/team";
 @import "stylepages/otherpages/connect";
+@import "stylepages/otherpages/history";
+@import "stylepages/otherpages/media";
+@import "stylepages/otherpages/team";
+@import "stylepages/otherpages/teampost";

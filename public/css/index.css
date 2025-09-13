@@ -26,45 +26,65 @@
   --TIKTOK: #fe2c55;
 }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Gupter";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/gupter-v17-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* gupter-700 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Gupter";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/gupter-v17-latin-700.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Rubik Wet Paint";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/rubik-wet-paint-v2-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Shojumaru";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/shojumaru-v15-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Tilt Prism";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/tilt-prism-v15-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+#lightbox {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
-html {
-  scroll-behavior: smooth;
-  scroll-padding: 7rem;
+#lightbox.active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 5s;
 }
 
-body {
-  min-height: 100vh;
-  font-family: garamond;
-  font-size: 1.2rem;
-  background: var(--BRANDII);
-  color: var(--BRANDI);
-}
-
-ul {
-  padding: 0;
-  list-style-type: none;
-}
-
-li {
-  list-style-type: none;
-}
-
-a {
-  text-decoration: none;
-}
-
-img {
+#lightbox img {
+  padding: 1rem;
+  margin: 4.5rem 0rem;
+  border-radius: 2rem;
   max-width: 100%;
-  height: auto;
-}
-
-main {
-  margin-top: 5rem;
+  max-height: 90%;
 }
 
 footer {
@@ -144,10 +164,11 @@ footer .copyrights {
   gap: 1rem;
   font-size: 0.8rem;
   margin-top: 1.5rem;
+  margin-bottom: 2rem;
 }
 footer .copyrights .crest {
   color: var(--BRANDII);
-  font-size: 1.7rem;
+  font-size: 1.2rem;
   font-weight: bold;
 }
 footer .designer {
@@ -215,6 +236,9 @@ header .headeritems #maktowncrest .crestname {
   color: var(--BRANDII);
   font-weight: bold;
 }
+header .headeritems .links {
+  display: none;
+}
 header .headeritems .navbutton {
   display: flex;
   flex-direction: column;
@@ -252,13 +276,34 @@ header .headeritems .navbutton.open .lineiii {
   opacity: 0;
 }
 
+@media (min-width: 768px) {
+  header .headeritems .navbutton {
+    display: none;
+  }
+  header .headeritems .links {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 70%;
+  }
+}
+@media (min-width: 992px) {
+  header .headeritems .links {
+    width: 50%;
+  }
+}
+@media (min-width: 1200px) {
+  header .headeritems .links {
+    width: 40%;
+  }
+}
 nav {
   width: 100%;
   height: 100vh;
-  background: var(--BRANDI);
+  background: rgba(0, 0, 0, 0.9058823529);
   margin-top: 5rem;
   padding: 1rem;
-  position: absolute;
+  position: fixed;
   top: -100vh;
   z-index: 2;
   transition: top ease-in 0.4s;
@@ -269,9 +314,62 @@ nav .links {
   margin: auto;
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  justify-content: space-between;
+  height: 80%;
 }
-nav .links .link {
+
+nav.open {
+  top: 0;
+}
+
+@media (min-width: 768px) {
+  nav {
+    display: none;
+  }
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding: 7rem;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Gupter";
+  font-size: 1.2rem;
+  background: var(--BRANDII);
+  color: var(--BRANDI);
+}
+
+ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+main {
+  margin-top: 7rem;
+  min-height: 65vh;
+}
+
+.link {
   background: var(--BRANDII);
   color: var(--BRANDI);
   border: none;
@@ -287,11 +385,13 @@ nav .links .link {
   color: var(--BRANDIII);
   z-index: 1;
 }
-nav .links button:hover {
+
+button:hover {
   color: var(--BRANDII);
   transform: translateY(-0.27rem);
 }
-nav .links button:after {
+
+button:after {
   content: "";
   background: var(--BRANDI);
   position: absolute;
@@ -304,44 +404,156 @@ nav .links button:after {
   transition: all 0.3s;
   z-index: -1;
 }
-nav .links button:hover:after {
+
+button:hover:after {
   transform: skewX(-45deg) scale(1, 1);
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
   background: var(--BRANDIII);
 }
 
-nav.open {
-  top: 0;
-}
-
-#addplayer, #updateplayer, #addstaff, #updatestaff {
+.adminforms {
   max-width: 90%;
   min-width: 90%;
   margin: auto;
   display: flex;
   flex-direction: column;
+  gap: 2rem;
   background: var(--BRANDII);
-  padding: 1.5rem 0.4rem;
 }
-#addplayer a, #updateplayer a, #addstaff a, #updatestaff a {
-  background: var(--BRANDII);
-  color: var(--BRANDIV);
+.adminforms .link {
+  border: 0.05rem groove var(--BRANDIV);
+}
+.adminforms h1 {
+  color: var(--BRANDIII);
+}
+.adminforms div form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.adminforms div form article {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.adminforms div form article label {
+  color: var(--BRANDIII);
+}
+.adminforms div form article input, .adminforms div form article textarea {
   padding: 0.4rem;
   font-weight: bold;
-  width: 5.5rem;
-  margin-bottom: 0.5rem;
+  border: none;
+  color: var(--BRANDII);
+  background: var(--TEXTII);
+  transition: ease-in 0.4s;
+  width: 100%;
 }
-#addplayer h1, #updateplayer h1, #addstaff h1, #updatestaff h1 {
-  font-size: 2rem;
-  color: var(--BRANDIII);
-  text-align: center;
+.adminforms div form article input:focus, .adminforms div form article textarea:focus {
+  background: var(--BRANDI);
+  outline: none;
 }
-#addplayer .tooltip, #updateplayer .tooltip, #addstaff .tooltip, #updatestaff .tooltip {
+.adminforms div form article textarea {
+  height: 10rem;
+  resize: none;
+}
+.adminforms div form .adminformbtn {
+  background: var(--BRANDII);
+  color: var(--BRANDI);
+  border: none;
+  border-radius: 0.2rem;
+  font-size: 0.8rem;
+  font-weight: bold;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  padding: 0.4rem 0.7rem;
+  transition: all 0.5s;
+  padding: 0.4rem 1.5rem;
+  background: var(--BRANDIV);
+  color: var(--BRANDII);
+  font-size: 1.2rem;
+}
+.adminforms div form .adminformbtn:hover {
+  color: var(--BRANDII);
+  transform: translateY(-0.27rem);
+  background: var(--BRANDIII);
+}
+
+@media (min-width: 768px) {
+  .adminforms div form {
+    width: 70%;
+  }
+}
+.adminpages {
+  max-width: 90%;
+  min-width: 90%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  background: var(--BRANDII);
+}
+.adminpages .link {
+  border: 0.05rem groove var(--BRANDIV);
+}
+.adminpages .pages {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+  background: var(--WHITE);
+}
+.adminpages .pages article {
+  padding: 0.7rem;
+  box-shadow: 0.0625rem 0.1875rem 0.3125rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+.adminpages .pages article .franchisehistory {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+.adminpages .pages article .franchisehistory .historytext {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.adminpages .pages article .franchisehistory .aboutimg img {
+  border-radius: 0.5rem 0.5rem 0 0;
+  width: 100%;
+}
+.adminpages .pages article .file {
+  background: var(--BRANDI);
+  color: var(--BRANDII);
+  border-radius: 1rem 1rem 0 0;
+  width: 15rem;
+}
+.adminpages .pages article .file img {
+  border-radius: 1rem 1rem 0 0;
+  width: 100%;
+  height: 15rem;
+}
+.adminpages .pages article .file h4 {
+  color: var(--BRANDIV);
+}
+.adminpages .pages article .actionsbtn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.adminpages .pages article .actionsbtn .tooltip {
   position: relative;
   display: block;
 }
-#addplayer .tooltip .deletebtn, #updateplayer .tooltip .deletebtn, #addstaff .tooltip .deletebtn, #updatestaff .tooltip .deletebtn {
+.adminpages .pages article .actionsbtn .tooltip .deletebtn {
   background: var(--ERROR);
   color: var(--BRANDI);
   padding: 0.4rem;
@@ -349,9 +561,10 @@ nav.open {
   font-weight: bold;
   font-size: 1.2rem;
   border: none;
-  width: 100%;
+  font-size: 0.8rem;
+  padding: 0.4rem 0.7rem;
 }
-#addplayer .tooltip .warning, #updateplayer .tooltip .warning, #addstaff .tooltip .warning, #updatestaff .tooltip .warning {
+.adminpages .pages article .actionsbtn .tooltip .warning {
   background: var(--ERROR);
   color: var(--BRANDII);
   text-align: center;
@@ -368,7 +581,7 @@ nav.open {
   transition: 0.5s;
   transform: translateX(-50%) translateY(-4rem);
 }
-#addplayer .tooltip .warning::before, #updateplayer .tooltip .warning::before, #addstaff .tooltip .warning::before, #updatestaff .tooltip .warning::before {
+.adminpages .pages article .actionsbtn .tooltip .warning::before {
   content: "";
   bottom: -0.2rem;
   width: 0.7rem;
@@ -378,40 +591,12 @@ nav.open {
   transform: rotate(45deg);
   left: 50%;
 }
-#addplayer .tooltip:hover .warning, #updateplayer .tooltip:hover .warning, #addstaff .tooltip:hover .warning, #updatestaff .tooltip:hover .warning {
+.adminpages .pages article .actionsbtn .tooltip:hover .warning {
   visibility: visible;
   opacity: 1;
   transform: translateX(-50%) translateY(0rem);
 }
-#addplayer form, #updateplayer form, #addstaff form, #updatestaff form {
-  margin-top: 2rem;
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  padding: 0.4rem;
-}
-#addplayer form article, #updateplayer form article, #addstaff form article, #updatestaff form article {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-#addplayer form article label, #updateplayer form article label, #addstaff form article label, #updatestaff form article label {
-  color: var(--BRANDIII);
-}
-#addplayer form article input, #updateplayer form article input, #addstaff form article input, #updatestaff form article input {
-  padding: 0.4rem;
-  font-weight: bold;
-  border: none;
-  color: var(--BRANDII);
-  background: var(--TEXTII);
-  transition: ease-in 0.4s;
-  width: 100%;
-}
-#addplayer form article input:focus, #updateplayer form article input:focus, #addstaff form article input:focus, #updatestaff form article input:focus {
-  background: var(--BRANDI);
-  outline: none;
-}
-#addplayer form .adminaddbtn, #addplayer form .adminupdatebtn, #updateplayer form .adminaddbtn, #updateplayer form .adminupdatebtn, #addstaff form .adminaddbtn, #addstaff form .adminupdatebtn, #updatestaff form .adminaddbtn, #updatestaff form .adminupdatebtn {
+.adminpages .pages article .actionsbtn .updatebtn {
   background: var(--BRANDII);
   color: var(--BRANDI);
   border: none;
@@ -428,13 +613,27 @@ nav.open {
   background: var(--BRANDIV);
   color: var(--BRANDII);
   font-size: 1.2rem;
+  font-size: 0.8rem;
+  padding: 0.4rem 0.7rem;
 }
-#addplayer form .adminaddbtn:hover, #addplayer form .adminupdatebtn:hover, #updateplayer form .adminaddbtn:hover, #updateplayer form .adminupdatebtn:hover, #addstaff form .adminaddbtn:hover, #addstaff form .adminupdatebtn:hover, #updatestaff form .adminaddbtn:hover, #updatestaff form .adminupdatebtn:hover {
+.adminpages .pages article .actionsbtn .updatebtn:hover {
   color: var(--BRANDII);
   transform: translateY(-0.27rem);
   background: var(--BRANDIII);
 }
 
+@media (min-width: 768px) {
+  .adminpages .pages article .franchisehistory {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  .adminpages .pages article .franchisehistory .historytext {
+    width: 70%;
+  }
+}
 #adminpanel {
   display: flex;
   align-items: center;
@@ -442,12 +641,6 @@ nav.open {
   background: var(--TRANSPARENT);
   margin-top: 5rem;
   padding: 1rem;
-}
-#adminpanel button {
-  cursor: pointer;
-  background: var(--BRANDII);
-  padding: 0.4rem;
-  font-weight: bold;
 }
 
 #dashboard {
@@ -461,38 +654,22 @@ nav.open {
   border-radius: 0.5rem;
   background: var(--BRANDII);
   color: var(--TEXTII);
-  margin-bottom: 4.5rem;
   padding: 1rem;
 }
-#dashboard .adminaddupdatebtn {
+#dashboard .adminaddbtn, #dashboard .adminviewbtn {
   display: flex;
+  align-items: center;
+  justify-content: space-between;
   flex-wrap: wrap;
-  gap: 1rem;
-  margin-bottom: 4.5rem;
+  align-content: space-between;
+  gap: 2rem;
 }
-#dashboard .adminaddupdatebtn .addplayer, #dashboard .adminaddupdatebtn .addstaff, #dashboard .adminaddupdatebtn .updateabout, #dashboard .adminaddupdatebtn .staff {
-  background: var(--BRANDII);
-  color: var(--BRANDI);
-  border: none;
-  border-radius: 0.2rem;
-  font-size: 0.8rem;
-  font-weight: bold;
-  cursor: pointer;
-  position: relative;
-  z-index: 1;
-  overflow: hidden;
-  padding: 0.4rem 0.7rem;
-  transition: all 0.5s;
-  padding: 0.4rem 1.5rem;
-  background: var(--BRANDIV);
-  color: var(--BRANDII);
-  font-size: 1.2rem;
-  padding: 0.4rem;
-  font-size: 0.8rem;
-  background: var(--BRANDV);
+#dashboard .adminaddbtn .link, #dashboard .adminviewbtn .link {
+  border: 0.05rem groove var(--BRANDIV);
+  display: inline;
 }
-#dashboard .adminaddupdatebtn .addplayer:hover, #dashboard .adminaddupdatebtn .addstaff:hover, #dashboard .adminaddupdatebtn .updateabout:hover, #dashboard .adminaddupdatebtn .staff:hover {
-  background: var(--BRANDIII);
+#dashboard hr {
+  margin: 2rem 0rem;
 }
 #dashboard .table {
   overflow-x: auto;
@@ -609,39 +786,42 @@ nav.open {
   background: var(--BRANDIII);
 }
 
-#adminlogin {
+.adminform {
   max-width: 90%;
   min-width: 90%;
   margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
   background: var(--BRANDII);
-  padding: 1.5rem;
 }
-#adminlogin h1 {
+.adminform h1 {
   font-size: 2.5rem;
   color: var(--BRANDIII);
-  margin-bottom: 1.5rem;
 }
-#adminlogin form {
+.adminform form {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  width: 100%;
 }
-#adminlogin form .inputs {
+.adminform form .inputs {
   display: flex;
   flex-direction: column;
   gap: 2.5rem;
   width: 100%;
 }
-#adminlogin form .inputs div {
+.adminform form .inputs div {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 0.1rem;
 }
-#adminlogin form .inputs div label {
+.adminform form .inputs div label {
   color: var(--BRANDIII);
 }
-#adminlogin form .inputs div input {
+.adminform form .inputs div input {
   padding: 0.4rem;
   font-weight: bold;
   border: none;
@@ -651,11 +831,11 @@ nav.open {
   width: 70%;
   border-radius: 0rem 0.2rem 0.2rem 0rem;
 }
-#adminlogin form .inputs div input:focus {
+.adminform form .inputs div input:focus {
   background: var(--BRANDI);
   outline: none;
 }
-#adminlogin form .loginbtn {
+.adminform form .loginbtn {
   background: var(--BRANDII);
   color: var(--BRANDI);
   border: none;
@@ -673,7 +853,7 @@ nav.open {
   color: var(--BRANDII);
   font-size: 1.2rem;
 }
-#adminlogin form .loginbtn:hover {
+.adminform form .loginbtn:hover {
   color: var(--BRANDII);
   transform: translateY(-0.27rem);
   background: var(--BRANDIII);
@@ -717,44 +897,479 @@ nav.open {
   background: var(--BRANDIII);
 }
 
-#news {
+@media (min-width: 768px) {
+  .adminform form {
+    width: 70%;
+  }
+}
+@media (min-width: 992px) {
+  .adminform form {
+    width: 50%;
+  }
+}
+.adminpages {
   max-width: 90%;
   min-width: 90%;
   margin: auto;
   display: flex;
   flex-direction: column;
+  gap: 2rem;
+  background: var(--BRANDII);
+}
+.adminpages .link {
+  border: 0.05rem groove var(--BRANDIV);
+}
+.adminpages .adminteamposts {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  background: var(--WHITE);
+}
+.adminpages .adminteamposts article {
   padding: 0.7rem;
   box-shadow: 0.0625rem 0.1875rem 0.3125rem rgba(0, 0, 0, 0.1);
   border-radius: 0.5rem;
-  gap: 2rem;
-  padding: 4rem 1.5rem;
-  color: var(--TEXTII);
-  margin-bottom: 2rem;
-  background: var(--WHITE);
-}
-#news h2 {
-  font-size: 2.5rem;
-  color: var(--BRANDIII);
-}
-#news .about {
   display: flex;
   flex-direction: column;
+  gap: 2.5rem;
+  width: 100%;
+}
+.adminpages .adminteamposts article .filebody {
+  width: inherit;
+}
+.adminpages .adminteamposts article .filebody .file {
+  border-radius: 1rem 1rem 0 0;
+  width: inherit;
+}
+.adminpages .adminteamposts article .filebody .file img {
+  border-radius: 1rem 1rem 0 0;
+  width: 100%;
+}
+.adminpages .adminteamposts article .actionsbtn {
+  display: flex;
   align-items: center;
-  gap: 2rem;
+  justify-content: space-between;
+}
+.adminpages .adminteamposts article .actionsbtn .tooltip {
+  position: relative;
+  display: block;
+}
+.adminpages .adminteamposts article .actionsbtn .tooltip .deletebtn {
+  background: var(--ERROR);
+  color: var(--BRANDI);
+  padding: 0.4rem;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1.2rem;
+  border: none;
+  font-size: 0.8rem;
+  padding: 0.4rem 0.7rem;
+}
+.adminpages .adminteamposts article .actionsbtn .tooltip .warning {
+  background: var(--ERROR);
+  color: var(--BRANDII);
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 0.7rem 0.4rem;
+  border-radius: 0.2rem;
+  z-index: 1;
+  left: 50%;
+  bottom: 2.5rem;
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.5s;
+  transform: translateX(-50%) translateY(-4rem);
+}
+.adminpages .adminteamposts article .actionsbtn .tooltip .warning::before {
+  content: "";
+  bottom: -0.2rem;
+  width: 0.7rem;
+  height: 0.7rem;
+  position: absolute;
+  background: var(--ERROR);
+  transform: rotate(45deg);
+  left: 50%;
+}
+.adminpages .adminteamposts article .actionsbtn .tooltip:hover .warning {
+  visibility: visible;
+  opacity: 1;
+  transform: translateX(-50%) translateY(0rem);
+}
+.adminpages .adminteamposts article .actionsbtn .updatebtn {
+  background: var(--BRANDII);
+  color: var(--BRANDI);
+  border: none;
+  border-radius: 0.2rem;
+  font-size: 0.8rem;
+  font-weight: bold;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  padding: 0.4rem 0.7rem;
+  transition: all 0.5s;
+  padding: 0.4rem 1.5rem;
+  background: var(--BRANDIV);
+  color: var(--BRANDII);
+  font-size: 1.2rem;
+  font-size: 0.8rem;
+  padding: 0.4rem 0.7rem;
+}
+.adminpages .adminteamposts article .actionsbtn .updatebtn:hover {
+  color: var(--BRANDII);
+  transform: translateY(-0.27rem);
+  background: var(--BRANDIII);
 }
 
 @media (min-width: 768px) {
-  .about {
-    flex-direction: row !important;
-    align-items: flex-start !important;
-    justify-content: flex-end !important;
-    gap: 2rem !important;
+  .adminpages .adminteamposts article .filebody {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    align-items: flex-start;
   }
-  .about figure {
-    width: 30% !important;
+  .adminpages .adminteamposts article .filebody .file {
+    border-radius: 1rem 0 0 1rem;
+    width: 40% !important;
   }
-  .about article {
-    width: 50% !important;
+  .adminpages .adminteamposts article .filebody .file img {
+    border-radius: 1rem 0 0 1rem;
+  }
+  .adminpages .adminteamposts article .filebody .teambody {
+    width: 55% !important;
+  }
+}
+.adminpages {
+  max-width: 90%;
+  min-width: 90%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  background: var(--BRANDII);
+}
+.adminpages .link {
+  border: 0.05rem groove var(--BRANDIV);
+}
+.adminpages .watch {
+  display: grid;
+  place-content: center start;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 5rem 2rem;
+  width: 100%;
+  padding: 1rem;
+}
+.adminpages .watch article {
+  padding: 0.7rem;
+  box-shadow: 0.0625rem 0.1875rem 0.3125rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: inherit;
+  background: rgba(0, 0, 0, 0.9058823529);
+}
+.adminpages .watch article .video {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  color: var(--BRANDII);
+  font-weight: bold;
+  border-radius: 0.5rem 0.5rem 0rem 0rem;
+}
+.adminpages .watch article .video video {
+  aspect-ratio: 16/9;
+  width: 100%;
+  border-radius: 0.5rem 0.5rem 0rem 0rem;
+}
+.adminpages .watch article .actionsbtn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.adminpages .watch article .actionsbtn .tooltip {
+  position: relative;
+  display: block;
+}
+.adminpages .watch article .actionsbtn .tooltip .deletebtn {
+  background: var(--ERROR);
+  color: var(--BRANDI);
+  padding: 0.4rem;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1.2rem;
+  border: none;
+  font-size: 0.8rem;
+  padding: 0.4rem 0.7rem;
+}
+.adminpages .watch article .actionsbtn .tooltip .warning {
+  background: var(--ERROR);
+  color: var(--BRANDII);
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 0.7rem 0.4rem;
+  border-radius: 0.2rem;
+  z-index: 1;
+  left: 50%;
+  bottom: 2.5rem;
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.5s;
+  transform: translateX(-50%) translateY(-4rem);
+}
+.adminpages .watch article .actionsbtn .tooltip .warning::before {
+  content: "";
+  bottom: -0.2rem;
+  width: 0.7rem;
+  height: 0.7rem;
+  position: absolute;
+  background: var(--ERROR);
+  transform: rotate(45deg);
+  left: 50%;
+}
+.adminpages .watch article .actionsbtn .tooltip:hover .warning {
+  visibility: visible;
+  opacity: 1;
+  transform: translateX(-50%) translateY(0rem);
+}
+.adminpages .watch article .actionsbtn .updatebtn {
+  background: var(--BRANDII);
+  color: var(--BRANDI);
+  border: none;
+  border-radius: 0.2rem;
+  font-size: 0.8rem;
+  font-weight: bold;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  padding: 0.4rem 0.7rem;
+  transition: all 0.5s;
+  padding: 0.4rem 1.5rem;
+  background: var(--BRANDIV);
+  color: var(--BRANDII);
+  font-size: 1.2rem;
+  font-size: 0.8rem;
+  padding: 0.4rem 0.7rem;
+}
+.adminpages .watch article .actionsbtn .updatebtn:hover {
+  color: var(--BRANDII);
+  transform: translateY(-0.27rem);
+  background: var(--BRANDIII);
+}
+
+@media (min-width: 768px) {
+  .adminpages .watch {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 992px) {
+  .adminpages .watch {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+#hero {
+  max-width: 90%;
+  min-width: 90%;
+  margin: auto;
+  margin-bottom: 4.5rem;
+}
+#hero article {
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  border-radius: 0.5rem;
+}
+#hero article h1 {
+  font-family: "Rubik Wet Paint";
+  font-size: 1.7rem;
+  letter-spacing: 0.5rem;
+  color: var(--BRANDII);
+  top: 5rem;
+  left: 2rem;
+  position: absolute;
+}
+#hero article small {
+  color: var(--BRANDII);
+  font-family: "Shojumaru";
+  font-size: 2.5rem;
+}
+#hero article video {
+  z-index: -1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 100%;
+  min-height: 100%;
+}
+
+@media (min-width: 768px) {
+  #hero article h1 {
+    font-size: 2.5rem !important;
+  }
+  #hero article small {
+    font-size: 4rem !important;
+  }
+}
+#photos {
+  padding: 0.7rem;
+  box-shadow: 0.0625rem 0.1875rem 0.3125rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  max-width: 90%;
+  min-width: 90%;
+  margin: auto;
+  padding: 1.5rem;
+  color: var(--TEXTII);
+  margin-bottom: 4.5rem;
+  background: rgba(0, 0, 0, 0.9058823529);
+  text-align: center;
+}
+#photos .maktownflyersphotos {
+  column-count: 1;
+}
+#photos .maktownflyersphotos .mediaimg {
+  margin-bottom: 1rem;
+}
+#photos .maktownflyersphotos .mediaimg img {
+  cursor: pointer;
+  transition: all 0.5s;
+  width: inherit;
+}
+#photos .maktownflyersphotos .mediaimg img:hover {
+  transform: scale(1.1);
+}
+
+@media (min-width: 576px) {
+  #photos .maktownflyersphotos {
+    column-count: 2;
+  }
+}
+@media (min-width: 768px) {
+  #photos .maktownflyersphotos {
+    column-count: 4;
+  }
+}
+@media (min-width: 992px) {
+  #photos .maktownflyersphotos {
+    column-count: 5;
+  }
+}
+#teampost {
+  max-width: 90%;
+  min-width: 90%;
+  margin: auto;
+  padding: 0.7rem;
+  box-shadow: 0.0625rem 0.1875rem 0.3125rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  color: var(--TEXTII);
+  margin-bottom: 4.5rem;
+}
+#teampost h2 {
+  font-size: 2.5rem;
+}
+#teampost article {
+  padding: 0.7rem;
+  box-shadow: 0.0625rem 0.1875rem 0.3125rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  overflow-x: scroll;
+  border: 0.2rem groove var(--BRANDIV);
+}
+#teampost article .teampost {
+  padding: 0.7rem;
+  box-shadow: 0.0625rem 0.1875rem 0.3125rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+#teampost article .teampost .teampostphoto {
+  width: 11rem;
+}
+#teampost article .teampost .teampostphoto img {
+  width: 100%;
+  height: 21rem !important;
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+#teampost article .teampost .teampostlink {
+  text-align: center;
+}
+#teampost article .teampost .teampostlink .link {
+  border: 0.05rem groove var(--BRANDIV);
+}
+#teampost article::-webkit-scrollbar {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .teampostphoto {
+    width: 15rem !important;
+  }
+}
+@media (min-width: 992px) {
+  .teampostphoto {
+    width: 20rem !important;
+  }
+}
+#watch {
+  max-width: 90%;
+  min-width: 90%;
+  margin: auto;
+  margin-bottom: 4.5rem;
+  text-align: center;
+}
+#watch h2 {
+  font-size: 2.5rem;
+  color: var(--BRANDIII);
+  text-align: left;
+}
+#watch article {
+  display: grid;
+  place-content: center start;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1.5rem;
+  width: 100%;
+  padding: 1rem;
+}
+#watch article .watchvideo {
+  padding: 0.7rem;
+  box-shadow: 0.0625rem 0.1875rem 0.3125rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  background: var(--BRANDII);
+  width: inherit;
+  text-align: left;
+}
+#watch article .watchvideo video {
+  aspect-ratio: 16/9;
+  width: 100%;
+  border-radius: 0.5rem 0.5rem 0rem 0rem;
+}
+#watch .link {
+  border: 0.05rem groove var(--BRANDIV);
+}
+
+@media (min-width: 768px) {
+  #watch article {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 992px) {
+  #watch article {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 #connect {
@@ -768,7 +1383,7 @@ nav.open {
   flex-direction: column;
   gap: 4rem;
   color: var(--BRANDII);
-  background: var(--BRANDI) !important;
+  background: var(--BRANDI);
   padding: 1rem 1.5rem;
   margin-bottom: 2rem;
 }
@@ -862,84 +1477,48 @@ nav.open {
     width: 60%;
   }
 }
-#hero {
-  max-width: 90%;
-  min-width: 90%;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
+#history {
   padding: 0.7rem;
   box-shadow: 0.0625rem 0.1875rem 0.3125rem rgba(0, 0, 0, 0.1);
   border-radius: 0.5rem;
-  gap: 5rem;
-  padding: 4rem 1.5rem;
-  color: var(--BRANDI);
-  text-shadow: 0.07rem 0.1rem 0.1rem var(--WHITE);
-  margin-bottom: 2rem;
-  background: var(--BRANDII) url("../../images/hero.png") no-repeat center/cover;
+  max-width: 90%;
+  min-width: 90%;
+  margin: auto;
 }
-#hero .herohead, #hero .herop {
-  font-size: 1.7rem;
+#history h1 {
+  font-size: 2.5rem;
+  color: var(--BRANDIV);
 }
-#hero .starthere {
-  background: var(--BRANDII);
-  color: var(--BRANDI);
-  border: none;
-  border-radius: 0.2rem;
-  font-size: 0.8rem;
-  font-weight: bold;
-  cursor: pointer;
-  position: relative;
-  z-index: 1;
-  overflow: hidden;
-  padding: 0.4rem 0.7rem;
-  transition: all 0.5s;
-  padding: 0.7rem 1.5rem;
-  background: var(--BRANDIV);
-  color: var(--BRANDII);
-  margin-top: 0.5rem;
+#history article {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
-#hero button:hover {
-  color: var(--BRANDII);
-  transform: translateY(-0.27rem);
+#history article .franchisehistory {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
-#hero button:after {
-  content: "";
-  background: var(--BRANDI);
-  position: absolute;
-  z-index: -1;
-  left: -20%;
-  right: -20%;
-  top: 0;
-  bottom: 0;
-  transform: skewX(-45deg) scale(0, 1);
-  transition: all 0.3s;
-  background: var(--BRANDIII);
+#history article .aboutimg {
+  padding: 0.7rem;
+  box-shadow: 0.0625rem 0.1875rem 0.3125rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
 }
-#hero button:hover:after {
-  transform: skewX(-45deg) scale(1, 1);
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
+#history article .aboutimg img {
+  border-radius: 0.5rem 0.5rem 0 0;
+  width: 100%;
 }
 
 @media (min-width: 768px) {
-  #hero {
+  #history article {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     flex-direction: row;
-    justify-content: center;
-    padding: 4rem 1.5rem;
+    align-items: flex-start;
   }
-}
-@media (min-width: 992px) {
-  #hero {
-    padding: 4rem 4rem;
-  }
-}
-@media (min-width: 1200px) {
-  #hero {
-    padding: 4rem 10rem;
-  }
-  .herop {
-    width: 40%;
+  #history article .franchisehistory {
+    width: 70%;
   }
 }
 .teamrosterhead {
@@ -949,6 +1528,9 @@ nav.open {
 }
 
 #teamroster {
+  padding: 0.7rem;
+  box-shadow: 0.0625rem 0.1875rem 0.3125rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
   max-width: 90%;
   min-width: 90%;
   margin: auto;
@@ -958,9 +1540,6 @@ nav.open {
   align-items: flex-start;
   justify-content: center;
   flex-wrap: wrap;
-  padding: 0.7rem;
-  box-shadow: 0.0625rem 0.1875rem 0.3125rem rgba(0, 0, 0, 0.1);
-  border-radius: 0.5rem;
   gap: 2.5rem;
   padding: 4rem 1.5rem;
   color: var(--TEXTII);
@@ -1047,125 +1626,77 @@ nav.open {
   border-radius: 1rem;
   height: 20rem;
 }
-#teamstaff section article .playerimg {
+#teamstaff section article .staffimg {
   color: var(--BRANDII);
 }
-#teamstaff section article .playerimg img {
+#teamstaff section article .staffimg img {
   border-radius: 1rem 1rem 0 0;
   height: 15rem;
 }
-#teamstaff section article .playerimg figcaption {
+#teamstaff section article .staffimg figcaption {
   margin-left: 0.5rem;
 }
-#teamstaff section article .playerimg figcaption h4 {
+#teamstaff section article .staffimg figcaption h4 {
   color: var(--BRANDIV);
   margin-bottom: 1rem;
 }
-#teamstaff section article .playerimg figcaption small {
+#teamstaff section article .staffimg figcaption small {
   padding: 0.4rem;
   border: 0.01rem solid var(--BRANDIV);
 }
 
-#connect {
+#oneteampost {
+  max-width: 90%;
+  min-width: 90%;
+  margin: auto;
   padding: 0.7rem;
   box-shadow: 0.0625rem 0.1875rem 0.3125rem rgba(0, 0, 0, 0.1);
   border-radius: 0.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 4rem;
-  color: var(--BRANDII);
-  background: var(--TRANSPARENT);
-  padding: 1rem 1.5rem;
+  color: var(--TEXTII);
   margin-bottom: 2rem;
+  background: var(--BRANDII);
 }
-#connect h3 {
-  font-size: 2.5rem;
+#oneteampost .link {
+  border: 0.05rem groove var(--BRANDIV);
+  margin-bottom: 1.5rem;
 }
-#connect form {
+#oneteampost h1 {
+  font-size: 4rem;
+}
+#oneteampost article {
+  border: 0.2rem groove var(--BRANDIV);
   padding: 0.7rem;
   box-shadow: 0.0625rem 0.1875rem 0.3125rem rgba(0, 0, 0, 0.1);
   border-radius: 0.5rem;
+}
+#oneteampost article .teampost {
   display: flex;
   flex-direction: column;
-  gap: 5rem;
+  gap: 1rem;
 }
-#connect form article {
-  display: flex;
-  flex-direction: column;
-  gap: 7rem;
+#oneteampost article .teampost .teampostphoto {
+  width: inherit !important;
 }
-#connect form article .input {
-  background: transparent;
-  border-color: transparent;
-  color: var(--BRANDII);
-  border-bottom: 0.2rem groove var(--BRANDII);
-  border-radius: 0rem;
+#oneteampost article .teampost .teampostphoto img {
   width: 100%;
-  padding-bottom: 1rem;
-  font-size: 1.2rem;
-  transition: all 0.8s;
 }
-#connect form article textarea {
-  resize: none;
-}
-#connect form article .input:focus {
-  outline: none;
-  background: transparent;
-  border-color: transparent;
-  box-shadow: none;
-  color: var(--BRANDII);
-  border-bottom: 0.2rem groove var(--BRANDIII);
-}
-#connect form article .label {
-  color: var(--BRANDIII);
-  display: block;
-  margin-top: -4.5rem;
-  margin-left: 0rem;
-  font-size: 1.2rem;
-  transition: all 0.8s;
-}
-#connect form article .textarealabel {
-  margin-top: -6rem;
-}
-#connect form article .input:placeholder-shown + .label {
-  transform: translate(1.25rem, 1.25rem);
-  opacity: 0;
-  visibility: hidden;
-}
-#connect form .send {
-  margin: 1rem 0rem;
-}
-#connect form .send .sendbtn {
-  background: var(--BRANDII);
+#oneteampost article .teampost .teampostbody {
   color: var(--BRANDI);
-  border: none;
-  border-radius: 0.2rem;
-  font-size: 0.8rem;
-  font-weight: bold;
-  cursor: pointer;
-  position: relative;
-  z-index: 1;
-  overflow: hidden;
-  padding: 0.4rem 0.7rem;
-  transition: all 0.5s;
-  padding: 0.4rem 1.5rem;
-  background: var(--BRANDIV);
-  color: var(--BRANDII);
-  font-size: 1.2rem;
-}
-#connect form .send input:hover {
-  color: var(--BRANDII);
-  transform: translateY(-0.27rem);
-  background: var(--BRANDIII);
 }
 
 @media (min-width: 768px) {
-  #connect {
-    flex-direction: row !important;
-    justify-content: space-between !important;
+  #oneteampost article .teampost {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: flex-start;
   }
-  #connect form {
-    width: 60%;
+  #oneteampost article .teampost .teampostphoto {
+    width: 40% !important;
+  }
+  #oneteampost article .teampost .teampostbody {
+    width: 55% !important;
   }
 }
 

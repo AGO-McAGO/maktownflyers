@@ -3,8 +3,11 @@
 const express = require("express");
 const router = express.Router();
 const Admin = require("../models/Admin");
+const Franchisehistory = require("../models/Franchisehistory");
 const Player = require("../models/Player");
 const Staff = require("../models/Staff");
+const Teampost = require("../models/Teampost");
+const Video = require("../models/Video");
 const bcryptjs = require("bcryptjs"); // password encryption
 const jwt = require("jsonwebtoken");
 const fs = require("fs");
@@ -20,7 +23,7 @@ const authMiddleware = (request, response, next) => {
       title: "Maktown Flyers Admin Dashboard",
       keywords: "Maktown, Flyers, Official Website, Dashboard",
       description: "Maktown Flyers Official Dashboard",
-      author: "AGO SOO McAGO",
+      author: "AGO SOO McAGO"
     };
 
   if (!token) {
@@ -44,7 +47,7 @@ router.get("/admin", async (request, response) => {
       title: "Maktown Flyers Admin Login",
       keywords: "Maktown, Flyers, Official Website, Admin, Login",
       description: "Maktown Flyers Admin Login",
-      author: "AGO SOO McAGO",
+      author: "AGO SOO McAGO"
     };
 
     response.render("admin/adminlogin", { locals, layout: adminLayout } );
@@ -83,7 +86,7 @@ router.post("/admin", async (request, response) => {
       title: "Maktown Flyers Admin Dashboard",
       keywords: "Maktown, Flyers, Dashboard",
       description: "Maktown Flyers Admin Dashboard",
-      author: "AGO SOO McAGO",
+      author: "AGO SOO McAGO"
     };
 
     if (!admin) { // if admin doesn't exist ....
@@ -111,7 +114,7 @@ router.get("/dashboard", authMiddleware, async (request, response) => {
       title: "Maktown Flyers Dashboard Admin",
       keywords: "Maktown, Flyers, Admin, Dashboard",
       description: "Maktown Flyers Admin Dashboard",
-      author: "AGO SOO McAGO",
+      author: "AGO SOO McAGO"
     };
     
     const players = await Player.find();
@@ -127,13 +130,13 @@ router.get("/dashboard", authMiddleware, async (request, response) => {
 router.get("/addplayer", authMiddleware, async (request, response) => {
   try {
     const locals = {
-      title: "Maktown Flyers Player Sign By Admin",
+      title: "Maktown Flyers Player Sign Up By Admin",
       keywords: "Maktown, Flyers, Add, Player, Information",
       description: "Maktown Flyers Admin Adding Player Information",
-      author: "AGO SOO McAGO",
+      author: "AGO SOO McAGO"
     };
 
-    response.render("admin/addplayer", { locals, layout: adminLayout });
+    response.render("admin/addplayer", { locals, layout: adminLayout } );
   } catch (error) {
     console.log(error);
   }
@@ -146,7 +149,7 @@ router.get("/updateplayer/:id", authMiddleware, async (request, response) => {
       title: "Maktown Flyers Admin Update Player",
       keywords: "Maktown, Flyers, Update, Player, Information",
       description: "Maktown Flyers Admin Updating Player Information",
-      author: "AGO SOO McAGO",
+      author: "AGO SOO McAGO"
     };
 
     const player = await Player.findOne( { _id: request.params.id } );
@@ -206,7 +209,7 @@ router.post("/addplayer", authMiddleware, async (request, response) => {
         playerexperience: request.body.playerexperience,
         playerheight: request.body.playerheight,
         playerweight: request.body.playerweight,
-        playerphoto: newPlayerPhotoName,
+        playerphoto: newPlayerPhotoName
       } );
 
       await Player.create(newPlayer);
@@ -255,7 +258,7 @@ router.post("/updateplayer/:id", authMiddleware, async (request, response) => {
 
     await Player.findByIdAndUpdate(playerId, updatePlayer);
     
-    response.redirect( `/updateplayer/${playerId}`);
+    response.redirect(`/updateplayer/${playerId}`);
   } catch (error) {
     console.log(error);
     response.redirect("/dashboard");
@@ -291,10 +294,10 @@ router.delete("/deleteplayer/:id", authMiddleware, async (request, response) => 
 router.get("/staff", authMiddleware, async (request, response) => {
   try {
     const locals = {
-      title: "Maktown Flyers Staff Admin",
+      title: "Maktown Flyers Admin (Staff)",
       keywords: "Maktown, Flyers, Staff, Information",
       description: "Maktown Flyers Admin Staff Information",
-      author: "AGO SOO McAGO",
+      author: "AGO SOO McAGO"
     };
     
     const staffs = await Staff.find();
@@ -312,7 +315,7 @@ router.get("/addstaff", authMiddleware, async (request, response) => {
       title: "Maktown Flyers Staff Signing By Admin",
       keywords: "Maktown, Flyers, Add, Staff, Information",
       description: "Maktown Flyers Admin Adding Staff Information",
-      author: "AGO SOO McAGO",
+      author: "AGO SOO McAGO"
     };
 
     response.render("admin/addstaff", { locals, layout: adminLayout });
@@ -328,7 +331,7 @@ router.get("/updatestaff/:id", authMiddleware, async (request, response) => {
       title: "Maktown Flyers Admin Update Staff",
       keywords: "Maktown, Flyers, Update, Staff, Information",
       description: "Maktown Flyers Admin Updating Staff Information",
-      author: "AGO SOO McAGO",
+      author: "AGO SOO McAGO"
     };
 
     const staff = await Staff.findOne( { _id: request.params.id } );
@@ -338,27 +341,6 @@ router.get("/updatestaff/:id", authMiddleware, async (request, response) => {
     console.log(error);
   }
 });
-
-// "delete staff" page, get method
-router.get("/deletestaff/:id", authMiddleware, async(request, response) => {
-  try {
-
-    const locals = {
-      title: "Maktown Flyers Admin Staff Termination",
-      keywords: "Maktown, Flyers, Admin, Staff, Termination",
-      description: "Maktown Flyers Admin Staff Termination",
-      author: "AGO SOO McAGO"
-    };
-
-    let staffId = request.params.id;
-    const staff = await Staff.findById(staffId);
-
-    response.render("admin/deletestaff", { locals, staff, layout: adminLayout } );
-
-  } catch (error) {
-    console.log(error);
-  }
-} );
 
 // "add staff", post method
 router.post("/addstaff", authMiddleware, async (request, response) => {
@@ -383,7 +365,7 @@ router.post("/addstaff", authMiddleware, async (request, response) => {
       const newStaff = new Staff( {
         staffname: request.body.staffname,
         staffrole: request.body.staffrole,
-        staffphoto: newStaffPhotoName,
+        staffphoto: newStaffPhotoName
       } );
 
       await Staff.create(newStaff);
@@ -451,9 +433,445 @@ router.delete("/deletestaff/:id", authMiddleware, async (request, response) => {
       console.log("Staff not deleted!");
     }
 
-    response.redirect("/dashboard");
+    response.redirect("/staff");
   } catch (error) {
     console.log(error + "Did not delete");
+  }
+
+} );
+
+//! Teampost
+// "View teampost" page, get method
+router.get("/teamposts", authMiddleware, async (request, response) => {
+  try {
+    const locals = {
+      title: "Maktown Flyers Posts By Admin",
+      keywords: "Maktown, Flyers, Posts",
+      description: "Maktown Flyers Admin Posts",
+      author: "AGO SOO McAGO"
+    };
+    
+    const teamposts = await Teampost.find();
+
+    response.render("admin/teamposts", { locals, teamposts, layout: adminLayout } );
+  } catch (error) {
+    console.log(error);
+  }
+});
+
+// "add teampost" page, get method
+router.get("/addteampost", authMiddleware, async (request, response) => {
+  try {
+    const locals = {
+      title: "Maktown Flyers Team Posts By Admin",
+      keywords: "Maktown, Flyers, Add, Posts",
+      description: "Maktown Flyers Admin Posts",
+      author: "AGO SOO McAGO"
+    };
+
+    response.render("admin/addteampost", { locals, layout: adminLayout });
+  } catch (error) {
+    console.log(error);
+  }
+});
+
+// "update teampost" page, get method
+router.get("/updateteampost/:id", authMiddleware, async (request, response) => {
+  try {
+    const locals = {
+      title: "Maktown Flyers Admin Post Update",
+      keywords: "Maktown, Flyers, Update, Post",
+      description: "Maktown Flyers Admin Updating Post",
+      author: "AGO SOO McAGO"
+    };
+
+    const teampost = await Teampost.findOne( { _id: request.params.id } );
+
+    response.render("admin/updateteampost", { locals, teampost, layout: adminLayout } );
+  } catch (error) {
+    console.log(error);
+  }
+} );
+
+// "add teampost", post method
+router.post("/teampost", authMiddleware, async (request, response) => {
+  try {
+    let teampostPhotoFile;
+    let teampostPhotoUploadPath;
+    let newTeampostPhotoName;
+
+    if (!request.files || Object.keys(request.files).length === 0) {
+      console.log("Files uploaded unsuccessful.");
+    } else {
+      teampostPhotoFile = request.files.teampostphoto;
+      newTeampostPhotoName = Date.now() + teampostPhotoFile.name;
+      teampostPhotoUploadPath = require("path").resolve("./") + "/public/images/uploads/teamposts/" + newTeampostPhotoName;
+
+      teampostPhotoFile.mv(teampostPhotoUploadPath, function (error) {
+        if (error) return response.satus(500).send(error);
+      } );
+    }
+
+    try {
+      const newTeampost = new Teampost( {
+        teampostheading: request.body.teampostheading,
+        teampostbody: request.body.teampostbody,
+        teampostphoto: newTeampostPhotoName
+      } );
+
+      await Teampost.create(newTeampost);
+      response.redirect("/addteampost");
+    } catch (error) {
+      console.log(error);
+    }
+  } catch (error) {
+    console.log(error);
+    response.redirect("/dashboard");
+  }
+} );
+
+// "update teampost" , post method
+router.post("/updateteampost/:id", authMiddleware, async (request, response) => {
+  try {
+    let teampostId = request.params.id;
+    let teampostPhotoFile;
+    let teampostPhotoUploadPath;
+    let newTeampostPhotoName;
+
+    if(!request.files || Object.keys(request.files).length === 0){
+      console.log("File uploaded unsuccessful.");
+    } else {
+      fs.unlinkSync("./public/images/uploads/teamposts/" + request.body.teampostoldphoto); // to remove the old image from the folder
+      teampostPhotoFile = request.files.teampostphoto;
+      newTeampostPhotoName = Date.now()+"_"+teampostPhotoFile.name;
+      teampostPhotoUploadPath = require("path").resolve("./") + "/public/images/uploads/teamposts/" + newTeampostPhotoName;
+
+      teampostPhotoFile.mv(teampostPhotoUploadPath, function(error){
+        if(error) return response.satus(500).send(error);
+      } )
+    }
+
+    const updateTeampost = {
+      teampostheading: request.body.teampostheading,
+      teampostbody: request.body.teampostbody,
+      teampostphoto: newTeampostPhotoName,
+      updatedAt: Date.now()
+    };
+
+    await Teampost.findByIdAndUpdate(teampostId, updateTeampost);
+    
+    response.redirect( `/updateteampost/${teampostId}`);
+  } catch (error) {
+    console.log(error);
+    response.redirect("/dashboard");
+  }
+
+} );
+
+// "delete teampost", post method
+router.delete("/deleteteampost/:id", authMiddleware, async (request, response) => {
+  try {
+    const teampostId = request.params.id;
+    
+    const deletingTeampost = await Teampost.findOneAndDelete( {_id: teampostId} ); // find the photo from the database
+
+    const { teampostphoto } = deletingTeampost;
+    
+    if (teampostphoto) {
+      const teampostPhotoPath = require("path").resolve("./") + "/public/images/uploads/teamposts/" + teampostphoto;
+      fs.unlinkSync(teampostPhotoPath);
+    } else {
+      console.log("Teampost not deleted!");
+    }
+
+    response.redirect("/teamposts");
+  } catch (error) {
+    console.log(error + "Did not delete");
+  }
+
+} );
+
+//! Team Video
+// "View team video" page, get method
+router.get("/teamvideos", authMiddleware, async (request, response) => {
+  try {
+    const locals = {
+      title: "Maktown Flyers Videos By Admin",
+      keywords: "Maktown, Flyers, Videos",
+      description: "Maktown Flyers Admin Videos",
+      author: "AGO SOO McAGO"
+    };
+    
+    const videos = await Video.aggregate( [ {$sort: { teamvideocreatedAt: -1 } } ] ).exec(); // newest video at the top
+
+    response.render("admin/teamvideos", { locals, videos, layout: adminLayout } );
+  } catch (error) {
+    console.log(error);
+  }
+} );
+
+// "add team videos" page, get method
+router.get("/addteamvideo", authMiddleware, async (request, response) => {
+  try {
+    const locals = {
+      title: "Maktown Flyers Team Videos By Admin",
+      keywords: "Maktown, Flyers, Add, Videos",
+      description: "Maktown Flyers Admin Videos",
+      author: "AGO SOO McAGO"
+    };
+
+    response.render("admin/addteamvideo", { locals, layout: adminLayout });
+  } catch (error) {
+    console.log(error);
+  }
+} );
+
+// "update teamvideo" page, get method
+router.get("/updateteamvideo/:id", authMiddleware, async (request, response) => {
+  try {
+    const locals = {
+      title: "Maktown Flyers Admin Video Update",
+      keywords: "Maktown, Flyers, Update, Video",
+      description: "Maktown Flyers Admin Updating Video",
+      author: "AGO SOO McAGO"
+    };
+
+    const video = await Video.findOne( { _id: request.params.id } );
+
+    response.render("admin/updateteamvideo", { locals, video, layout: adminLayout } );
+  } catch (error) {
+    console.log(error);
+  }
+} );
+
+// "add team video", post method
+router.post("/teamvideo", authMiddleware, async (request, response) => {
+  try {
+    let teamVideoFile;
+    let teamVideoUploadPath;
+    let newTeamVideoName;
+
+    if (!request.files || Object.keys(request.files).length === 0) {
+      console.log("Files uploaded unsuccessful.");
+    } else {
+      teamVideoFile = request.files.teamvideo;
+      newTeamVideoName = Date.now() + teamVideoFile.name;
+      teamVideoUploadPath = require("path").resolve("./") + "/public/videos/uploads/" + newTeamVideoName;
+
+      teamVideoFile.mv(teamVideoUploadPath, function (error) {
+        if (error) return response.satus(500).send(error);
+      } );
+    }
+
+    try {
+      const newVideo = new Video( {
+        teamvideotitle: request.body.teamvideotitle,
+        teamvideo: newTeamVideoName
+      } );
+
+      await Video.create(newVideo);
+      response.redirect("/addteamvideo");
+    } catch (error) {
+      console.log(error);
+    }
+  } catch (error) {
+    console.log(error);
+    response.redirect("/dashboard");
+  }
+} );
+
+// "update team video" , post method
+router.post("/updateteamvideo/:id", authMiddleware, async (request, response) => {
+  try {
+    let teamvideoId = request.params.id;
+    let teamVideoFile;
+    let teamVideoUploadPath;
+    let newTeamVideoName;
+
+    if(!request.files || Object.keys(request.files).length === 0){
+      console.log("File uploaded unsuccessful.");
+    } else {
+      fs.unlinkSync("./public/videos/uploads/" + request.body.teamoldvideo); // to remove the old video from the folder
+      teamVideoFile = request.files.teamvideo;
+      newTeamVideoName = Date.now()+"_"+teamVideoFile.name;
+      teamVideoUploadPath = require("path").resolve("./") + "/public/videos/uploads/" + newTeamVideoName;
+
+      teamVideoFile.mv(teamVideoUploadPath, function(error) {
+        if(error) return response.satus(500).send(error);
+      } )
+    }
+
+    const updateTeamvideo = {
+      teamvideotitle: request.body.teamvideotitle,
+      teamvideo: newTeamVideoName,
+      updatedAt: Date.now()
+    };
+
+    await Video.findByIdAndUpdate(teamvideoId, updateTeamvideo);
+    
+    response.redirect(`/updateteamvideo/${teamvideoId}`);
+  } catch (error) {
+    console.log(error);
+    response.redirect("/dashboard");
+  }
+
+} );
+
+// "delete teamvideo", post method
+router.delete("/deleteteamvideo/:id", authMiddleware, async (request, response) => {
+  try {
+    const teamvideoId = request.params.id;
+    
+    const deletingTeamvideo = await Video.findOneAndDelete( {_id: teamvideoId} ); // find the video from the database
+
+    const { teamvideo } = deletingTeamvideo;
+    
+    if (teamvideo) {
+      const teamVideoPath = require("path").resolve("./") + "/public/videos/uploads/" + teamvideo;
+      fs.unlinkSync(teamVideoPath);
+    } else {
+      console.log("Team not deleted!");
+    }
+
+    response.redirect("/teamvideos");
+  } catch (error) {
+    console.log(error + "Did not delete");
+  }
+
+} );
+
+//! Franchisehistory
+// "View franchisehistory" page, get method
+router.get("/franchisehistory", authMiddleware, async (request, response) => {
+  try {
+    const locals = {
+      title: "Maktown Flyers Franchisehistory By Admin",
+      keywords: "Maktown, Flyers, Franchisehistory",
+      description: "Maktown Flyers Admin Franchisehistory",
+      author: "AGO SOO McAGO",
+    };
+    
+    const franchisehistory = await Franchisehistory.find();
+
+    response.render("admin/franchisehistory", { locals, franchisehistory, layout: adminLayout } );
+  } catch (error) {
+    console.log(error);
+  }
+} );
+
+// "add teampost" page, get method
+router.get("/addfranchisehistory", authMiddleware, async (request, response) => {
+  try {
+    const locals = {
+      title: "Maktown Flyers Team Posts By Admin",
+      keywords: "Maktown, Flyers, Add, Posts",
+      description: "Maktown Flyers Admin Posts",
+      author: "AGO SOO McAGO"
+    };
+
+    response.render("admin/addfranchisehistory", { locals, layout: adminLayout });
+  } catch (error) {
+    console.log(error);
+  }
+} );
+
+// "update franchisehistory" page, get method
+router.get("/updatefranchisehistory/:id", authMiddleware, async (request, response) => {
+  try {
+    const locals = {
+      title: "Maktown Flyers Admin Franchisehistory Update",
+      keywords: "Maktown, Flyers, Update, Franchisehistory",
+      description: "Maktown Flyers Admin Updating Franchisehistory",
+      author: "AGO SOO McAGO"
+    };
+
+    const franchisehistory = await Franchisehistory.findOne( { _id: request.params.id } );
+
+    response.render("admin/updatefranchisehistory", { locals, franchisehistory, layout: adminLayout } );
+  } catch (error) {
+    console.log(error);
+  }
+} );
+
+// "add franchisehistory", post method
+router.post("/franchisehistory", authMiddleware, async (request, response) => {
+  try {
+    let aboutPhotoFile;
+    let aboutPhotoUploadPath;
+    let newAboutPhotoName;
+
+    if (!request.files || Object.keys(request.files).length === 0) {
+      console.log("Files uploaded unsuccessful.");
+    } else {
+      aboutPhotoFile = request.files.aboutphoto;
+      newAboutPhotoName = Date.now() + aboutPhotoFile.name;
+      aboutPhotoUploadPath = require("path").resolve("./") + "/public/images/uploads/about/" + newAboutPhotoName;
+
+      aboutPhotoFile.mv(aboutPhotoUploadPath, function (error) {
+        if (error) return response.satus(500).send(error);
+      } );
+    }
+
+    try {
+      const newFranchisehistory = new Franchisehistory( {
+      franchisehistorytextone: request.body.franchisehistorytextone,
+      franchisehistorytexttwo: request.body.franchisehistorytexttwo,
+      franchisehistorytextthree: request.body.franchisehistorytextthree,
+      franchisehistorytextfour: request.body.franchisehistorytextfour,
+        aboutname: request.body.aboutname,
+        aboutqualifications: request.body.aboutqualifications,
+        aboutphoto: newAboutPhotoName
+      } );
+
+      await Franchisehistory.create(newFranchisehistory);
+      response.redirect("/addfranchisehistory");
+    } catch (error) {
+      console.log(error);
+    }
+  } catch (error) {
+    console.log(error);
+    response.redirect("/dashboard");
+  }
+} );
+
+// "update franchisehistory" , post method
+router.post("/updatefranchisehistory/:id", authMiddleware, async (request, response) => {
+  try {
+    let franchisehistoryId = request.params.id;
+    let aboutPhotoFile;
+    let aboutPhotoUploadPath;
+    let newAboutPhotoName;
+
+    if(!request.files || Object.keys(request.files).length === 0){
+      console.log("File uploaded unsuccessful.");
+    } else {
+      fs.unlinkSync("./public/images/uploads/about/" + request.body.aboutoldphoto); // to remove the old image from the folder
+      aboutPhotoFile = request.files.aboutphoto;
+      newAboutPhotoName = Date.now()+"_"+aboutPhotoFile.name;
+      aboutPhotoUploadPath = require("path").resolve("./") + "/public/images/uploads/about/" + newAboutPhotoName;
+
+      aboutPhotoFile.mv(aboutPhotoUploadPath, function(error){
+        if(error) return response.satus(500).send(error);
+      } )
+    }
+
+    const updateFranchisehistory = {
+      franchisehistorytextone: request.body.franchisehistorytextone,
+      franchisehistorytexttwo: request.body.franchisehistorytexttwo,
+      franchisehistorytextthree: request.body.franchisehistorytextthree,
+      franchisehistorytextfour: request.body.franchisehistorytextfour,
+      aboutname: request.body.aboutname,
+      aboutqualifications: request.body.aboutqualifications,
+      aboutphoto: newAboutPhotoName,
+      franchisehistoryupdatedAt: Date.now()
+    };
+
+    await Franchisehistory.findByIdAndUpdate(franchisehistoryId, updateFranchisehistory);
+    
+    response.redirect( `/updatefranchisehistory/${franchisehistoryId}`);
+  } catch (error) {
+    console.log(error);
+    response.redirect("/dashboard");
   }
 
 } );

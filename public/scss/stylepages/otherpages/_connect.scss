@@ -1,9 +1,10 @@
 #connect {
+    @include center;
     @include card;
     @include flexcolumn;
     gap: 4rem;
     color: var(--BRANDII);
-    background: var(--TRANSPARENT);
+    background: var(--BRANDI);
     padding: $paddingsm $paddinglg;
     margin-bottom: $marginxl;
 

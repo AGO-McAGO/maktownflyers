@@ -1,13 +1,16 @@
-#adminlogin {
+.adminform {
     @include center;
+    @include flexcolumn;
+    align-items: center;
+    gap: 2rem;
     background: var(--BRANDII);
-    padding: $paddinglg;
 
-    h1 { font-size: $font-sizelg; color: var(--BRANDIII); margin-bottom: $marginlg; }
+    h1 { font-size: $font-sizelg; color: var(--BRANDIII); }
 
     form {
         @include flexcolumn;
         gap: 1.5rem;
+        width: 100%;
 
         .inputs {
             @include flexcolumn;
@@ -50,11 +53,11 @@
 }
 
 //! Medium devices (tablets, 768px and up)
-// @media (min-width: 768px) {
-//     #adminlogin form { width: 70%; margin: $marginxl auto; }
-// }
+@media (min-width: 768px) {
+    .adminform form { width: 70%; }
+}
 
 //! Large devices (desktops, 992px and up)
-// @media (min-width: 992px) {
-//     #adminlogin form { width: 50%; }
-// }
+@media (min-width: 992px) {
+    .adminform form { width: 50%; }
+}

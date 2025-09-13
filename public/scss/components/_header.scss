@@ -18,7 +18,10 @@ header {
     
       .crestname { color: var(--BRANDII); font-weight: bold; }
     }
-  
+
+    // navigation links inside the header
+    .links { display: none; }
+
     // burger button
     .navbutton {
       @include flexcolumn;
@@ -53,6 +56,17 @@ header {
 }
 
 //! Medium devices (tablets, 768px and up)
-// @media (min-width: 768px) {
-//   header .headeritems .navbutton { display: none; }
-// }
+@media (min-width: 768px) {
+  header .headeritems .navbutton { display: none; }
+  header .headeritems .links { @include flexrow; width: 70%; }
+}
+
+//! Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  header .headeritems .links { width: 50%; }
+}
+
+//! Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  header .headeritems .links { width: 40%; }
+}

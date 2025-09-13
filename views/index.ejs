@@ -1,49 +1,98 @@
 <section id="hero">
 
-    <div> <h1> Hero IMAGE AND OR VIDEO </h1> </div>
+    <article>
+        <h1> Maktown Flyers Basketball </h1>
+        <small> Guard The Town </small>
+        <video autoplay muted loop> <source src="videos/assists/mkfii.mp4" type="video/mp4" /> </video>
+    </article>
 
 </section> <!--! hero end  -->
 
-<section id="news">
+<section id="teampost">
+  <h2> Latest </h2>
 
-    <div class="herohead"> <h1> TEAM NEWS </h1> </div>
-
-</section> <!--! news end  -->
-
-<section id="connect">
-    <article>
-        <h3> BE A PART OF THE ACTION! </h3>
-        <p> Sign up for our email newsletter and get all the latest Flyers news and offers </p>
-    </article>
+  <article>
     
-    <form action="https://formsubmit.co/oscariteji@gmail.com" method="POST">
+    <% if(teamposts != "") { %>
+      <% teamposts.forEach(function(teampost, index){ %>
+      
+        <div class="teampost">
+          
+          <div class="teampostphoto">
+            <figure>
+              <img src="images/uploads/teamposts/<%= teampost.teampostphoto %>" alt="<%= teampost.teampostheading %>" width="225" height="200" />
+              <figcaption> <h3> <%= teampost.teampostheading %> </h3> </figcaption>
+            </figure>
+          </div>
         
-        <article>
-            <div>
-                <input type="text" name="name" id="name" class="input" placeholder="Write name here" required />
-                <label for="name" class="label"> Name </label>
-            </div>
-            
-            <div>
-                <input type="email" name="email" id="email" class="input" placeholder="Write email address here" required />
-                <label for="email" class="label"> Email </label>
-            </div>
-            
-            <div>
-                <textarea name="message" id="message" class="input" placeholder="Write message here" required></textarea>
-                <label for="message" class="label textarealabel"> Message </label>
-            </div>
-        </article>
-
-        <input type="hidden" name="_next" value="https://ivpips.onrender.com/feedback">
-        <input type="hidden" name="_subject" value="Email From IV PIPS Website Customer!">
-        <input type="hidden" name="_captcha" value="false">
-        <!--! <input type="hidden" name="_autoresponse" value="Your message is recieved, response shortly."> won't work with forms that have reCAPTCHA disabled-->
-        <input type="hidden" name="_template" value="box">
-            
-        <div class="send">
-            <input type="submit" value="Send" id="send" class="sendbtn" />
+          <div class="teampostlink"> <a href="/teampost/<%= teampost._id %>"> <button class="link"> Read More! </button> </a> </div>
+      
         </div>
-    </form>
+    
+      <% }) %>
+    <% } else { %>
+      <p>No items found.</p>
+    <% } %>
+  
+  </article>
 
-</section> <!--! contact end  -->
+</section> <!--! teampost end  -->
+
+<section id="photos">
+
+  <article class="maktownflyersphotos">
+    <!-- //TODO add an X to close the lightbox-->
+    <div class="mediaimg"> <figure> <img src="./images/assists/mfi.jpeg" alt="MAKTOWN Flyers Photo" width="320" height="299" /> </figure> </div>
+    <div class="mediaimg"> <figure> <img src="./images/assists/mfxxix.jpeg" alt="MAKTOWN Flyers Photo" width="320" height="299" /> </figure> </div>
+    <div class="mediaimg"> <figure> <img src="./images/assists/mfiv.jpeg" alt="MAKTOWN Flyers Photo" width="320" height="299" /> </figure> </div>
+    <div class="mediaimg"> <figure> <img src="./images/assists/mfv.jpeg" alt="MAKTOWN Flyers Photo" width="320" height="299" /> </figure> </div>
+        
+    <div class="mediaimg"> <figure> <img src="./images/assists/mfxii.jpeg" alt="MAKTOWN Flyers Photo" width="320" height="299" /> </figure> </div>
+    <div class="mediaimg"> <figure> <img src="./images/assists/mfxiii.jpeg" alt="MAKTOWN Flyers Photo" width="320" height="299" /> </figure> </div>
+    <div class="mediaimg"> <figure> <img src="./images/assists/mfxvii.jpeg" alt="MAKTOWN Flyers Photo" width="320" height="299" /> </figure> </div>
+    <div class="mediaimg"> <figure> <img src="./images/assists/mfxix.jpeg" alt="MAKTOWN Flyers Photo" width="320" height="299" /> </figure> </div>
+        
+    <div class="mediaimg"> <figure> <img src="./images/assists/mfiii.jpeg" alt="MAKTOWN Flyers Photo" width="320" height="299" /> </figure> </div>
+    <div class="mediaimg"> <figure> <img src="./images/assists/mfxxvi.jpeg" alt="MAKTOWN Flyers Photo" width="320" height="299" /> </figure> </div>
+    <div class="mediaimg"> <figure> <img src="./images/assists/mfxxvii.jpeg" alt="MAKTOWN Flyers Photo" width="320" height="299" /> </figure> </div>
+    <div class="mediaimg"> <figure> <img src="./images/assists/mfii.jpeg" alt="MAKTOWN Flyers Photo" width="320" height="299" /> </figure> </div>
+  </article>
+  
+  <a href="media#photos"> <button class="link"> View More! </button> </a>
+
+</section>  <!--! photos end  -->
+
+<section id="watch">
+  
+  <h2> Watch </h2>
+  
+  <article>
+    
+    <% if(videos != "") { %>
+      <% videos.forEach( function(video, index) { %>
+      
+        <div class="watchvideo">
+
+          <div>
+            <video controls>
+              <source src="videos/uploads/<%= video.teamvideo %>" type="video/mp4">
+              <source src="videos/uploads/<%= video.teamvideo %>" type="video/webm">
+              <source src="videos/uploads/<%= video.teamvideo %>" type="video/ogg">
+              Sorry! Your browser does not support the video.
+            </video>
+          </div>
+      
+          <div> <%= video.teamvideotitle %> </div>
+      
+        </div>
+    
+      <% }) %>
+    <% } else { %>
+        <p> No Videos! </p>
+    <% } %>
+
+  </article>
+
+  <a href="media#watch"> <button class="link"> Watch More! </button> </a>
+
+</section> <!--! watch end  -->

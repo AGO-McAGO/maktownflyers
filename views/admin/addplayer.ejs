@@ -1,6 +1,6 @@
-<section id="addplayer">
+<section class="adminforms">
 
-  <a href="/dashboard"> &larr; Back </a>
+  <span> <a href="/dashboard"> <button class="link"> &larr; Back To Dashboard </button> </a> </span>
 
   <h1> Add Player </h1>
 
@@ -11,50 +11,51 @@
       <article>
         <div>
           <label for="playername"> <b> Player Name </b> </label> <br />
-          <input type="text" name="playername" placeholder="Player Name ...." />
+          <input type="text" name="playername" id="playername" placeholder="Player Name ...." required />
         </div>
 
         <div>
           <label for="playerposition"> <b> Player Position </b> </label> <br />
-          <input type="text" name="playerposition" placeholder="Player Position ...." />
+          <input type="text" name="playerposition" id="playerposition" placeholder="Player Position ...." required />
           <small> E.g. Center, Small Forward, Guard, e.t.c. </small>
         </div>
 
         <div>
           <label for="playernumber"> <b> Player Jersey Number </b> </label> <br />
-          <input type="text" name="playernumber" placeholder="Player Jersey Number ...." />
+          <input type="text" name="playernumber" id="playernumber" placeholder="Player Jersey Number ...." required />
+          <small> Must be unique ( no two players can have the same jersey number). </small>
         </div>
 
         <div>
           <label for="playerage"> <b> Player Age </b> </label> <br />
-          <input type="text" name="playerage" placeholder="Player Age ...." />
+          <input type="text" name="playerage" id="playerage" placeholder="Player Age ...." required />
         </div>
 
         <div>
           <label for="playerexperience"> <b> Player Experience </b> </label> <br />
-          <input type="text" name="playerexperience" placeholder="Player Experience ...." />
+          <input type="text" name="playerexperience" id="playerexperience" placeholder="Player Experience ...." required />
           <small> Enter number of years of player experience </small>
         </div>
 
         <div>
           <label for="playerheight"> <b> Player Height </b> </label> <br />
-          <input type="text" name="playerheight" placeholder="Player Height ...." />
+          <input type="text" name="playerheight" id="playerheight" placeholder="Player Height ...." required />
           <small> In feet (ft), E.g 6.5, 6.1, 6.10, e.t.c. </small>
         </div>
 
         <div>
           <label for="playerweight"> <b> Player Weight </b> </label> <br />
-          <input type="text" name="playerweight" placeholder="Player Weight ...." />
+          <input type="text" name="playerweight" id="playerweight" placeholder="Player Weight ...." required />
           <small> In Kilograms (Kg), E.g. 105.2, 76, e.t.c. </small>
         </div>
 
         <div>
           <label for="playerphoto"> <b> Choose Player Photo </b> </label>
-          <input type="file" name="playerphoto" id="playerphoto" accept="image/*">
+          <input type="file" name="playerphoto" id="playerphoto" accept="image/*" required />
         </div>
       </article>
 
-      <div> <input type="submit" value="Add Player" class="adminaddbtn" /> </div>
+      <div> <input type="submit" value="Add Player" class="adminformbtn" /> </div>
 
     </form>
   </div>

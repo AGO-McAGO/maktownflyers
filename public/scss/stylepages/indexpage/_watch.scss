@@ -1,0 +1,40 @@
+#watch {
+    @include center;
+    margin-bottom: $marginxxl;
+    text-align: center;
+
+    h2 { font-size: $font-sizelg; color: var(--BRANDIII); text-align: left; }
+
+    article {
+        display: grid;
+        place-content: center start;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 1.5rem;
+        width: 100%;
+        padding: $paddingsm;
+
+        .watchvideo {
+            @include card;
+            background: var(--BRANDII);
+            width: inherit;
+            text-align: left;
+
+            video { aspect-ratio: 16 / 9; width: 100%; border-radius: $border-radiussm $border-radiussm 0rem 0rem; }
+
+        }
+
+    }
+
+    .link { border: $border-brand; }
+
+}
+
+//! Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+    #watch article { grid-template-columns: repeat(2, 1fr); }
+}
+
+//! Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+    #watch article { grid-template-columns: repeat(4, 1fr); }
+}

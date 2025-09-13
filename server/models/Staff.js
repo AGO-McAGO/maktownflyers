@@ -7,11 +7,15 @@ const Schema = mongoose.Schema;
 const staffSchema = new Schema( {
 	staffname: {
 		type: String,
-		required: [true, "Name is required!"]
+		required: [true, "Name is required!"],
+		minLength: [2, "Must be at least 2 characters!"],
+		maxLength: [50, "Can not be more than 50 characters!"]
 	},
 	staffrole: {
 		type: String,
-		required: [true, "Role is required!"]
+		required: [true, "Role is required!"],
+		minLength: [2, "Must be at least 2 characters!"],
+		maxLength: [100, "Can not be more than 100 characters!"]
 	},
 	staffphoto: {
 		type: String,
