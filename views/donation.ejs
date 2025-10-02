@@ -1,0 +1,27 @@
+<section id="donation">
+
+    <article class="donating">
+        <h1> Support Maktown Flyers </h1>
+        <p> Thank you, in anticipation of your donation. </p>
+    </article>
+    
+    <article class="donating">
+
+        <form action="/create-checkout-session" enctype="multipart/form-data" id="donationform" method="POST">
+
+            <article>
+                <div>
+                    <label for="donationamount"> Donation Amount <span> <i class="fa-solid fa-sack-dollar fa-xl"></i> </span> </label>
+                    <input type="number" name="donationamount" id="donationamount" min="1" value="5" required />
+                </div>
+
+                <div class="send"> <input type="submit" value="Donate" id="donatebutton" disabled /> </div>
+            </article>
+
+        </form>
+    
+        <div id="errormessage"></div>
+
+    </article>
+
+</section>

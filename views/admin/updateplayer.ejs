@@ -10,48 +10,48 @@
       <article>
         <div>
           <label for="playername"> <b> Player Name </b> </label> <br />
-          <input type="text" name="playername" value="<%= player.playername %>" required />
+          <input type="text" name="playername" id="playername" value="<%= player.playername %>" required />
         </div>
 
         <div>
           <label for="playerposition"> <b> Player Position </b> </label> <br />
-          <input type="text" name="playerposition" value="<%= player.playerposition %>" required />
+          <input type="text" name="playerposition" id="playerposition" value="<%= player.playerposition %>" required />
           <small> E.g. Center, Small Forward, Guard, e.t.c. </small>
         </div>
 
         <div>
           <label for="playernumber"> <b> Player Jersey Number </b> </label> <br />
-          <input type="text" name="playernumber" value="<%= player.playernumber %>" required />
+          <input type="text" name="playernumber" id="playernumber" value="<%= player.playernumber %>" required />
         </div>
 
         <div>
           <label for="playerage"> <b> Player Age </b> </label> <br />
-          <input type="text" name="playerage" value="<%= player.playerage %>" required />
+          <input type="text" name="playerage" id="playerage" value="<%= player.playerage %>" required />
         </div>
 
         <div>
           <label for="playerexperience"> <b> Player Experience </b> </label> <br />
-          <input type="text" name="playerexperience" value="<%= player.playerexperience %>" required />
+          <input type="text" name="playerexperience" id="playerexperience" value="<%= player.playerexperience %>" required />
           <small> Enter number of years of player experience </small>
         </div>
 
         <div>
           <label for="playerheight"> <b> Player Height </b> </label> <br />
-          <input type="text" name="playerheight" value="<%= player.playerheight %>" required />
+          <input type="text" name="playerheight" id="playerheight" value="<%= player.playerheight %>" required />
           <small> In feet (ft), E.g 6.5, 6.1, 6.10, e.t.c. </small>
         </div>
 
         <div>
           <label for="playerweight"> <b> Player Weight </b> </label> <br />
-          <input type="text" name="playerweight" value="<%= player.playerweight %>" required />
+          <input type="text" name="playerweight" id="playerweight" value="<%= player.playerweight %>" required />
           <small> In Kilograms (Kg), E.g. 105.2, 76, e.t.c. </small>
         </div>
 
         <div>
           <label for="playerphoto"> <b> Choose Player Photo </b> </label>
-          <input type="file" name="playerphoto" id="playerphoto" accept="image/*" required />
+          <input type="file" name="playerphoto" id="playerphoto" accept="image/*" />
           <img src="/images/uploads/players/<%= player.playerphoto %>" alt="<%= player.playername %>" width="275" height="200" />
-          <input type="hidden" name="playeroldphoto" id="playeroldphoto" value="<%= player.playerphoto %>">
+          <input type="hidden" name="playeroldphoto" id="playeroldphoto" value="<%= player.playerphoto %>" />
         </div>
       </article>
 

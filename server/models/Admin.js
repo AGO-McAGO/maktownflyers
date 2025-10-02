@@ -8,17 +8,28 @@ const adminSchema = new Schema( {
     adminname: {
         type: String,
         required: true,
-        minlength: 1,
-        maxlength: 20,
+        trim: true,
+        lowercase: true,
+        minlength: 5,
+        maxlength: 50,
         unique: true
     },
     adminpassword: {
         type: String,
         required: true,
-        minlength: 2,
-        maxlength: 100
+		trim: true,
+        minlength: 5,
+		select: false
     },
-	created: {
+	forgotPasswordCode: {
+		type: String,
+		select: false // forgot password code hasn't been sent yet
+	},
+	forgotPasswordCodeValidation: {
+		type: Number,
+		select: false // the forgot password code hasn't been validated yet
+	},
+	admincreatedAt: {
 		type: Date,
 		required: true,
 		default: Date.now

@@ -2,16 +2,21 @@
 
   <h1> Admin Login </h1>
 
-  <form action="/admin" method="POST">
+  <form action="/adminlogin" method="POST">
 
     <article class="inputs">
-      <div> <label for="adminname"> <b> Name </b> </label> <input type="text" name="adminname" placeholder="Enter Admin Name"> </div>
-      <div> <label for="adminpassword"> <b> Password </b> </label> <input type="password" name="adminpassword" placeholder="Enter Admin Password"> </div>
+      <div> <label for="adminname"> <b> Name </b> </label> <input type="text" name="adminname" id="adminname" placeholder="Enter Admin Name" required /> </div>
+      <div>
+        <label for="adminpassword"> <b> Password </b> </label>
+        <input type="password" name="adminpassword" id="adminpassword" placeholder="Enter Admin Password" required />
+      </div>
     </article>
 
     <div> <input type="submit" value="Login" class="loginbtn" /> </div>
 
   </form>
+  
+  <a href="/adminforgotpassword"> <button type="button" class="link" disabled> <strong> Forgot Password? </strong> </button> </a>
 
 </section>
 
@@ -21,12 +26,12 @@
 
   <h2> Register </h2>
 
-  <form action="/register" method="POST">
+  <form action="/signup" method="POST">
     <div> <label for="adminname"> <b> Admin Name </b> </label> <input type="text" name="adminname" placeholder="Enter Admin Name"> </div>
 
     <div> <label for="adminpassword"> <b> Admin Password </b> </label> <input type="password" name="adminpassword" placeholder="Enter Admin Password"> </div>
 
-    <div> <input type="submit" value="Register" /> </div>
+    <div> <input type="submit" value="Admin Signup" /> </div>
   </form>
 
 </section> -->

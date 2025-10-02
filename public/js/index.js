@@ -11,7 +11,6 @@ navButton.addEventListener( "click", () => {
 } );
 //! navigation end
 
-
 // photo lightbox view
 const maktownPhotos = document.querySelectorAll(" .mediaimg figure img");
 const lightbox = document.createElement("div"); lightbox.id = "lightbox"; // create div and assign "lightbox" class.
@@ -39,3 +38,42 @@ lightbox.addEventListener( "click", e => {
 
 } );
 //! photo lightbox end
+
+const stripe = Stripe("pk_test_51SD8w7CNFb0D13sPTH0zvLnJeF3nL08I5xUeXR9W8l2XSHs8kLCVzAYqv6SWRvUWTNx1v0sOOmlTnaxscR4664bu00tg2otqbZ");
+const donateButton = document.getElementById("donatebutton");
+const donationForm = document.getElementById("donationform");
+const errorMessage = document.getElementById("errormessage");
+
+donationForm.addEventListener("submit", async (event) => {
+  event.preventDefault();
+
+  const donationamount = document.getElementById("donationamount").value;
+  
+  try {
+    const response = await fetch("/create-checkout-session", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ donationamount: parseFloat(donationamount) }),
+    } );
+    
+    const session = await response.json();
+    
+    if (session.error) {
+      errorMessage.textContent = session.error;
+    } else {
+      const result = await stripe.redirectToCheckout({ sessionId: session.id, });
+      
+      if (result.error) {
+        errorMessage.textContent = result.error.message;
+      }
+    }
+
+  } catch (error) {
+    console.error("Error:", error);
+    errorMessage.textContent = "An unexpected error occurred.";
+  }
+
+} );
+//! stripe validation form end

@@ -58,7 +58,7 @@ header {
 //! Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
   header .headeritems .navbutton { display: none; }
-  header .headeritems .links { @include flexrow; width: 70%; }
+  header .headeritems .links { @include flexrow; flex-wrap: wrap; width: 70%; }
 }
 
 //! Large devices (desktops, 992px and up)

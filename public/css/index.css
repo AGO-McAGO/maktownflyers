@@ -284,6 +284,7 @@ header .headeritems .navbutton.open .lineiii {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
     width: 70%;
   }
 }
@@ -410,6 +411,12 @@ button:hover:after {
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
   background: var(--BRANDIII);
+}
+
+#donatebtn {
+  background: var(--NAIRAI);
+  color: var(--BRANDII);
+  margin-top: 0.7rem;
 }
 
 .adminforms {
@@ -1202,6 +1209,7 @@ button:hover:after {
   color: var(--BRANDII);
   font-family: "Shojumaru";
   font-size: 2.5rem;
+  margin-left: 1.5rem;
 }
 #hero article video {
   z-index: -1;
@@ -1475,6 +1483,83 @@ button:hover:after {
   }
   #connect form {
     width: 60%;
+  }
+}
+#donation {
+  max-width: 90%;
+  min-width: 90%;
+  margin: auto;
+  padding: 0.7rem;
+  box-shadow: 0.0625rem 0.1875rem 0.3125rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 2rem;
+  color: var(--TEXTII);
+  padding: 4rem 1rem;
+  background: var(--BRANDII);
+}
+#donation h1 {
+  font-size: 1.7rem;
+  color: var(--BRANDIII);
+}
+#donation .donating {
+  width: 100%;
+  padding: 1.5rem 1rem;
+}
+#donation .donating article {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: inherit;
+}
+#donation .donating article input[type=number] {
+  margin: 1rem 0rem 0rem 0rem;
+}
+#donation .donating article #donatebutton {
+  background: var(--BRANDII);
+  color: var(--BRANDI);
+  border: none;
+  border-radius: 0.2rem;
+  font-size: 0.8rem;
+  font-weight: bold;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  padding: 0.4rem 0.7rem;
+  transition: all 0.5s;
+  padding: 0.4rem 1.5rem;
+  background: var(--BRANDIV);
+  color: var(--BRANDII);
+  font-size: 1.2rem;
+  background: var(--DOLLAR);
+}
+#donation .donating article #donatebutton:hover {
+  color: var(--BRANDII);
+  transform: translateY(-0.27rem);
+  background: var(--BRANDIII);
+  background: var(--NAIRAI);
+}
+#donation .donating #errormessage {
+  margin-top: 0.7rem;
+  color: var(--BRANDIII);
+  font-size: 1.7rem;
+}
+
+@media (min-width: 768px) {
+  #donation h1 {
+    font-size: 2.5rem;
+  }
+  #donation .donating {
+    width: 45% !important;
+    padding: 4rem 1rem;
+  }
+  #donation .donating input[type=number] {
+    margin: 1rem !important;
   }
 }
 #history {

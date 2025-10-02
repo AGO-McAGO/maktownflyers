@@ -21,7 +21,7 @@
             position: absolute;
         }
 
-        small { color: var(--BRANDII); font-family: $font-familyiii; font-size: $font-sizelg; }
+        small { color: var(--BRANDII); font-family: $font-familyiii; font-size: $font-sizelg; margin-left: $marginlg; }
 
         video {
             z-index: -1;
