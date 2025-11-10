@@ -1,0 +1,128 @@
+<section class="adminforms">
+
+  <span> <a href="/dashboard"> <button class="link"> &larr; Back To Dashboard </button> </a> </span>
+  
+  <div class="formdiv">
+    <h1> Player Registration </h1>
+
+    <form action="/addplayer" enctype="multipart/form-data" method="POST">
+
+      <section class="split"> <!--! i -->
+
+        <article> <!-- parti -->
+          <div>
+            <label for="playername"> <b> Full Name </b> </label>
+            <input type="text" name="playername" id="playername" required />
+          </div>
+
+          <div>
+            <label for="playerphonenumber"> <b> Player Phone Number (<small> 11 digits </small>) </b> </label>
+            <input type="number" name="playerphonenumber" id="playerphonenumber" min="10" required />
+          </div>
+
+          <div>
+            <label for="playeremail"> <b> Player Email </b> </label>
+            <input type="email" name="playeremail" id="playeremail" required />
+          </div>
+
+          <div>
+            <label for="playerposition"> <b> Player Position </b> </label>
+            <input type="text" name="playerposition" id="playerposition" required />
+          </div>
+
+          <div>
+            <label for="playernumber"> <b> Player Jersey Number </b> </label>
+            <input type="number" name="playernumber" id="playernumber" placeholder="Two players can't have same jersey number" required />
+          </div>
+
+          <div>
+            <label for="playerjerseysize"> <b> Player Jersey Size </b> </label>
+            <input type="number" name="playerjerseysize" id="playerjerseysize" required />
+          </div>
+
+          <div>
+            <label for="playertracksuitsize"> <b> Player Tracksuit Size </b> </label>
+            <input type="number" name="playertracksuitsize" id="playertracksuitsize" required />
+          </div>
+
+          <div>
+            <label for="playershoesize"> <b> Player Shoe Size </b> </label>
+            <input type="number" name="playershoesize" id="playershoesize" required />
+          </div>
+
+          <div>
+            <label for="playerdateofbirth"> <b> Player Date of Birth </b> </label>
+            <input type="date" name="playerdateofbirth" id="playerdateofbirth" required />
+          </div>
+        </article> <!-- parti -->
+
+        <article> <!-- partii -->
+          <div>
+            <label for="playerexperience"> <b> Player Experience </b> </label>
+            <input type="number" name="playerexperience" id="playerexperience" required />
+          </div>
+
+          <div>
+            <label for="playerdatesigned"> <b> Player Date Signed </b> </label>
+            <input type="date" name="playerdatesigned" id="playerdatesigned" min="2020-01-01" required />
+          </div>
+
+          <div>
+            <label for="playerlastevaluation"> <b> Player Last Evaluation </b> </label>
+            <input type="date" name="playerlastevaluation" id="playerlastevaluation" min="2020-01-01" required />
+          </div>
+
+          <div>
+            <label for="playerfeet"> <b> Player Height (Feet) </b> </label>
+            <input type="number" name="playerfeet" id="playerfeet" required />
+          </div>
+
+          <div>
+            <label for="playerinches"> <b> Player Height (Inches) </b> </label>
+            <input type="number" name="playerinches" id="playerinches" required />
+          </div>
+
+          <div>
+            <label for="playerweight"> <b> Player Weight (Kg) </b> </label>
+            <input type="number" name="playerweight" id="playerweight" required />
+          </div>
+
+          <div>
+            <label for="playerwingspan"> <b> Player Wingspan (cm) </b> </label>
+            <input type="number" name="playerwingspan" id="playerwingspan" required />
+          </div>
+
+          <div>
+            <label for="playerstandingreach"> <b> Player Standing Reach (cm) </b> </label>
+            <input type="number" name="playerstandingreach" id="playerstandingreach" required />
+          </div>
+
+          <div>
+            <label for="playercoach"> <b> Player Coach </b> </label>
+            <input type="text" name="playercoach" id="playercoach" required />
+          </div>
+        </article> <!-- partii -->
+
+      </section> <!--! i -->
+
+      <section class="nosplit"> <!--! ii -->
+        <article>
+          <div>
+            <label for="playercoachnotes"> <b> Coach's Notes On Player </b> </label>
+            <textarea name="playercoachnotes" id="playercoachnotes"></textarea>
+          </div>
+        
+          <div>
+            <label for="playerphoto"> <b> Choose Player Photo </b> </label>
+            <input type="file" name="playerphoto" id="playerphoto" accept="image/*" required />
+          </div>
+        </article>
+      </section> <!--! ii -->
+
+      <div> <input type="submit" value="Add Player" class="adminformbtn" /> </div>
+
+    </form>
+
+  </div>
+
+</section>

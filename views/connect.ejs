@@ -1,0 +1,37 @@
+<section id="connect">
+    <article>
+        <h3> BE A PART OF THE ACTION! </h3>
+        <p> Sign up for our email newsletter and get all the latest Flyers news and offers </p>
+    </article>
+    
+    <form action="https://formsubmit.co/everybodyluvsalvin@gmail.com" method="POST">
+        
+        <article>
+            <div>
+                <input type="text" name="name" id="name" class="input" placeholder="Write name here" required />
+                <label for="name" class="label"> Name </label>
+            </div>
+            
+            <div>
+                <input type="email" name="email" id="email" class="input" placeholder="Write email address here" required />
+                <label for="email" class="label"> Email </label>
+            </div>
+            
+            <div>
+                <textarea name="message" id="message" class="input" placeholder="Write message here" required></textarea>
+                <label for="message" class="label textarealabel"> Message </label>
+            </div>
+        </article>
+
+        <input type="hidden" name="_next" value="https://maktownflyers.onrender.com/feedback">
+        <input type="hidden" name="_subject" value="Email From Maktown Flyers Website!">
+        <input type="hidden" name="_captcha" value="false">
+        <!--! <input type="hidden" name="_autoresponse" value="Your message is recieved, response shortly."> won't work with forms that have reCAPTCHA disabled-->
+        <input type="hidden" name="_template" value="box">
+            
+        <div class="send">
+            <input type="submit" value="Send" id="send" class="sendbtn" />
+        </div>
+    </form>
+
+</section> <!--! contact end  -->

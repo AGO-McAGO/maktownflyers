@@ -1,0 +1,70 @@
+#player {
+    @include center;
+    color: var(--TEXTII);
+    background: var(--BRANDII);
+
+    .link { border: $border-brand; margin-bottom: $marginlg; }
+
+    .player {
+        @include flexrow;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        gap: 2.5rem;
+
+        strong {color: var(--BRANDI); }
+
+        .playerdetails {
+            @include card;
+            @include flexcolumn;
+            gap: 2rem;
+            width: 100%;
+
+            .details {
+                text-align: center;
+
+                img { @include card; }
+            }
+
+            .ahp { @include flexrow; justify-content: center; gap: 2rem; }
+
+        }
+
+        .coachnotes {
+            @extend .playerdetails;
+            gap: 1rem;
+            padding: 0rem;
+
+            h2 {
+                background: var(--BRANDIV);
+                color: var(--BRANDII);
+                border-radius: $border-radiussm $border-radiussm 0rem 0rem;
+                padding: $paddingxsi;
+            }
+            
+            div {
+                @include flexcolumn;
+                gap: 1rem;
+                padding: $paddingxsi;
+
+                .coachname { color: var(--TEXTIII); }
+
+            }
+
+        }
+
+    }
+
+}
+
+//! Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+    #player .player .playerdetails { width: 40% !important; }
+    #player .player .coachnotes {  width: 50% !important; }
+}
+
+
+//! Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+    #player .player .playerdetails { width: 35% !important; }
+    #player .player .coachnotes {  width: 55% !important; }
+}

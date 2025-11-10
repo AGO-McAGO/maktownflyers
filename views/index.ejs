@@ -1,0 +1,158 @@
+<section id="hero">
+
+    <article>
+        <h1> Welcome To Maktown Flyers Basketball </h1>
+        <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit </p>
+        <small> Ipsum dolor sit, amet consectetur adipisicing elit. Quo, deserunt cupiditate. </small>
+        <video autoplay muted loop> <source src="videos/assists/mkfii.mp4" type="video/mp4" /> </video>
+    </article>
+
+</section> <!--! hero end  -->
+
+<section id="teamvalues">
+
+  <article class="teamvalueicons">
+    <div>
+      <span class="icon"> <i class="fa-solid fa-users fa-2xl"></i> </span>
+      <h2> Expert Coaching </h2>
+      <p> Learn from former professional players and certified coaches with proven track records. </p>
+    </div>
+
+    <div>
+      <span class="icon"> <i class="fa-solid fa-trophy fa-2xl"></i> </span>
+      <h2> Proven Programs </h2>
+      <p> Our training methods have developed highschool, college and professional athletes. </p>
+    </div>
+
+    <div>
+      <span class="icon"> <i class="fa-solid fa-trophy fa-2xl"></i> </span>
+      <h2> Skills Acquisition Training </h2>
+      <p> We engage our athletes in various handy skills training outside basketball. </p>
+    </div>
+  </article>
+
+  <article class="teamvalueour">
+    <div>
+      <h2 class="our"> Our Mission </h2>
+      <p>
+        Iipsum dolor sit amet consectetur adipisicing elit. Pariatur, deleniti.
+        Iipsum dolor sit amet consectetur adipisicing elit. Pariatur, deleniti.
+        Iipsum dolor sit amet consectetur adipisicing elit. Pariatur, deleniti.
+        Iipsum dolor sit amet consectetur adipisicing elit. Pariatur, deleniti.
+        Iipsum dolor sit amet consectetur adipisicing elit. Pariatur, deleniti.
+      </p>
+    </div>
+
+    <div>
+      <h2 class="our"> Our Motto </h2>
+      <p>
+        Dolor sit amet consectetur adipisicing elit. Pariatur, deleniti.
+        Iipsum dolor sit amet consectetur adipisicing elit. Pariatur, deleniti.
+        Iipsum dolor sit amet consectetur adipisicing elit. Pariatur, deleniti.
+        Iipsum dolor sit amet consectetur adipisicing elit. Pariatur, deleniti.
+        Iipsum dolor sit amet consectetur adipisicing elit.
+      </p>
+    </div>
+
+    <div>
+      <h2 class="our"> Our Core Values </h2>
+      <p>
+        Consectetur adipisicing elit. Pariatur, deleniti.
+        Iipsum dolor sit amet consectetur adipisicing elit. Pariatur, deleniti.
+        Iipsum dolor sit amet consectetur adipisicing elit. Pariatur, deleniti.
+        Iipsum dolor sit amet consectetur adipisicing elit. Pariatur, deleniti.
+        Iipsum dolor sit amet consectetur adipisicing elit. Pariatur releni.
+      </p>
+    </div>
+  </article>
+
+</section>  <!--! teamvalues end  -->
+
+<section id="teampost">
+  <h2> Latest News </h2>
+
+  <article>
+    
+    <% if(teamposts != "") { %>
+      <% teamposts.forEach(function(teampost, index){ %>
+      
+        <div class="teampost">
+          
+          <div class="teampostphoto">
+            <figure>
+              <img src="images/uploads/teamposts/<%= teampost.teampostphoto %>" alt="<%= teampost.teampostheading %>" width="225" height="200" />
+              <figcaption> <a href="/teampost/<%= teampost._id %>"> <%= teampost.teampostheading.substring(0, 25) %>... </a> </figcaption>
+            </figure>
+          </div>
+      
+        </div>
+
+      <% }) %>
+    <% } else { %>
+      <p>No items found.</p>
+    <% } %>
+
+  </article>
+  
+  <div class="teampostlink"> <a href="media#teampost"> <button class="link"> Read More News! </button> </a> </div>
+
+</section> <!--! teampost end  -->
+
+<section id="photos">
+
+  <article class="maktownflyersphotos">
+    <!-- //TODO add an X to close the lightbox-->
+    <div class="mediaimg"> <figure> <img src="./images/assists/mfi.jpeg" alt="MAKTOWN Flyers Photo" width="320" height="299" /> </figure> </div>
+    <div class="mediaimg"> <figure> <img src="./images/assists/mfxxix.jpeg" alt="MAKTOWN Flyers Photo" width="320" height="299" /> </figure> </div>
+    <div class="mediaimg"> <figure> <img src="./images/assists/mfiv.jpeg" alt="MAKTOWN Flyers Photo" width="320" height="299" /> </figure> </div>
+    <div class="mediaimg"> <figure> <img src="./images/assists/mfv.jpeg" alt="MAKTOWN Flyers Photo" width="320" height="299" /> </figure> </div>
+        
+    <div class="mediaimg"> <figure> <img src="./images/assists/mfxii.jpeg" alt="MAKTOWN Flyers Photo" width="320" height="299" /> </figure> </div>
+    <div class="mediaimg"> <figure> <img src="./images/assists/mfxiii.jpeg" alt="MAKTOWN Flyers Photo" width="320" height="299" /> </figure> </div>
+    <div class="mediaimg"> <figure> <img src="./images/assists/mfxvii.jpeg" alt="MAKTOWN Flyers Photo" width="320" height="299" /> </figure> </div>
+    <div class="mediaimg"> <figure> <img src="./images/assists/mfxix.jpeg" alt="MAKTOWN Flyers Photo" width="320" height="299" /> </figure> </div>
+        
+    <div class="mediaimg"> <figure> <img src="./images/assists/mfiii.jpeg" alt="MAKTOWN Flyers Photo" width="320" height="299" /> </figure> </div>
+    <div class="mediaimg"> <figure> <img src="./images/assists/mfxxvi.jpeg" alt="MAKTOWN Flyers Photo" width="320" height="299" /> </figure> </div>
+    <div class="mediaimg"> <figure> <img src="./images/assists/mfxxvii.jpeg" alt="MAKTOWN Flyers Photo" width="320" height="299" /> </figure> </div>
+    <div class="mediaimg"> <figure> <img src="./images/assists/mfii.jpeg" alt="MAKTOWN Flyers Photo" width="320" height="299" /> </figure> </div>
+  </article>
+  
+  <a href="media#photos"> <button class="link"> View More! </button> </a>
+
+</section>  <!--! photos end  -->
+
+<section id="watch">
+  
+  <h2> Watch </h2>
+  
+  <article>
+    
+    <% if(videos != "") { %>
+      <% videos.forEach( function(video, index) { %>
+      
+        <div class="watchvideo">
+
+          <div>
+            <video controls>
+              <source src="videos/uploads/<%= video.teamvideo %>" type="video/mp4">
+              <source src="videos/uploads/<%= video.teamvideo %>" type="video/webm">
+              <source src="videos/uploads/<%= video.teamvideo %>" type="video/ogg">
+              Sorry! Your browser does not support the video.
+            </video>
+          </div>
+      
+          <div> <%= video.teamvideotitle %> </div>
+      
+        </div>
+    
+      <% }) %>
+    <% } else { %>
+        <p> No Videos! </p>
+    <% } %>
+
+  </article>
+
+  <a href="media#watch"> <button class="link"> Watch More! </button> </a>
+
+</section> <!--! watch end  -->

@@ -1,0 +1,42 @@
+<section class="adminforms">
+  
+  <span> <a href="/dashboard"> <button class="link"> &larr; Back To Dashboard </button> </a> </span>
+  <span> <a href="/teamposts"> <button class="link"> View Posts </button> </a> </span>
+
+  <div class="formdiv">
+    <h1> Update Post </h1>
+
+    <form action="/updateteampost/<%= teampost._id %>" enctype="multipart/form-data" method="POST">
+
+      <section class="split">
+        <article>
+          <div>
+            <label for="teampostheading"> <b> Post Heading </b> </label>
+            <input type="text" name="teampostheading" id="teampostheading" value="<%= teampost.teampostheading %>" required />
+          </div>
+        
+          <div>
+            <label for="teampostbody"> <b> Post Body </b> </label>
+            <textarea name="teampostbody" id="teampostbody" placeholder="Write here" required><%= teampost.teampostbody %></textarea>
+          </div>
+        </article>
+      </section>
+
+
+      <section class="nosplit">
+        <article>
+          <div>
+            <label for="teampostphoto"> <b> Choose Photo </b> </label>
+            <input type="file" name="teampostphoto" id="teampostphoto" accept="image/*" />
+            <img src="/images/uploads/teamposts/<%= teampost.teampostphoto %>" alt="<%= teampost.teampostheading %>" width="275" height="200" />
+            <input type="hidden" name="teampostoldphoto" id="teampostoldphoto" value="<%= teampost.teampostphoto %>" />
+          </div>
+        </article>
+      </section>
+
+      <div> <input type="submit" value="Update Post" class="adminformbtn" /> </div>
+
+    </form>
+  </div>
+
+</section>

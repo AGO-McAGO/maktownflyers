@@ -1,0 +1,48 @@
+@mixin buttons {
+    background: var(--BRANDII);
+    color: var(--BRANDI);
+    border: none;
+    border-radius: $border-radiusxsii;
+    font-size: $font-sizexsi;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    padding: $paddingxsi $paddingxsii;
+    transition: all 0.5s;
+}
+@mixin buttonsbodyhover { color: var(--BRANDII); transform: translateY(-0.27rem); }
+
+@mixin buttonsbodyafter {
+    content: "";
+    background: var(--BRANDI);
+    position: absolute;
+    z-index: -1;
+    left: -20%;
+    right: -20%;
+    top: 0;
+    bottom: 0;
+    transform: skewX(-45deg) scale(0, 1);
+    transition: all 0.3s;
+}
+@mixin buttonsbodyhoverafter { transform: skewX(-45deg) scale(1, 1); -webkit-transition: all 0.3s; transition: all 0.3s; }
+
+@mixin adminloginbtn {
+    @include buttons;
+    padding: $paddingxsi $paddinglg;
+    background: var(--BRANDIV);
+    color: var(--BRANDII);
+    font-size: $font-sizexsii;
+}
+@mixin adminloginbtnhover { @include buttonsbodyhover; background: var(--BRANDIII); }
+
+@mixin deletebtn {
+    background: var(--ERROR);
+    color: var(--BRANDI);
+    padding: $paddingxsi;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: $font-sizexsii;
+    border: none;
+}

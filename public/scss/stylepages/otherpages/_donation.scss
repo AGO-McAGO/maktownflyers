@@ -1,0 +1,52 @@
+#donation {
+    @include center;
+    @include card;
+    @include flexrow;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 2rem;
+    color: var(--TEXTII);
+    padding: $paddingxl $paddingsm;
+    background: var(--BRANDII);
+
+    h1 { font-size: $font-sizesm; color: var(--BRANDIII); }
+
+    .donating {
+        width: 100%;
+        padding: $paddinglg $paddingsm;
+
+        article {
+            @include flexcolumn;
+            gap: 1.5rem;
+            width: inherit;
+
+            input[type="number"] { margin: $marginsm 0rem 0rem 0rem; }
+
+            #donatebutton { @include adminloginbtn; background: var(--DOLLAR); }
+            #donatebutton:hover { @include adminloginbtnhover; background: var(--NAIRAI); }
+
+        }
+
+        #errormessage { margin-top: $marginxsii; color: var(--BRANDIII); font-size: $font-sizesm; }
+
+    }
+
+}
+
+//! Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+    #donation {
+
+        h1 { font-size: $font-sizelg; }
+
+        .donating {
+            width: 45% !important;
+            padding: $paddingxl $paddingsm;
+
+            input[type="number"] { margin: $marginsm !important; }
+
+        }
+    
+    }
+
+}

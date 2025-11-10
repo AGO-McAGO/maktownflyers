@@ -1,0 +1,58 @@
+<h1 class="teamrosterhead"> MAKTOWN FLYERS Roster </h1>
+
+<section id="teamroster">
+
+  <% if(players != "") { %>
+    <% players.forEach(function(player, index){ %>
+
+      <article>
+
+        <div class="playerimg">
+          <figure>
+            <img src="images/uploads/players/<%= player.playerphoto %>" alt="<%= player.playername %>" width="225" height="200" />
+            <figcaption> <h4> <%= player.playername %> </h4> <span> <a href="/player/<%= player._id %>"> <button class="link"> View Player </button> </a> </span> </figcaption>
+          </figure>
+        </div>
+    
+        <div class="playerinfo">
+          <div class="dv number"> <%= player.playernumber %> </div>
+          <div class="dv"> <small> Height </small> <br /> <span> <%= player.playerfeet %>'<%= player.playerinches %>" </span> </div>
+          <div class="dv"> <small> Weight </small> <br /> <span> <%= player.playerweight %> </span> </div>
+          <div class="dv"> <small> Exp. </small> <br /> <span> <%= player.playerexperience %> </span> Years </div>
+        </div>
+
+      </article>
+
+    <% }) %>
+    <% } else { %>
+      <p> No players found </p>
+  <% } %>
+
+</section> <!--! teamroster end  -->
+
+<section id="teamstaff">
+
+  <h2 class="head"> Basketball Operations </h2>
+  
+  <section>
+    <% if(staffs != "") { %>
+      <% staffs.forEach(function(staff, index){ %>
+      
+        <article>
+          
+          <div class="staffimg">
+            <figure>
+              <img src="images/uploads/staff/<%= staff.staffphoto %>" alt="<%= staff.staffname %>" width="225" height="200" />
+              <figcaption> <h4> <%= staff.staffname %> </h4> <small> <%= staff.staffrole %> </small> </figcaption>
+            </figure>
+          </div>
+
+        </article>
+    
+      <% }) %>
+      <% } else { %>
+        <p> No staff found </p>
+    <% } %>
+  </section>
+
+</section> <!--! teamstaff end  -->

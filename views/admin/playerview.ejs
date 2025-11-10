@@ -1,0 +1,51 @@
+<section id="player">
+
+    <span> <a href="/dashboard"> <button class="link"> &larr; Back To Dashboard </button> </a> </span>
+    <span> <a href="/updateplayer/<%= player._id %>"> <button class="link"> Update Player </button> </a> </span>
+
+    <article class="player">
+
+        <div class="playerdetails">
+            <div class="details">
+                <div class="playerimg">
+                    <figure>
+                        <img src="../images/uploads/players/<%= player.playerphoto %>" alt="<%= player.playername %>" width="225" height="200" />
+                        <figcaption> <h1> <%= player.playername %> </h1>  </figcaption>
+                    </figure>
+                </div>
+            </div>
+            
+            <hr />
+
+            <div>
+                <p> <!--Joined --> Signed: <strong> <%= new Date(player.playerdatesigned).toDateString() %> </strong>  </p> <br />
+                <p> Position: <strong> <%= player.playerposition %> </strong>  </p> <br />
+                <p> Height: <strong> <%= player.playerfeet %>'<%= player.playerinches %>" </strong>  </p> <br />
+                <p> Date of Birth: <strong> <%= new Date(player.playerdateofbirth).toDateString() %> </strong>  </p> <br />
+                <p> Jersey Number: <strong> <%= player.playernumber %> </strong>  </p> <br />
+                <p> Experience: <strong> <%= player.playerexperience %> </strong>  </p> <br />
+                <p> Jersey Size: <strong> <%= player.playerjerseysize %> </strong>  </p> <br />
+                <p> Tracksuit Size: <strong> <%= player.playertracksuitsize %> </strong>  </p> <br />
+                <p> Shoe Size: <strong> <%= player.playershoesize %> </strong>  </p> <br />
+                <p> Phone Number: <strong> <%= player.playerphonenumber %> </strong>  </p> <br />
+                <p> Email: <strong> <%= player.playeremail %> </strong>  </p> <br />
+                <p> Weight (Kg): <strong> <%= player.playerweight %> </strong>  </p> <br />
+                <p> Standing Reach (cm): <strong> <%= player.playerstandingreach %> </strong>  </p> <br />
+                <p> Wingspan (cm): <strong> <%= player.playerwingspan %> </strong>  </p> <br />
+                <p> Last Evaluation: <strong> <%= new Date(player.playerlastevaluation).toDateString() %> </strong> </p>
+            </div>
+        </div>
+
+        <div class="coachnotes">
+            <h2> Coach's Notes </h2>
+            
+            <div>
+                <span> <strong> <%= player.playerupdatedAt.toDateString() %> </strong> </span>
+                <p> "<%= player.playercoachnotes %>" </p>
+                <p class="coachname"> -<%= player.playercoach %> </p>
+            </div>
+        </div>
+
+    </article>
+
+</section>

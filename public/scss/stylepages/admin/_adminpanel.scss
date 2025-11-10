@@ -1,0 +1,6 @@
+#adminpanel {
+    @include flexrow;
+    background: var(--TRANSPARENT);
+    margin-top: $marginpanel;
+    padding: $paddingsm;
+}

@@ -1,0 +1,39 @@
+<section id="player">
+
+    <span> <a href="/team#teamroster"> <button class="link"> &larr; Back </button> </a> </span>
+
+    <article class="player">
+
+        <div class="playerdetails">
+            <div class="details">
+                <h1> <%= player.playername %> </h1>
+                <!-- <p> Elite Training Program </p> -->
+            </div>
+
+            <div class="details ahp">
+                <span> <strong> <%= new Date(player.playerdateofbirth).toDateString() %> </strong> <br /> Date of Birth </span>
+                <span> <strong> <%= player.playerfeet %>'<%= player.playerinches %>" </strong> <br /> Height </span>
+                <span> <strong> <%= player.playerposition %> </strong> <br /> Position </span>
+            </div>
+
+            <hr />
+
+            <div>
+                <p> <strong> <!--Joined --> Signed: </strong> <%= new Date(player.playerdatesigned).toDateString() %> </p> <br />
+                <p> <strong> Last Evaluation: </strong> <%= new Date(player.playerlastevaluation).toDateString() %> </p>
+            </div>
+        </div>
+
+        <div class="coachnotes">
+            <h2> Coach's Notes </h2>
+            
+            <div>
+                <span> <strong> <%= player.playerupdatedAt.toDateString() %> </strong> </span>
+                <p> "<%= player.playercoachnotes %>" </p>
+                <p class="coachname"> -<%= player.playercoach %> </p>
+            </div>
+        </div>
+
+    </article>
+
+</section>

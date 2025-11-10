@@ -1,0 +1,52 @@
+#teampost {
+    @include center;
+    color: var(--BRANDIII);
+    margin-bottom: $marginxxl;
+
+    h2 { font-size: $font-sizelg; color: var(--TEXTII); }
+
+    article {
+        display: grid;
+        place-content: center start;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 2rem;
+        width: 100%;
+        padding: $paddingsm;
+        
+        .teampost {
+            @include card;
+            background: var(--BRANDII);
+            text-align: left;
+            width: inherit;
+            
+            .teampostphoto {
+                width: inherit;
+
+                img { width: 100%; height: 21rem !important; border-radius: $border-radiussm $border-radiussm 0 0; }
+                a { color: var(--BRANDIII); }
+                a:hover { text-decoration: underline; }
+
+            }
+
+        }
+
+    }
+
+    .teampostlink {
+        text-align: center;
+
+        .link { border: $border-brand; }
+
+    }
+
+}
+
+//! Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+    #teampost article { grid-template-columns: repeat(2, 1fr); }
+}
+
+//! Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+    #teampost article { grid-template-columns: repeat(3, 1fr); }
+}

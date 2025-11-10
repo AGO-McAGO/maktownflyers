@@ -1,0 +1,67 @@
+// padding
+$padding: 0.2rem;
+$paddingxsi: 0.4rem;
+$paddingxsii: 0.7rem;
+$paddingsm: 1rem;
+$paddinglg: 1.5rem;
+$paddingxl: 4rem;
+$paddingxxl: 10rem;
+
+
+// margin
+$marginxsi: 0.5rem;
+$marginxsii: 0.7rem;
+$marginsm: 1rem;
+$marginlg: 1.5rem;
+$marginxl: 2rem;
+$marginxxl: 4.5rem;
+$marginxxll: 5rem;
+
+$marginpanel: 4rem;
+$marginmain: 7rem;
+
+
+// border
+$border-zero: 0rem;
+$border-widthxsi: 0.01rem;
+$border-widthxsii: 0.2rem;
+
+$border-radiusxsi: 0.1rem;
+$border-radiusxsii: 0.25rem;
+$border-radiussm: 0.5rem;
+$border-radiuslg: 1rem;
+$border-radiusxl: 2rem;
+$border-circle: 50%;
+
+$border-brand: 0.05rem groove var(--BRANDIV); 
+
+
+// fonts
+$font-familyi: "Gupter";
+$font-familyii: "Rubik Wet Paint";
+$font-familyiii: "Shojumaru";
+$font-familyiv: garamond;
+$font-familyv: "century expanded";
+$font-familyvi: "Tilt Prism";
+
+$font-sizexsi: 0.8rem;
+$font-sizexsii: 1.2rem;
+$font-sizesm: 1.7rem;
+$font-sizelg: 2.5rem;
+$font-sizexl: 4rem;
+$font-sizexxl: 7rem;
+
+
+// shadow
+$box-shadow: 0.0625rem 0.1875rem 0.3125rem rgba(0,0,0,0.1);
+$box-shadowi: 1rem 0.1rem 1.5rem var(--BRANDIII);
+// $box-shadowii: inset 0 0 10px rgba(0, 0, 0, 0.3);
+// $box-shadowiii: 2px 2px 5px red, -2px -2px 5px blue;
+
+$textshadowi: 0.07rem 0.1rem 0.1rem var(--BLACK);
+$textshadowii: 0.07rem 0.1rem 0.1rem var(--WHITE);
+
+
+// backgrounds
+$backgrounddarken: #00000070;
+$backgrounddarker: #000000e7;

@@ -1,0 +1,22 @@
+<section id="oneteampost">
+
+    <span> <a href="/#teampost"> <button class="link"> &larr; Back </button> </a> </span>
+    <span> <a href="/media#teampost"> <button class="link"> Read More News! </button> </a> </span>
+
+    <article>
+        
+        <h1> <%= teampost.teampostheading %> </h1>
+        
+        <div class="teampost">
+            
+            <div class="teampostphoto">
+                <figure> <img src="/images/uploads/teamposts/<%= teampost.teampostphoto %>" alt="<%= teampost.teampostheading %>" width="225" height="200" /> </figure>
+            </div>
+          
+            <div class="teampostbody"> <%= teampost.teampostbody %> </div>
+        
+        </div>
+    
+    </article>
+        
+</section>

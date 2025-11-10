@@ -1,0 +1,42 @@
+<section class="adminpages">
+  
+  <span> <a href="/dashboard"> <button class="link"> &larr; Back To Dashboard </button> </a> </span>
+  <span> <a href="/addteampost"> <button class="link"> Publish Post </button> </a> </span>
+
+  <section class="pages">
+    
+    <% if(teamposts != "") { %>
+      <% teamposts.forEach(function(teampost, index) { %>
+      
+        <article>
+          
+          <div class="post">
+
+            <h2> <%= teampost.teampostheading %> </h2>
+            
+            <div class="filebody">
+              <figure>
+                <div> <img src="images/uploads/teamposts/<%= teampost.teampostphoto %>" alt="<%= teampost.teampostheading %>" width="225" height="200" /> </div>
+              </figure>
+              <div class="body"> <%= teampost.teampostbody %>. </div>
+            </div>
+          
+          </div>
+
+          <div class="actionsbtn">
+            <form class="dl" action="/deleteteampost/<%= teampost._id %>?_method=DELETE" method="POST">
+              <div class="tooltip"> <input type="submit" value="Delete" class="deletebtn" /> <span class="warning"> This Action Is Irreversible! </span> </div>
+            </form>
+            <a href="/updateteampost/<%= teampost._id %>"> <button class="updatebtn"> Update </button> </a>
+          </div>
+
+        </article>
+
+      <% } ) %>
+      <% } else { %>
+        <p> No posts found. </p>
+    <% } %>
+
+  </section>
+
+</section>

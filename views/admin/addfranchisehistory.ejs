@@ -1,0 +1,55 @@
+<section class="adminforms">
+
+  <a href="/dashboard"> <button class="link"> &larr; Back To Dashboard </button> </a>
+  <a href="/teamposts"> <button class="link"> View All Posts </button> </a>
+  
+  <div class="formdiv">
+
+    <h2> Upload (With Photo) </h2>
+
+    <form action="/franchisehistory" enctype="multipart/form-data" method="POST">
+
+      <article>
+        
+        <div>
+          <label for="franchisehistorytextone"> <b> Paragraph One </b> </label>
+          <textarea name="franchisehistorytextone" id="franchisehistorytextone" placeholder="Write message here" required></textarea>
+        </div>
+        
+        <div>
+          <label for="franchisehistorytexttwo"> <b> Paragraph Two </b> </label>
+          <textarea name="franchisehistorytexttwo" id="franchisehistorytexttwo" placeholder="Write message here"></textarea>
+        </div>
+        
+        <div>
+          <label for="franchisehistorytextthree"> <b> Paragraph Three </b> </label>
+          <textarea name="franchisehistorytextthree" id="franchisehistorytextthree" placeholder="Write message here"></textarea>
+        </div>
+        
+        <div>
+          <label for="franchisehistorytextfour"> <b> Paragraph Four </b> </label>
+          <textarea name="franchisehistorytextfour" id="franchisehistorytextfour" placeholder="Write message here"></textarea>
+        </div>
+
+        <div>
+          <label for="aboutname"> <b> About Name </b> </label> <br />
+          <input type="text" name="aboutname" id="aboutname" placeholder="About Name ...." required />
+        </div>
+
+        <div>
+          <label for="aboutqualifications"> <b> About Qualifications </b> </label> <br />
+          <input type="text" name="aboutqualifications" id="aboutqualifications" placeholder="About qualifications ...." required />
+        </div>
+
+        <div>
+          <label for="aboutphoto"> <b> Choose Photo </b> </label>
+          <input type="file" name="aboutphoto" id="aboutphoto" accept="image/*" required />
+        </div>
+      </article>
+
+      <div> <input type="submit" value="Publish" class="adminformbtn" /> </div>
+
+    </form>
+  </div>
+
+</section>

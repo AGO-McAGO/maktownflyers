@@ -1,0 +1,33 @@
+<section class="adminforms">
+
+  <span> <a href="/dashboard"> <button class="link"> &larr; Back To Dashboard </button> </a> </span>
+  <span> <a href="/teamvideos"> <button class="link"> View All Videos </button> </a> </span>
+
+  <div class="formdiv">
+
+    <h1> Post A Video </h1>
+
+    <form action="/addteamvideo" enctype="multipart/form-data" method="POST">
+
+      <section class="nosplit">
+        <article>
+          <div>
+            <label for="teamvideotitle"> <b> Video Title </b> </label>
+            <input type="text" name="teamvideotitle" id="teamvideotitle" placeholder="Video Title ...." required />
+          </div>
+        
+          <div>
+            <label for="teamvideo"> <b> Choose Video </b> </label>
+            <input type="file" name="teamvideo" id="teamvideo" accept="video/*" required />
+            <small> <b> Mp4 </b>, <b> OGG </b> and <b> WebM </b> formats. </small>
+          </div>
+        </article>
+      </section>
+
+      <div> <input type="submit" value="Publish Video" class="adminformbtn" /> </div>
+
+    </form>
+    
+  </div>
+
+</section>

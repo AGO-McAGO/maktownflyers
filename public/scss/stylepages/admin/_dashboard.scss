@@ -1,0 +1,58 @@
+#dashboard {
+    @include center;
+    @include flexcolumn;
+    @include card;
+    background: var(--BRANDII);
+    color: var(--TEXTII);
+    padding: $paddingsm;
+    
+    .link { border: $border-brand; display: inline; }
+    
+    .adminaddbtn, .adminviewbtn {
+        @include flexrow;
+        flex-wrap: wrap;
+        align-content: space-between;
+        gap: 2rem;
+    }
+
+    hr { margin: 2rem 0rem; }
+
+    .table {
+        overflow-x: auto;
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+            width: 100%;
+            margin-bottom: $marginxxl;
+            padding-bottom: $paddinglg;
+
+            caption { font-size: $font-sizexl; color: var(--BRANDIII); text-align: left; }
+
+            thead { background: var(--BRANDV); color: var(--BRANDII); }
+
+            th { border-left: 0.1rem groove var(--BRANDII); }
+            th, td { padding: $paddingxsi; text-align: left; }
+
+            td img { border-radius: $border-radiussm; height: 8rem; }
+
+            tr:nth-child(even){background-color: var(--TEXTI); }
+
+            .position { width: 20rem; }
+            .actions { width: 20rem; }
+            .actionsbtn {
+                @include flexrow;
+                gap: 4rem;
+                width: 20rem;
+
+                .updatebtn { @include adminloginbtn; font-size: $font-sizexsi; padding: $paddingxsi $paddingxsii; }
+                .updatebtn:hover { @include adminloginbtnhover; }
+                .deletebtn { @include deletebtn; font-size: $font-sizexsi; padding: $paddingxsi $paddingxsii; }
+
+            }
+
+        }
+
+    }
+
+}

@@ -1,0 +1,52 @@
+@mixin flexrow { display: flex; align-items: center; justify-content: space-between; }
+
+@mixin flexcolumn { display: flex; flex-direction: column; }
+
+@mixin center { max-width: 90%; min-width: 90%; margin: auto; }
+@mixin centerform { max-width: 50%; min-width: 50%; margin: auto; }
+
+@mixin card { padding: $paddingxsii; box-shadow: $box-shadow; border-radius: $border-radiussm; }
+
+@mixin forminput {
+    padding: $paddingxsi;
+    font-weight: bold;
+    color: var(--BRANDI);
+    background: var(--FORM);
+    border: $border-widthxsi groove var(--BRANDIII);
+    width: 100%;
+    border-radius: $border-radiusxsii;
+    transition: ease-in 0.4s;
+}
+@mixin forminputfocus { background: var(--BRANDII); outline: none; }
+
+@mixin tooltip { position: relative; display: block; }
+
+@mixin tooltiptext {
+    background: var(--ERROR);
+    color: var(--BRANDII);
+    text-align: center;
+    font-size: $font-sizexsii;
+    font-weight: bold;
+    padding: $paddingxsii $paddingxsi;
+    border-radius: $border-radiusxsii;
+    z-index: 1;
+    left: 50%;
+    bottom: 2.5rem;
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+    transform: translateX(-50%) translateY(-4rem);
+}
+@mixin tooltiptextbefore {
+    content: "";
+    bottom: -0.2rem;
+    width: 0.7rem;
+    height: 0.7rem;
+    position: absolute;
+    background: var(--ERROR);
+    transform: rotate(45deg);
+    left: 50%;
+}
+
+@mixin tooltiphover { visibility: visible; opacity: 1; transform: translateX(-50%) translateY(0rem); }

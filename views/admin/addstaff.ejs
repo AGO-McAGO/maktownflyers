@@ -1,0 +1,43 @@
+<section class="adminforms">
+  
+  <span> <a href="/dashboard"> <button class="link"> &larr; Back To Dashboard </button> </a> </span>
+  <span> <a href="/staff"> <button class="link"> View All Staff </button> </a> </span>
+
+  <div class="formdiv">
+    <h1> Add Staff </h1>
+
+    <form action="/addstaff" enctype="multipart/form-data" method="POST">
+
+      <section class="split"> <!--! i -->
+        <article>
+          <div>
+            <label for="staffname"> <b> Staff Name </b> </label>
+            <input type="text" name="staffname" id="staffname" placeholder="Staff Name ...." required />
+          </div>
+        </article>
+        
+        <article>
+          <div>
+            <label for="staffrole"> <b> Staff Role </b> </label>
+            <input type="text" name="staffrole" id="staffrole" placeholder="Staff Role ...." required />
+            <small> E.g. Head Coach, Assistant Coach, Team Physician, Team Executive, e.t.c. </small>
+          </div>
+        </article>
+      </section> <!--! i -->
+
+      <section class="nosplit"> <!--! ii -->
+        <article>
+          <div>
+            <label for="staffphoto"> <b> Choose Staff Photo </b> </label>
+            <input type="file" name="staffphoto" id="staffphoto" accept="image/*" required />
+          </div>
+        </article>
+      </section> <!--! ii -->
+
+      <div> <input type="submit" value="Add Staff" class="adminformbtn" /> </div>
+
+    </form>
+
+  </div>
+
+</section>

@@ -1,0 +1,42 @@
+<section class="adminpages">
+  
+  <span> <a href="/dashboard"> <button class="link"> &larr; Back To Dashboard </button> </a> </span>
+  <span> <a href="addstaff"> <button class="link"> Add Staff </button> </a> </span>
+
+  <section class="pagesfile">
+    
+    <% if(staffs != "") { %>
+      <% staffs.forEach(function(staff, index) { %>
+      
+        <article>
+          
+          <div class="staff">
+
+            <div class="file">
+              <figure>
+                <div> <img src="images/uploads/staff/<%= staff.staffphoto %>" alt="<%= staff.staffname %>" width="225" height="200" /> </div>
+                <figcaption> <%= staff.staffrole %> </figcaption>
+              </figure>
+
+              <h4> <%= staff.staffname %> </h4>
+            </div>
+          
+            <div class="actionsbtn">
+              <form class="dl" action="/deletestaff/<%= staff._id %>?_method=DELETE" method="POST">
+                <div class="tooltip"> <input type="submit" value="Delete" class="deletebtn" /> <span class="warning"> This Action Is Irreversible! </span> </div>
+              </form>
+              <a href="/updatestaff/<%= staff._id %>"> <button class="updatebtn"> Update </button> </a>
+            </div>
+
+          </div>
+
+        </article>
+
+      <% } ) %>
+      <% } else { %>
+        <p>No items found.</p>
+    <% } %>
+
+  </section>
+
+</section>

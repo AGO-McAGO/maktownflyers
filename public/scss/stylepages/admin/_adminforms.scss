@@ -1,0 +1,75 @@
+.adminforms {
+    @include center;
+    @include flexcolumn;
+    gap: 2rem;
+    background: var(--BRANDII);
+    
+    .link { border: $border-brand; }
+
+    .formdiv {
+        @include card;
+        @include flexcolumn;
+        gap: 2rem;
+        padding: 0rem;
+        
+        .hsmall, h1 {
+            background: var(--BRANDIV);
+            color: var(--BRANDII);
+            border-radius: $border-radiussm $border-radiussm 0rem 0rem;
+            padding: $paddingxsi;
+        }
+
+        form {
+            @include flexcolumn;
+            padding: $paddingxsi;
+            gap: 2rem;
+            
+            .split, .nosplit {
+                @include flexcolumn;
+                gap: 2rem;
+                
+                article {
+                    @include flexcolumn;
+                    gap: 2rem;
+                    width: 100%;
+
+                    div {
+                        @include flexcolumn;
+                        gap: 0.2rem;
+
+                        label { color: var(--TEXTII); }
+                        input, textarea { @include forminput; }
+                        input:focus, textarea:focus { @include forminputfocus; }
+                        textarea { height: 10rem; resize: none; }
+                    
+                    }
+               
+                }
+        
+            }
+        
+            .adminformbtn { @include adminloginbtn; }
+            .adminformbtn:hover { @include adminloginbtnhover; }
+    
+        }
+    
+    }
+
+}
+
+//! Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+
+    .adminforms {
+        max-width: 55% !important; min-width: 55% !important;
+
+        .formdiv form .split { @include flexrow; align-items: flex-start; flex-direction: row; }
+
+    }
+
+}
+
+//! Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+    .adminforms .smallform { @include centerform; }
+}

@@ -1,0 +1,74 @@
+<section class="adminforms">
+  
+  <span> <a href="/dashboard"> <button class="link"> &larr; Back To Dashboard </button> </a> </span>
+  <span> <a href="/franchisehistory"> <button class="link"> View Franchise History </button> </a> </span>
+  
+  <div class="formdiv">
+
+    <h1> Update Franchise History </h1>
+
+    <form action="/updatefranchisehistory/<%= franchisehistory._id %>" enctype="multipart/form-data" method="POST">
+      
+      <section class="split">
+
+        <article>
+          <div>
+            <label for="franchisehistorytextone"> <b> Paragraph One </b> </label>
+            <textarea name="franchisehistorytextone" id="franchisehistorytextone" required><%= franchisehistory.franchisehistorytextone %></textarea>
+          </div>
+          
+          <div>
+            <label for="franchisehistorytexttwo"> <b> Paragraph Two </b> </label>
+            <textarea name="franchisehistorytexttwo" id="franchisehistorytexttwo"><%= franchisehistory.franchisehistorytexttwo %></textarea>
+          </div>
+          
+          <div>
+            <label for="franchisehistorytextthree"> <b> Paragraph Three </b> </label>
+            <textarea name="franchisehistorytextthree" id="franchisehistorytextthree"><%= franchisehistory.franchisehistorytextthree %></textarea>
+          </div>
+          
+          <div>
+            <label for="franchisehistorytextfour"> <b> Paragraph Four </b> </label>
+            <textarea name="franchisehistorytextfour" id="franchisehistorytextfour"><%= franchisehistory.franchisehistorytextfour %></textarea>
+          </div>
+          
+        </article>
+      
+      </section>
+
+      <section class="split">
+        <article>
+          <div>
+            <label for="aboutname"> <b> About Name </b> </label>
+            <input type="text" name="aboutname" value="<%= franchisehistory.aboutname %>" id="aboutname" required />
+          </div>
+        </article>
+
+        
+        <article>
+          <div>
+            <label for="aboutqualifications"> <b> About Qualifications </b> </label>
+            <input type="text" name="aboutqualifications" value="<%= franchisehistory.aboutqualifications %>" id="aboutqualifications" required />
+          </div>
+        </article>
+      </section>
+      
+      <section class="nosplit">
+
+
+        <article>
+          <div>
+            <label for="aboutphoto"> <b> Choose Photo </b> </label>
+            <input type="file" name="aboutphoto" id="aboutphoto" accept="image/*" />
+            <img src="/images/uploads/about/<%= franchisehistory.aboutphoto %>" alt="<%= franchisehistory.aboutname %>" width="275" height="200" />
+            <input type="hidden" name="aboutoldphoto" id="aboutoldphoto" value="<%= franchisehistory.aboutphoto %>" />
+          </div>
+        </article>
+      </section>
+
+      <div> <input type="submit" value="Update History" class="adminformbtn" /> </div>
+
+    </form>
+  </div>
+
+</section>

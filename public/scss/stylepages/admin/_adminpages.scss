@@ -1,0 +1,207 @@
+//! Admin errorpages (authentication and login feedback)
+#errorpages, #feedback {
+    @include center;
+    @include card;
+    color: var(--ERROR);
+    background: var(--BRANDII);
+    padding: $paddingxl $paddinglg;
+
+    h1 { margin-bottom: $marginxl; }
+
+    button { @include adminloginbtn; }
+    button:hover { @include adminloginbtnhover; }
+
+}
+
+.adminpages {
+    @include center;
+    @include flexcolumn;
+    gap: 2rem;
+    background: var(--BRANDII);
+    color: var(--TEXTIV);
+
+    .link { border: $border-brand; }
+
+    .pages {
+        @include flexrow;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        gap: 5rem;
+        background: var(--WHITE);
+
+        article {
+            @include card;
+            @include flexcolumn;
+            gap: 2.5rem;
+            width: 100%;
+            
+            .post {
+                @include flexcolumn;
+                gap: 0.5rem;
+
+                h2 { color : var(--BRANDIV); }
+
+                .filebody {
+                    @include flexcolumn;
+                    gap: 1rem;
+                    width: inherit;
+                    
+                    figure div {
+                        height: 20rem;
+                        
+                        img { border-radius: $border-radiuslg $border-radiuslg 0 0; width: 100%; height: 100%; }
+                    
+                    }
+                
+                }
+
+            }
+
+            .franchisehistory {
+                @include flexcolumn;
+                gap: 2.5rem;
+
+                .historytext { @include flexcolumn; gap: 1rem; }
+
+                .aboutimg img { border-radius: $border-radiussm $border-radiussm 0 0; width: 100%; }
+
+            }
+            
+            .actionsbtn {
+                @include flexrow;
+                
+                .tooltip {
+                    @include tooltip;
+
+                    .deletebtn { @include deletebtn; font-size: $font-sizexsi; padding: $paddingxsi $paddingxsii; }
+
+                    .warning { @include tooltiptext; }
+                    .warning::before { @include tooltiptextbefore; }
+                }
+                .tooltip:hover .warning { @include tooltiphover; }
+
+                .updatebtn { @include adminloginbtn; font-size: $font-sizexsi; padding: $paddingxsi $paddingxsii; }
+                .updatebtn:hover { @include adminloginbtnhover; }
+
+            }
+
+        }
+
+    }
+
+    .pagesfile {
+        display: grid;
+        place-content: center start;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 5rem 2rem;
+        width: 100%;
+        padding: $paddingsm;
+        color: var(--BRANDII);
+
+        article {
+            @include card;
+            @include flexcolumn;
+            justify-content: space-between;
+            gap: 2.5rem;
+            width: inherit;
+            background: $backgrounddarker;
+
+            .video {
+                @include flexcolumn;
+                gap: 0.5rem;
+                font-weight: bold;
+                border-radius: $border-radiussm $border-radiussm 0rem 0rem;
+
+                video { aspect-ratio: 16 / 9; width: 100%; border-radius: $border-radiussm $border-radiussm 0rem 0rem; }
+
+            }
+
+            .staff {
+                @include flexcolumn;
+                gap: 2.5rem;
+                width: 100%;
+                
+                .file {
+                    @include flexcolumn;
+                    gap: 0.5rem;
+                    
+                    figure {
+                        color: var(--BRANDIV);
+                        
+                        div {
+                            height: 15rem;
+                            
+                            img { border-radius: $border-radiuslg $border-radiuslg 0 0; width: 100%; height: 100%; }
+
+                        }
+                    
+                    }
+                
+                }
+            
+            }
+            
+            .actionsbtn {
+                @include flexrow;
+                
+                .tooltip {
+                    @include tooltip;
+
+                    .deletebtn { @include deletebtn; font-size: $font-sizexsi; padding: $paddingxsi $paddingxsii; }
+
+                    .warning { @include tooltiptext; }
+                    .warning::before { @include tooltiptextbefore; }
+                }
+                .tooltip:hover .warning { @include tooltiphover; }
+
+                .updatebtn { @include adminloginbtn; font-size: $font-sizexsi; padding: $paddingxsi $paddingxsii; }
+                .updatebtn:hover { @include adminloginbtnhover; }
+
+            }
+
+        }
+
+    }
+
+}
+
+//! Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+    
+    .adminpages .pages article {
+        
+        .post .filebody {
+            @include flexrow;
+            flex-direction: row;
+            align-items: flex-start;
+
+            figure div {
+                width: 25rem;
+                
+                img { border-radius: $border-radiuslg 0 0 $border-radiuslg; }
+
+            }
+            
+            .body {  width: 55%; }
+
+        }
+        
+        .franchisehistory {
+            @include flexrow;
+            flex-direction: row;
+            align-items: flex-start;
+        
+            .historytext { width: 70%; }
+    
+        }
+    
+    }
+
+    .adminpages .pagesfile { grid-template-columns: repeat(2, 1fr); }
+
+}
+
+//! Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+    .adminpages .pagesfile { grid-template-columns: repeat(4, 1fr); }
+}

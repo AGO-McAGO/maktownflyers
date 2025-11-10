@@ -1,0 +1,40 @@
+#hero {
+    margin-top: -$marginmain; 
+    color: var(--BRANDII);
+    margin-bottom: $marginxxl;
+
+    article {
+        background: rgba(0, 0, 0, 0.5);
+        @include flexcolumn;
+        justify-content: center;
+        align-items: center;
+        gap: 5rem;
+        position: relative;
+        overflow: hidden;
+        min-height: 100vh;
+
+        h1, p, small { padding: $paddingxsii; }
+
+        h1 { font: $font-sizesm $font-familyii; letter-spacing: 0.5rem; }
+
+        p { text-transform: capitalize; }
+
+        video {
+            z-index: -1;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            min-width: 100%;
+            min-height: 100%;
+        }
+
+    }
+
+}
+
+//! Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  #hero article h1 { font-size: $font-sizelg !important; }
+  #hero article p { font-size: $font-sizesm !important; }
+}

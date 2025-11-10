@@ -1,0 +1,48 @@
+<section class="adminforms">
+  
+  <div class="formdiv smallform">
+    
+    <h1> Admin Login </h1>
+    
+    <form action="/adminlogin" method="POST">
+
+      <section class="nosplit">
+
+        <article>
+          <div>
+            <label for="adminname"> <b> Name </b> </label>
+            <input type="text" name="adminname" id="adminname" placeholder="Enter Admin Name" required />
+          </div>
+        
+          <div>
+            <label for="adminpassword"> <b> Password </b> </label>
+            <input type="password" name="adminpassword" id="adminpassword" placeholder="Enter Admin Password" required />
+          </div>
+        </article>
+      </section>
+      
+      <div> <input type="submit" value="Login" class="adminformbtn" /> </div>
+  
+    </form>
+
+  </div>
+  
+  <a href="/adminforgotpassword"> <button type="button" class="link"> <strong> Forgot Password? </strong> </button> </a>
+
+</section>
+
+<!-- <hr />
+
+<section>
+
+  <h2> Register </h2>
+
+  <form action="/signup" method="POST">
+    <div> <label for="adminname"> <b> Admin Name </b> </label> <input type="text" name="adminname" placeholder="Enter Admin Name"> </div>
+
+    <div> <label for="adminpassword"> <b> Admin Password </b> </label> <input type="password" name="adminpassword" placeholder="Enter Admin Password"> </div>
+
+    <div> <input type="submit" value="Admin Signup" /> </div>
+  </form>
+
+</section> -->

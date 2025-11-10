@@ -1,0 +1,42 @@
+<section class="adminpages">
+  
+  <span> <a href="/dashboard"> <button class="link"> &larr; Back To Dashboard </button> </a> </span>
+  <span> <a href="/addteamvideo"> <button class="link"> Upload Video </button> </a> </span>
+  
+  <section class="pagesfile">
+    
+    <% if(videos != "") { %>
+        <% videos.forEach( function(video, index) { %>
+        
+          <article>
+
+            <div class="video">
+              <div>
+                <video controls>
+                  <source src="videos/uploads/<%= video.teamvideo %>" type="video/mp4">
+                  <source src="videos/uploads/<%= video.teamvideo %>" type="video/webm">
+                  <source src="videos/uploads/<%= video.teamvideo %>" type="video/ogg">
+                  Sorry! Your browser does not support the video.
+                </video>
+              </div>
+            
+              <div> <%= video.teamvideotitle %> </div>
+            </div>
+          
+            <div class="actionsbtn">
+              <form class="dl" action="/deleteteamvideo/<%= video._id %>?_method=DELETE" method="POST">
+                <div class="tooltip"> <input type="submit" value="Delete" class="deletebtn" /> <span class="warning"> This Action Is Irreversible! </span> </div>
+              </form>
+              <a href="/updateteamvideo/<%= video._id %>"> <button class="updatebtn"> Update </button> </a>
+            </div>
+          
+          </article>
+      
+        <% } ) %>
+        <% } else { %>
+          <p> No Videos! </p>
+      <% } %>
+  
+    </section>
+
+</section>

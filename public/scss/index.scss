@@ -1,0 +1,39 @@
+@import "colours";
+
+@import "variables";
+@import "fonts";
+@import "lightbox";
+@import "mixins";
+
+
+//! Components
+@import "components/buttons";
+@import "components/footer";
+@import "components/header";
+@import "components/nav";
+
+@import "base";
+
+//! Pages
+// admin pages
+@import "stylepages/admin/adminforms";
+@import "stylepages/admin/adminpages";
+@import "stylepages/admin/adminpanel";
+@import "stylepages/admin/dashboard";
+// @import "stylepages/admin/teamposts";
+// @import "stylepages/admin/teamvideos";
+
+// index/homepage
+@import "stylepages/indexpage/hero";
+@import "stylepages/indexpage/photos";
+@import "stylepages/indexpage/teamposts";
+@import "stylepages/indexpage/teamvalues";
+@import "stylepages/indexpage/watch";
+
+// otherpages
+@import "stylepages/otherpages/connect";
+@import "stylepages/otherpages/donation";
+@import "stylepages/otherpages/history";
+@import "stylepages/otherpages/player";
+@import "stylepages/otherpages/team";
+@import "stylepages/otherpages/teampost";

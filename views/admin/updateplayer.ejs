@@ -1,0 +1,130 @@
+<section class="adminforms">
+
+  <span> <a href="/dashboard"> <button class="link"> &larr; Back To Dashboard </button> </a> </span>
+
+  <div class="formdiv">
+    <h1> Player Update </h1>
+
+    <form action="/updateplayer/<%= player._id %>" enctype="multipart/form-data" method="POST">
+
+      <section class="split"> <!--! i -->
+
+        <article> <!-- parti -->
+          <div>
+            <label for="playername"> <b> Full Name </b> </label>
+            <input type="text" name="playername" id="playername" value="<%= player.playername %>" required />
+          </div>
+
+          <div>
+            <label for="playerphonenumber"> <b> Player Phone Number </b> </label>
+            <input type="number" name="playerphonenumber" id="playerphonenumber" value="<%= player.playerphonenumber %>" min="10" required />
+          </div>
+
+          <div>
+            <label for="playeremail"> <b> Player Email </b> </label>
+            <input type="email" name="playeremail" id="playeremail" value="<%= player.playeremail %>" required />
+          </div>
+
+          <div>
+            <label for="playerposition"> <b> Player Position </b> </label>
+            <input type="text" name="playerposition" id="playerposition" value="<%= player.playerposition %>" required />
+          </div>
+
+          <div>
+            <label for="playernumber"> <b> Player Jersey Number </b> </label>
+            <input type="number" name="playernumber" id="playernumber" value="<%= player.playernumber %>" required />
+          </div>
+
+          <div>
+            <label for="playerjerseysize"> <b> Player Jersey Size </b> </label>
+            <input type="number" name="playerjerseysize" id="playerjerseysize" value="<%= player.playerjerseysize %>" required />
+          </div>
+
+          <div>
+            <label for="playertracksuitsize"> <b> Player Tracksuit Size </b> </label>
+            <input type="number" name="playertracksuitsize" id="playertracksuitsize" value="<%= player.playertracksuitsize %>" required />
+          </div>
+
+          <div>
+            <label for="playershoesize"> <b> Player Shoe Size </b> </label>
+            <input type="number" name="playershoesize" id="playershoesize" value="<%= player.playershoesize %>" required />
+          </div>
+
+          <div>
+            <label for="playerdateofbirth"> <b> Player Date of Birth </b> </label>
+            <input type="date" name="playerdateofbirth" id="playerdateofbirth" value="<%= player.playerdateofbirth %>" required />
+          </div>
+        </article> <!-- parti -->
+
+        <article> <!-- partii -->
+          <div>
+            <label for="playerexperience"> <b> Player Experience </b> </label>
+            <input type="number" name="playerexperience" id="playerexperience" value="<%= player.playerexperience %>" required />
+          </div>
+
+          <div>
+            <label for="playerdatesigned"> <b> Player Date Signed </b> </label>
+            <input type="date" name="playerdatesigned" id="playerdatesigned" value="<%= player.playerdatesigned %>" min="2020-01-01" required />
+          </div>
+
+          <div>
+            <label for="playerlastevaluation"> <b> Player Last Evaluation </b> </label>
+            <input type="date" name="playerlastevaluation" id="playerlastevaluation" value="<%= player.playerlastevaluation %>" min="2020-01-01" required />
+          </div>
+
+          <div>
+            <label for="playerfeet"> <b> Player Height (Feet Only) </b> </label>
+            <input type="number" name="playerfeet" id="playerfeet" value="<%= player.playerfeet %>" required />
+          </div>
+
+          <div>
+            <label for="playerinches"> <b> Player Height (Inches On Player's Feet) </b> </label>
+            <input type="number" name="playerinches" id="playerinches" value="<%= player.playerinches %>" required />
+          </div>
+
+          <div>
+            <label for="playerweight"> <b> Player Weight (Kg) </b> </label>
+            <input type="number" name="playerweight" id="playerweight" value="<%= player.playerweight %>" required />
+          </div>
+
+          <div>
+            <label for="playerwingspan"> <b> Player Wingspan (cm) </b> </label>
+            <input type="number" name="playerwingspan" id="playerwingspan" value="<%= player.playerwingspan %>" required />
+          </div>
+
+          <div>
+            <label for="playerstandingreach"> <b> Player Standing Reach (cm) </b> </label>
+            <input type="number" name="playerstandingreach" id="playerstandingreach" value="<%= player.playerstandingreach %>" required />
+          </div>
+
+          <div>
+            <label for="playercoach"> <b> Player Coach </b> </label>
+            <input type="text" name="playercoach" id="playercoach" value="<%= player.playercoach %>" required />
+          </div>
+        </article> <!-- partii -->
+
+      </section> <!--! i -->
+
+      <section class="nosplit"> <!--! ii -->
+        <article>
+          <div>
+          <label for="playercoachnotes"> <b> Coach's Notes On Player </b> </label>
+          <textarea name="playercoachnotes" id="playercoachnotes"><%= player.playercoachnotes %></textarea>
+        </div>
+
+        <div>
+          <label for="playerphoto"> <b> Choose Player Photo </b> </label>
+          <input type="file" name="playerphoto" id="playerphoto" accept="image/*" />
+          <img src="/images/uploads/players/<%= player.playerphoto %>" alt="<%= player.playername %>" width="275" height="200" />
+          <input type="hidden" name="playeroldphoto" id="playeroldphoto" value="<%= player.playerphoto %>" />
+        </div>
+        </article>
+      </section> <!--! ii -->
+
+      <div> <input type="submit" value="Update Player" class="adminformbtn" /> </div>
+
+    </form>
+
+  </div>
+
+</section>

@@ -1,0 +1,115 @@
+.teamrosterhead { text-align: center; font-size: $font-sizelg; margin-top: 7rem; }
+
+
+#teamroster {
+    @include card;
+    @include center;
+    @include flexrow;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2.5rem;
+    padding: $paddingxl $paddinglg;
+    color: var(--TEXTII);
+    margin-bottom: $marginxl;
+    background: var(--WHITE);
+
+    article {
+        @include card;
+        @include flexrow;
+        align-items: flex-start;
+        padding: 0;
+        border-radius: $border-radiuslg;
+        height: 20rem;
+
+        .playerimg{
+
+            img { border-radius: $border-radiuslg 0 0 0; height: 15rem; }
+
+            figcaption {
+                color: var(--BRANDI);
+                margin-left: 1rem;
+
+                .link { border: $border-brand; margin: $marginxsii 0rem; }
+
+            }
+
+        }
+
+        .playerinfo {
+            @include flexcolumn;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 0 $border-radiuslg $border-radiuslg 0;
+            height: inherit;
+            background-color: var(--BRANDIV);
+            color: var(--BRANDII);
+            text-align: center;
+
+            .dv {
+                padding: $paddingxsi;
+
+                span { font-weight: bold; }
+            }
+
+            .number {
+                padding: $paddinglg;
+                background-color: var(--BRANDI);
+                color: var(--BRANDII);
+                font-weight: bold;
+                border-radius: 0 $border-radiuslg 0 0;
+                width: 100%;
+            }
+
+        }
+
+    }
+
+}
+
+#teamstaff {
+    @include center;
+    margin-top: $marginxxl;
+    margin-bottom: $marginxxl;
+
+    h2 { color: var(--BRANDII); background-color: var(--BRANDI); padding: $paddingsm; }
+
+    section{
+        @include flexrow;
+        align-items: flex-start;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 2.5rem;
+        padding: $paddingxl $paddinglg;
+        color: var(--TEXTII);
+        margin-bottom: $marginxl;
+        background: var(--WHITE);
+
+        article {
+            @include card;
+            background: var(--BRANDI);
+            padding: 0;
+            border-radius: $border-radiuslg;
+            height: 20rem;
+        
+            .staffimg{
+                color: var(--BRANDII);
+
+                img { border-radius: $border-radiuslg $border-radiuslg 0 0 ; height: 15rem; }
+
+                figcaption {
+                    margin-left: $marginxsi;
+
+                    h4 { color: var(--BRANDIV); margin-bottom: $marginsm; }
+
+                    small{ padding: $paddingxsi; border: 0.01rem solid var(--BRANDIV); }
+
+                }
+
+            }
+
+        }
+
+    }
+
+}

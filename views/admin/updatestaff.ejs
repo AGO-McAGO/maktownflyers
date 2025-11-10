@@ -1,0 +1,45 @@
+<section class="adminforms">
+
+  <span> <a href="/dashboard"> <button class="link"> &larr; Back To Dashboard </button> </a> </span>
+  <span> <a href="/staff"> <button class="link"> View All Staff </button> </a> </span>
+
+  <div class="formdiv">
+    <h1> Update Staff </h1>
+
+    <form action="/updatestaff/<%= staff._id %>" enctype="multipart/form-data" method="POST">
+
+      <section class="split"> <!--! i -->
+        <article>
+          <div>
+            <label for="staffname"> <b> Staff Name </b> </label>
+            <input type="text" name="staffname" id="staffname" value="<%= staff.staffname %>" required />
+          </div>
+        </article>
+        
+        <article>
+          <div>
+            <label for="staffrole"> <b> Staff Role </b> </label>
+            <input type="text" name="staffrole" id="staffrole" value="<%= staff.staffrole %>" required />
+            <small> E.g. Head Coach, Assistant Coach, Team Physician, Team Executive, e.t.c. </small>
+          </div>
+        </article>
+      </section> <!--! i -->
+
+      <section class="nosplit"> <!--! ii -->
+        <article>
+          <div>
+            <label for="staffphoto"> <b> Choose Staff Photo </b> </label>
+            <input type="file" name="staffphoto" id="staffphoto" accept="image/*" />
+            <img src="/images/uploads/staff/<%= staff.staffphoto %>" alt="<%= staff.staffname %>" width="275" height="200" />
+            <input type="hidden" name="staffoldphoto" id="staffoldphoto" value="<%= staff.staffphoto %>" />
+          </div>
+        </article>
+      </section> <!--! ii -->
+
+      <div> <input type="submit" value="Update Staff" class="adminformbtn" /> </div>
+
+    </form>
+
+  </div>
+
+</section>

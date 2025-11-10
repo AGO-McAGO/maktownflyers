@@ -1,0 +1,90 @@
+#connect {
+    @include center;
+    @include card;
+    @include flexcolumn;
+    gap: 4rem;
+    color: var(--BRANDII);
+    background: var(--BRANDI);
+    padding: $paddingsm $paddinglg;
+    margin-bottom: $marginxl;
+
+    h3 { font-size: $font-sizelg; }
+
+    form {
+        @include card;
+        @include flexcolumn;
+        gap: 5rem;
+
+        article {
+          @include flexcolumn;
+          gap: 7rem;
+
+          .input {
+            background: transparent;
+            border-color: transparent;
+            color: var(--BRANDII);
+            border-bottom: $border-widthxsii groove var(--BRANDII);
+            border-radius: $border-zero;
+            width: 100%;
+            padding-bottom: $paddingsm;
+            font-size: $font-sizexsii;
+            transition: all .8s;
+          }
+
+          textarea { resize: none; }
+
+          .input:focus {
+            outline: none;
+            background: transparent;
+            border-color: transparent;
+            box-shadow: none;
+            color: var(--BRANDII);
+            border-bottom: $border-widthxsii groove var(--BRANDIII);
+          }
+
+          .label { // for label animation on typing
+            color: var(--BRANDIII);
+            display: block;
+            margin-top: -$marginxxl;
+            margin-left: 0rem;
+            font-size: $font-sizexsii;
+            transition: all .8s;
+          }
+          .textarealabel { margin-top: -6rem; }
+
+          // for label to be hidden. the plus (+) selects the next immediate sibling
+          .input:placeholder-shown + .label { transform: translate(1.25rem, 1.25rem); opacity: 0; visibility: hidden; }
+
+        }
+
+        .send {
+          margin: $marginsm 0rem;
+
+          .sendbtn {
+            @include buttons;
+            padding: $paddingxsi $paddinglg;
+            background: var(--BRANDIV);
+            color: var(--BRANDII);
+            font-size: $font-sizexsii;
+          }
+
+          input:hover { @include buttonsbodyhover; background: var(--BRANDIII); }
+
+        }
+
+      }
+
+}
+
+//! Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+
+  #connect {
+    flex-direction: row !important;
+    justify-content: space-between !important;
+
+    form { width: 60%; }
+
+  }
+
+}

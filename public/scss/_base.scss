@@ -1,0 +1,35 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; scroll-padding: 7rem; }
+
+body {
+  min-height: 100vh;
+  font-family: $font-familyi;
+  font-size: $font-sizexsii;
+  background: var(--BRANDII);
+  color: var(--BRANDI);
+}
+
+ul { padding: 0; list-style-type: none; }
+li { list-style-type: none; }
+
+a { text-decoration: none; }
+
+img { max-width: 100%; height: auto; }
+
+main { margin-top: $marginmain; min-height: 65vh; }
+
+//! for all buttons and links
+.link { @include buttons; color: var(--BRANDIII); z-index: 1; }
+button:hover { @include buttonsbodyhover; }
+button:after { @include buttonsbodyafter; z-index: -1; }
+button:hover:after { @include buttonsbodyhoverafter; background: var(--BRANDIII); }
+
+#donatebtn { background: var(--NAIRAI); color: var(--BRANDII); margin-top: $marginxsii; }
+
+header .links .link, nav .links .link {
+  @include buttons;
+  background: var(--BRANDI);
+  color: var(--BRANDII);
+  padding: $padding $paddingxsi;
+}

@@ -1,0 +1,47 @@
+#oneteampost {
+    @include center;
+    @include card;
+    color: var(--TEXTII);
+    margin-bottom: $marginxl;
+    background: var(--BRANDII);
+
+    .link { border: $border-brand; margin-bottom: $marginlg; }
+
+    h1 { font-size: $font-sizexl; color: var(--BRANDIII); }
+
+    article {
+        border: 0.2rem groove var(--BRANDIV);
+        @include card;
+
+        .teampost {
+            @include flexcolumn;
+            gap: 1rem;
+
+            .teampostphoto {
+                width: inherit !important;
+
+                img { width: 100%; }
+
+            }
+
+            .teampostbody { color: var(--BRANDI); }
+
+        }
+
+    }
+
+}
+
+//! Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+    #oneteampost article .teampost {
+        @include flexrow;
+        flex-direction: row;
+        align-items: flex-start;
+        
+        .teampostphoto { width: 40% !important; }
+        .teampostbody {  width: 55% !important; }
+
+    }
+
+}

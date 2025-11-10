@@ -1,0 +1,63 @@
+<section id="dashboard">
+
+  <section class="adminaddbtn">
+    <a href="addplayer"> <button class="link"> Add Player </button> </a>
+    <a href="addstaff"> <button class="link"> Add Staff </button> </a>
+    <a href="addteampost"> <button class="link"> Publish Post </button> </a>
+    <a href="addteamvideo"> <button class="link"> Upload Video </button> </a>
+  </section>
+
+  <hr />
+  
+  <section class="adminviewbtn">
+    <a href="teamposts"> <button class="link"> All Posts </button> </a>
+    <a href="teamvideos"> <button class="link"> All Videos </button> </a>
+    <a href="staff"> <button class="link"> Team Staff </button> </a>
+    <a href="franchisehistory"> <button class="link"> Franchise History </button> </a>
+  </section>
+  
+  <section>
+    <div class="table">
+
+      <table>
+
+        <caption> Team Roster </caption>
+
+        <thead>
+          <tr>
+            <th> Name </th>
+            <th class="position"> Position </th>
+            <th class="actions"> Actions </th>
+          </tr>
+        </thead>
+
+        <tbody>
+
+          <%
+            if(players != "") { %>
+              <% players.forEach(function(player, index) { %>
+                <tr>
+                  <td> <%- player.playername %> </td>
+                  <td class="position"> <%- player.playerposition %> </td>
+                  <td class="actionsbtn">
+
+                    <a href="/playerview/<%= player._id %>"> <button class="link"> View </button> </a>
+                    <a href="/updateplayer/<%= player._id %>"> <button class="updatebtn"> Update </button> </a>
+                    <form class="dl" action="/deleteplayer/<%= player._id %>?_method=DELETE" method="POST"> <input type="submit" value="Delete" class="deletebtn" /> </form>
+
+                  </td>
+                </tr>
+                <% }) %>
+              <% } else { %>
+              <p class="noplayers"> No players found! </p>
+            <% }
+          %>
+
+        </tbody>
+
+      </table>
+
+    </div>
+  </section>
+
+</section>

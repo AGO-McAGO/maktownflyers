@@ -1,0 +1,41 @@
+<section class="adminforms">
+
+  <span> <a href="/dashboard"> <button class="link"> &larr; Back To Dashboard </button> </a> </span>
+  <span> <a href="/teamvideos"> <button class="link"> View All Videos </button> </a> </span>
+  <span> <a href="/addteamvideo"> <button class="link"> Upload Video </button> </a> </span>
+
+  <div class="formdiv">
+
+    <h1> Update Video </h1>
+
+    <form action="/updateteamvideo/<%= video._id %>" enctype="multipart/form-data" method="POST">
+
+      <section class="nosplit">
+        <article>
+          <div>
+            <label for="teamvideotitle"> <b> Video Title </b> </label>
+            <input type="text" name="teamvideotitle" id="teamvideotitle" value="<%= video.teamvideotitle %>" required />
+          </div>
+        
+          <div>
+            <label for="teamvideo"> <b> Choose Video </b> </label>
+            <input type="file" name="teamvideo" id="teamvideo" accept="video/*" />
+            <small> <b> Mp4 </b>, <b> OGG </b> and <b> WebM </b> formats. </small>
+          
+            <video controls width="275" height="200">
+              <source src="videos/uploads/<%= video.teamvideo %>" type="video/mp4">
+              <source src="videos/uploads/<%= video.teamvideo %>" type="video/webm">
+              <source src="videos/uploads/<%= video.teamvideo %>" type="video/ogg">
+              Sorry! Your browser does not support the video.
+            </video>
+            <input type="hidden" name="teamoldvideo" id="teamoldvideo" value="<%= video.teamvideo %>" />
+          </div>
+        </article>
+      </section>
+
+      <div> <input type="submit" value="Update Video" class="adminformbtn" /> </div>
+
+    </form>
+  </div>
+
+</section>

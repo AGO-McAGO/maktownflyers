@@ -1,0 +1,40 @@
+<section class="adminpages">
+  
+  <span> <a href="/dashboard"> <button class="link"> &larr; Back To Dashboard </button> </a> </span>
+
+  <section class="pages">
+    
+    <% if(franchisehistory != "") { %>
+      <% franchisehistory.forEach( function(history, index) { %>
+        
+        <article>
+          <span> <a href="/updatefranchisehistory/<%= history._id %>"> <button class="link"> Update Franchise History </button> </a> </span>
+          
+          <div class="franchisehistory">
+            
+            <div class="historytext">
+              <div class="history"> <p> <%= history.franchisehistorytextone %> </p> </div>
+              <div class="history"> <p> <%= history.franchisehistorytexttwo %> </p> </div>
+              <div class="history"> <p> <%= history.franchisehistorytextthree %> </p> </div>
+              <div class="history"> <p> <%= history.franchisehistorytextfour %> </p> </div>
+            </div>
+          
+            <div class="aboutimg">
+              <figure>
+                <img src="images/uploads/about/<%= history.aboutphoto %>" alt="<%= history.aboutname %>" width="225" height="200" />
+                <figcaption> <h2> <%= history.aboutname %> </h2> <%= history.aboutqualifications %> </figcaption>
+              </figure>
+            </div>
+        
+          </div>
+
+        </article>
+
+      <% } ) %>
+      <% } else { %>
+        <p> No History Yet! </p>
+    <% } %>
+
+  </section>
+
+</section>

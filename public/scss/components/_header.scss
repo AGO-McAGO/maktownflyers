@@ -1,0 +1,71 @@
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: var(--BRANDI);
+  z-index: 3;
+
+  .headeritems {
+    @include flexrow;
+    @include center;
+  
+    #maktowncrest {
+      @include flexrow;
+      justify-content: center;
+    
+      img { border-radius: $border-radiusxsi; width: 7rem; height: 4rem; }
+    
+      .crestname { color: var(--BRANDII); font-weight: bold; }
+    }
+
+    // navigation links inside the header
+    .links { display: none; }
+
+    // burger button
+    .navbutton {
+      @include flexcolumn;
+      justify-content: center;
+      align-items: center;
+      gap: 0.7rem;
+      background-color: var(--BRANDIII);
+      border-radius: $border-circle;
+      cursor: pointer;
+      height: 3.7rem;
+      width: 3.7rem;
+      transition: all 0.4s;
+      border: none;
+      outline: none;
+    }
+    .navbutton.open { background-color: var(--BRANDII); }
+  
+    // burger
+    .linei, .lineii, .lineiii {
+      width: 2.7rem;
+      height: 0.2rem;
+      transition: all 0.4s;
+      background-color: var(--BRANDII);
+    }
+  
+    // burger becomes plank
+    .navbutton.open .linei { transform: rotate(-45deg) translate(-0.7rem, 0.75rem); background-color: var(--BRANDIII); }
+    .navbutton.open .lineii { width: 0; opacity: 0; }
+    .navbutton.open .lineiii { width: 0; opacity: 0; }
+  }
+
+}
+
+//! Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  header .headeritems .navbutton { display: none; }
+  header .headeritems .links { @include flexrow; flex-wrap: wrap; width: 70%; }
+}
+
+//! Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  header .headeritems .links { width: 50%; }
+}
+
+//! Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  header .headeritems .links { width: 40%; }
+}

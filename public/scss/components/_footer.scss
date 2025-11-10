@@ -1,0 +1,62 @@
+footer {
+  background: var(--BRANDI);
+  color: var(--BRANDII);
+  padding: $paddinglg $paddingxsii;
+  margin-top: $marginxl;
+  
+  a { color: var(--BRANDII); }
+  
+  .footerdv {
+    @include center;
+    @include flexcolumn;
+    gap: 1rem;
+
+    .sectionfooter {
+      @include flexcolumn;
+      gap: 4rem;
+
+      .articlefooter {
+        @include flexcolumn;
+        gap: 1rem;
+        
+        h4 { color: var(--BRANDIV); font-size: $font-sizesm; }
+        
+        .socialmedia {
+          @include flexrow;
+          justify-content: flex-start;
+          gap: 2rem;
+          align-items: center;
+        
+          .youtube { color: var(--YOUTUBE); }
+          .tiktok { color: var(--TIKTOK); }
+          .xtwitter { color: var(--XTWITTER); background-color: var(--BRANDII); }
+          .instagram { color: var(--INSTAGRAM); }
+          .facebook { color: var(--FACEBOOK); }
+      
+        }
+        
+        .teamlinks a { color: var(--BRANDII); }
+        
+        .getintouch { @include flexcolumn; gap: 1rem; }
+
+        #designer { font-weight: bold; }
+
+      }
+
+    }
+
+  }
+
+}
+
+//! Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+
+  footer .footerdv .sectionfooter {
+    @include flexrow;
+    flex-direction: row;
+    align-items: flex-start;
+  
+  }
+
+}

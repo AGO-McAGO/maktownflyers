@@ -1,0 +1,1719 @@
+:root {
+  --BLACK: #000000;
+  --WHITE: #ffffff;
+  --BRANDI: var(--BLACK);
+  --BRANDII: var(--WHITE);
+  --BRANDIII: #ad0000;
+  --BRANDIV: #f00c0c;
+  --BRANDV: #3e3535;
+  --ACCENT: #e67514;
+  --DOLLAR: #70bb65;
+  --FORM: #f3f3f3;
+  --ERROR: #f00303;
+  --NAIRAI: #008b2c;
+  --NAIRAII: #1b7339;
+  --TEXTI: #d0d0d0;
+  --TEXTII: #515151;
+  --TEXTIII: #ababab;
+  --TEXTIV: #6e6b6b;
+  --TRANSPARENT: #00000070;
+  --XTWITTER: var(--BLACK);
+  --TWITTERI: #1DA1F2;
+  --TWITTERII: #55acee;
+  --FACEBOOK: #3b5998;
+  --INSTAGRAM: #e1306c;
+  --WHATSAPP: #25d366;
+  --LINKEDINI: #0077b5;
+  --LINKEDINII: #0a66c2;
+  --YOUTUBE: #ff0000;
+  --TIKTOK: #fe2c55;
+}
+
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Gupter";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/gupter-v17-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* gupter-700 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Gupter";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/gupter-v17-latin-700.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Rubik Wet Paint";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/rubik-wet-paint-v2-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Shojumaru";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/shojumaru-v15-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Tilt Prism";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/tilt-prism-v15-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+#lightbox {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+#lightbox.active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 5s;
+}
+
+#lightbox img {
+  padding: 1rem;
+  margin: 4.5rem 0rem;
+  border-radius: 2rem;
+  max-width: 100%;
+  max-height: 90%;
+}
+
+footer {
+  background: var(--BRANDI);
+  color: var(--BRANDII);
+  padding: 1.5rem 0.7rem;
+  margin-top: 2rem;
+}
+footer a {
+  color: var(--BRANDII);
+}
+footer .footerdv {
+  max-width: 90%;
+  min-width: 90%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+footer .footerdv .sectionfooter {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+footer .footerdv .sectionfooter .articlefooter {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+footer .footerdv .sectionfooter .articlefooter h4 {
+  color: var(--BRANDIV);
+  font-size: 1.7rem;
+}
+footer .footerdv .sectionfooter .articlefooter .socialmedia {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  justify-content: flex-start;
+  gap: 2rem;
+  align-items: center;
+}
+footer .footerdv .sectionfooter .articlefooter .socialmedia .youtube {
+  color: var(--YOUTUBE);
+}
+footer .footerdv .sectionfooter .articlefooter .socialmedia .tiktok {
+  color: var(--TIKTOK);
+}
+footer .footerdv .sectionfooter .articlefooter .socialmedia .xtwitter {
+  color: var(--XTWITTER);
+  background-color: var(--BRANDII);
+}
+footer .footerdv .sectionfooter .articlefooter .socialmedia .instagram {
+  color: var(--INSTAGRAM);
+}
+footer .footerdv .sectionfooter .articlefooter .socialmedia .facebook {
+  color: var(--FACEBOOK);
+}
+footer .footerdv .sectionfooter .articlefooter .teamlinks a {
+  color: var(--BRANDII);
+}
+footer .footerdv .sectionfooter .articlefooter .getintouch {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+footer .footerdv .sectionfooter .articlefooter #designer {
+  font-weight: bold;
+}
+
+@media (min-width: 768px) {
+  footer .footerdv .sectionfooter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: var(--BRANDI);
+  z-index: 3;
+}
+header .headeritems {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 90%;
+  min-width: 90%;
+  margin: auto;
+}
+header .headeritems #maktowncrest {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  justify-content: center;
+}
+header .headeritems #maktowncrest img {
+  border-radius: 0.1rem;
+  width: 7rem;
+  height: 4rem;
+}
+header .headeritems #maktowncrest .crestname {
+  color: var(--BRANDII);
+  font-weight: bold;
+}
+header .headeritems .links {
+  display: none;
+}
+header .headeritems .navbutton {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.7rem;
+  background-color: var(--BRANDIII);
+  border-radius: 50%;
+  cursor: pointer;
+  height: 3.7rem;
+  width: 3.7rem;
+  transition: all 0.4s;
+  border: none;
+  outline: none;
+}
+header .headeritems .navbutton.open {
+  background-color: var(--BRANDII);
+}
+header .headeritems .linei, header .headeritems .lineii, header .headeritems .lineiii {
+  width: 2.7rem;
+  height: 0.2rem;
+  transition: all 0.4s;
+  background-color: var(--BRANDII);
+}
+header .headeritems .navbutton.open .linei {
+  transform: rotate(-45deg) translate(-0.7rem, 0.75rem);
+  background-color: var(--BRANDIII);
+}
+header .headeritems .navbutton.open .lineii {
+  width: 0;
+  opacity: 0;
+}
+header .headeritems .navbutton.open .lineiii {
+  width: 0;
+  opacity: 0;
+}
+
+@media (min-width: 768px) {
+  header .headeritems .navbutton {
+    display: none;
+  }
+  header .headeritems .links {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 70%;
+  }
+}
+@media (min-width: 992px) {
+  header .headeritems .links {
+    width: 50%;
+  }
+}
+@media (min-width: 1200px) {
+  header .headeritems .links {
+    width: 40%;
+  }
+}
+nav {
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.9058823529);
+  margin-top: 4rem;
+  padding: 1rem;
+  position: fixed;
+  top: -100vh;
+  z-index: 2;
+  transition: top ease-in 0.4s;
+}
+nav .links {
+  max-width: 90%;
+  min-width: 90%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 80%;
+}
+
+nav.open {
+  top: 0;
+}
+
+@media (min-width: 768px) {
+  nav {
+    display: none;
+  }
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding: 7rem;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Gupter";
+  font-size: 1.2rem;
+  background: var(--BRANDII);
+  color: var(--BRANDI);
+}
+
+ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+main {
+  margin-top: 7rem;
+  min-height: 65vh;
+}
+
+.link {
+  background: var(--BRANDII);
+  color: var(--BRANDI);
+  border: none;
+  border-radius: 0.25rem;
+  font-size: 0.8rem;
+  font-weight: bold;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  padding: 0.4rem 0.7rem;
+  transition: all 0.5s;
+  color: var(--BRANDIII);
+  z-index: 1;
+}
+
+button:hover {
+  color: var(--BRANDII);
+  transform: translateY(-0.27rem);
+}
+
+button:after {
+  content: "";
+  background: var(--BRANDI);
+  position: absolute;
+  z-index: -1;
+  left: -20%;
+  right: -20%;
+  top: 0;
+  bottom: 0;
+  transform: skewX(-45deg) scale(0, 1);
+  transition: all 0.3s;
+  z-index: -1;
+}
+
+button:hover:after {
+  transform: skewX(-45deg) scale(1, 1);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  background: var(--BRANDIII);
+}
+
+#donatebtn {
+  background: var(--NAIRAI);
+  color: var(--BRANDII);
+  margin-top: 0.7rem;
+}
+
+header .links .link, nav .links .link {
+  background: var(--BRANDII);
+  color: var(--BRANDI);
+  border: none;
+  border-radius: 0.25rem;
+  font-size: 0.8rem;
+  font-weight: bold;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  padding: 0.4rem 0.7rem;
+  transition: all 0.5s;
+  background: var(--BRANDI);
+  color: var(--BRANDII);
+  padding: 0.2rem 0.4rem;
+}
+
+.adminforms {
+  max-width: 90%;
+  min-width: 90%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  background: var(--BRANDII);
+}
+.adminforms .link {
+  border: 0.05rem groove var(--BRANDIV);
+}
+.adminforms .formdiv {
+  padding: 0.7rem;
+  box-shadow: 0.0625rem 0.1875rem 0.3125rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 0rem;
+}
+.adminforms .formdiv .hsmall, .adminforms .formdiv h1 {
+  background: var(--BRANDIV);
+  color: var(--BRANDII);
+  border-radius: 0.5rem 0.5rem 0rem 0rem;
+  padding: 0.4rem;
+}
+.adminforms .formdiv form {
+  display: flex;
+  flex-direction: column;
+  padding: 0.4rem;
+  gap: 2rem;
+}
+.adminforms .formdiv form .split, .adminforms .formdiv form .nosplit {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.adminforms .formdiv form .split article, .adminforms .formdiv form .nosplit article {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+}
+.adminforms .formdiv form .split article div, .adminforms .formdiv form .nosplit article div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+.adminforms .formdiv form .split article div label, .adminforms .formdiv form .nosplit article div label {
+  color: var(--TEXTII);
+}
+.adminforms .formdiv form .split article div input, .adminforms .formdiv form .split article div textarea, .adminforms .formdiv form .nosplit article div input, .adminforms .formdiv form .nosplit article div textarea {
+  padding: 0.4rem;
+  font-weight: bold;
+  color: var(--BRANDI);
+  background: var(--FORM);
+  border: 0.01rem groove var(--BRANDIII);
+  width: 100%;
+  border-radius: 0.25rem;
+  transition: ease-in 0.4s;
+}
+.adminforms .formdiv form .split article div input:focus, .adminforms .formdiv form .split article div textarea:focus, .adminforms .formdiv form .nosplit article div input:focus, .adminforms .formdiv form .nosplit article div textarea:focus {
+  background: var(--BRANDII);
+  outline: none;
+}
+.adminforms .formdiv form .split article div textarea, .adminforms .formdiv form .nosplit article div textarea {
+  height: 10rem;
+  resize: none;
+}
+.adminforms .formdiv form .adminformbtn {
+  background: var(--BRANDII);
+  color: var(--BRANDI);
+  border: none;
+  border-radius: 0.25rem;
+  font-size: 0.8rem;
+  font-weight: bold;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  padding: 0.4rem 0.7rem;
+  transition: all 0.5s;
+  padding: 0.4rem 1.5rem;
+  background: var(--BRANDIV);
+  color: var(--BRANDII);
+  font-size: 1.2rem;
+}
+.adminforms .formdiv form .adminformbtn:hover {
+  color: var(--BRANDII);
+  transform: translateY(-0.27rem);
+  background: var(--BRANDIII);
+}
+
+@media (min-width: 768px) {
+  .adminforms {
+    max-width: 55% !important;
+    min-width: 55% !important;
+  }
+  .adminforms .formdiv form .split {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: row;
+  }
+}
+@media (min-width: 992px) {
+  .adminforms .smallform {
+    max-width: 50%;
+    min-width: 50%;
+    margin: auto;
+  }
+}
+#errorpages, #feedback {
+  max-width: 90%;
+  min-width: 90%;
+  margin: auto;
+  padding: 0.7rem;
+  box-shadow: 0.0625rem 0.1875rem 0.3125rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  color: var(--ERROR);
+  background: var(--BRANDII);
+  padding: 4rem 1.5rem;
+}
+#errorpages h1, #feedback h1 {
+  margin-bottom: 2rem;
+}
+#errorpages button, #feedback button {
+  background: var(--BRANDII);
+  color: var(--BRANDI);
+  border: none;
+  border-radius: 0.25rem;
+  font-size: 0.8rem;
+  font-weight: bold;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  padding: 0.4rem 0.7rem;
+  transition: all 0.5s;
+  padding: 0.4rem 1.5rem;
+  background: var(--BRANDIV);
+  color: var(--BRANDII);
+  font-size: 1.2rem;
+}
+#errorpages button:hover, #feedback button:hover {
+  color: var(--BRANDII);
+  transform: translateY(-0.27rem);
+  background: var(--BRANDIII);
+}
+
+.adminpages {
+  max-width: 90%;
+  min-width: 90%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  background: var(--BRANDII);
+  color: var(--TEXTIV);
+}
+.adminpages .link {
+  border: 0.05rem groove var(--BRANDIV);
+}
+.adminpages .pages {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 5rem;
+  background: var(--WHITE);
+}
+.adminpages .pages article {
+  padding: 0.7rem;
+  box-shadow: 0.0625rem 0.1875rem 0.3125rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  width: 100%;
+}
+.adminpages .pages article .post {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.adminpages .pages article .post h2 {
+  color: var(--BRANDIV);
+}
+.adminpages .pages article .post .filebody {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: inherit;
+}
+.adminpages .pages article .post .filebody figure div {
+  height: 20rem;
+}
+.adminpages .pages article .post .filebody figure div img {
+  border-radius: 1rem 1rem 0 0;
+  width: 100%;
+  height: 100%;
+}
+.adminpages .pages article .franchisehistory {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+.adminpages .pages article .franchisehistory .historytext {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.adminpages .pages article .franchisehistory .aboutimg img {
+  border-radius: 0.5rem 0.5rem 0 0;
+  width: 100%;
+}
+.adminpages .pages article .actionsbtn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.adminpages .pages article .actionsbtn .tooltip {
+  position: relative;
+  display: block;
+}
+.adminpages .pages article .actionsbtn .tooltip .deletebtn {
+  background: var(--ERROR);
+  color: var(--BRANDI);
+  padding: 0.4rem;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1.2rem;
+  border: none;
+  font-size: 0.8rem;
+  padding: 0.4rem 0.7rem;
+}
+.adminpages .pages article .actionsbtn .tooltip .warning {
+  background: var(--ERROR);
+  color: var(--BRANDII);
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 0.7rem 0.4rem;
+  border-radius: 0.25rem;
+  z-index: 1;
+  left: 50%;
+  bottom: 2.5rem;
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.5s;
+  transform: translateX(-50%) translateY(-4rem);
+}
+.adminpages .pages article .actionsbtn .tooltip .warning::before {
+  content: "";
+  bottom: -0.2rem;
+  width: 0.7rem;
+  height: 0.7rem;
+  position: absolute;
+  background: var(--ERROR);
+  transform: rotate(45deg);
+  left: 50%;
+}
+.adminpages .pages article .actionsbtn .tooltip:hover .warning {
+  visibility: visible;
+  opacity: 1;
+  transform: translateX(-50%) translateY(0rem);
+}
+.adminpages .pages article .actionsbtn .updatebtn {
+  background: var(--BRANDII);
+  color: var(--BRANDI);
+  border: none;
+  border-radius: 0.25rem;
+  font-size: 0.8rem;
+  font-weight: bold;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  padding: 0.4rem 0.7rem;
+  transition: all 0.5s;
+  padding: 0.4rem 1.5rem;
+  background: var(--BRANDIV);
+  color: var(--BRANDII);
+  font-size: 1.2rem;
+  font-size: 0.8rem;
+  padding: 0.4rem 0.7rem;
+}
+.adminpages .pages article .actionsbtn .updatebtn:hover {
+  color: var(--BRANDII);
+  transform: translateY(-0.27rem);
+  background: var(--BRANDIII);
+}
+.adminpages .pagesfile {
+  display: grid;
+  place-content: center start;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 5rem 2rem;
+  width: 100%;
+  padding: 1rem;
+  color: var(--BRANDII);
+}
+.adminpages .pagesfile article {
+  padding: 0.7rem;
+  box-shadow: 0.0625rem 0.1875rem 0.3125rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2.5rem;
+  width: inherit;
+  background: rgba(0, 0, 0, 0.9058823529);
+}
+.adminpages .pagesfile article .video {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-weight: bold;
+  border-radius: 0.5rem 0.5rem 0rem 0rem;
+}
+.adminpages .pagesfile article .video video {
+  aspect-ratio: 16/9;
+  width: 100%;
+  border-radius: 0.5rem 0.5rem 0rem 0rem;
+}
+.adminpages .pagesfile article .staff {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  width: 100%;
+}
+.adminpages .pagesfile article .staff .file {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.adminpages .pagesfile article .staff .file figure {
+  color: var(--BRANDIV);
+}
+.adminpages .pagesfile article .staff .file figure div {
+  height: 15rem;
+}
+.adminpages .pagesfile article .staff .file figure div img {
+  border-radius: 1rem 1rem 0 0;
+  width: 100%;
+  height: 100%;
+}
+.adminpages .pagesfile article .actionsbtn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.adminpages .pagesfile article .actionsbtn .tooltip {
+  position: relative;
+  display: block;
+}
+.adminpages .pagesfile article .actionsbtn .tooltip .deletebtn {
+  background: var(--ERROR);
+  color: var(--BRANDI);
+  padding: 0.4rem;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1.2rem;
+  border: none;
+  font-size: 0.8rem;
+  padding: 0.4rem 0.7rem;
+}
+.adminpages .pagesfile article .actionsbtn .tooltip .warning {
+  background: var(--ERROR);
+  color: var(--BRANDII);
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 0.7rem 0.4rem;
+  border-radius: 0.25rem;
+  z-index: 1;
+  left: 50%;
+  bottom: 2.5rem;
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.5s;
+  transform: translateX(-50%) translateY(-4rem);
+}
+.adminpages .pagesfile article .actionsbtn .tooltip .warning::before {
+  content: "";
+  bottom: -0.2rem;
+  width: 0.7rem;
+  height: 0.7rem;
+  position: absolute;
+  background: var(--ERROR);
+  transform: rotate(45deg);
+  left: 50%;
+}
+.adminpages .pagesfile article .actionsbtn .tooltip:hover .warning {
+  visibility: visible;
+  opacity: 1;
+  transform: translateX(-50%) translateY(0rem);
+}
+.adminpages .pagesfile article .actionsbtn .updatebtn {
+  background: var(--BRANDII);
+  color: var(--BRANDI);
+  border: none;
+  border-radius: 0.25rem;
+  font-size: 0.8rem;
+  font-weight: bold;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  padding: 0.4rem 0.7rem;
+  transition: all 0.5s;
+  padding: 0.4rem 1.5rem;
+  background: var(--BRANDIV);
+  color: var(--BRANDII);
+  font-size: 1.2rem;
+  font-size: 0.8rem;
+  padding: 0.4rem 0.7rem;
+}
+.adminpages .pagesfile article .actionsbtn .updatebtn:hover {
+  color: var(--BRANDII);
+  transform: translateY(-0.27rem);
+  background: var(--BRANDIII);
+}
+
+@media (min-width: 768px) {
+  .adminpages .pages article .post .filebody {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  .adminpages .pages article .post .filebody figure div {
+    width: 25rem;
+  }
+  .adminpages .pages article .post .filebody figure div img {
+    border-radius: 1rem 0 0 1rem;
+  }
+  .adminpages .pages article .post .filebody .body {
+    width: 55%;
+  }
+  .adminpages .pages article .franchisehistory {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  .adminpages .pages article .franchisehistory .historytext {
+    width: 70%;
+  }
+  .adminpages .pagesfile {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 992px) {
+  .adminpages .pagesfile {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+#adminpanel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--TRANSPARENT);
+  margin-top: 4rem;
+  padding: 1rem;
+}
+
+#dashboard {
+  max-width: 90%;
+  min-width: 90%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  padding: 0.7rem;
+  box-shadow: 0.0625rem 0.1875rem 0.3125rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  background: var(--BRANDII);
+  color: var(--TEXTII);
+  padding: 1rem;
+}
+#dashboard .link {
+  border: 0.05rem groove var(--BRANDIV);
+  display: inline;
+}
+#dashboard .adminaddbtn, #dashboard .adminviewbtn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-content: space-between;
+  gap: 2rem;
+}
+#dashboard hr {
+  margin: 2rem 0rem;
+}
+#dashboard .table {
+  overflow-x: auto;
+}
+#dashboard .table table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  margin-bottom: 4.5rem;
+  padding-bottom: 1.5rem;
+}
+#dashboard .table table caption {
+  font-size: 4rem;
+  color: var(--BRANDIII);
+  text-align: left;
+}
+#dashboard .table table thead {
+  background: var(--BRANDV);
+  color: var(--BRANDII);
+}
+#dashboard .table table th {
+  border-left: 0.1rem groove var(--BRANDII);
+}
+#dashboard .table table th, #dashboard .table table td {
+  padding: 0.4rem;
+  text-align: left;
+}
+#dashboard .table table td img {
+  border-radius: 0.5rem;
+  height: 8rem;
+}
+#dashboard .table table tr:nth-child(even) {
+  background-color: var(--TEXTI);
+}
+#dashboard .table table .position {
+  width: 20rem;
+}
+#dashboard .table table .actions {
+  width: 20rem;
+}
+#dashboard .table table .actionsbtn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+  width: 20rem;
+}
+#dashboard .table table .actionsbtn .updatebtn {
+  background: var(--BRANDII);
+  color: var(--BRANDI);
+  border: none;
+  border-radius: 0.25rem;
+  font-size: 0.8rem;
+  font-weight: bold;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  padding: 0.4rem 0.7rem;
+  transition: all 0.5s;
+  padding: 0.4rem 1.5rem;
+  background: var(--BRANDIV);
+  color: var(--BRANDII);
+  font-size: 1.2rem;
+  font-size: 0.8rem;
+  padding: 0.4rem 0.7rem;
+}
+#dashboard .table table .actionsbtn .updatebtn:hover {
+  color: var(--BRANDII);
+  transform: translateY(-0.27rem);
+  background: var(--BRANDIII);
+}
+#dashboard .table table .actionsbtn .deletebtn {
+  background: var(--ERROR);
+  color: var(--BRANDI);
+  padding: 0.4rem;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1.2rem;
+  border: none;
+  font-size: 0.8rem;
+  padding: 0.4rem 0.7rem;
+}
+
+#hero {
+  margin-top: -7rem;
+  color: var(--BRANDII);
+  margin-bottom: 4.5rem;
+}
+#hero article {
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+}
+#hero article h1, #hero article p, #hero article small {
+  padding: 0.7rem;
+}
+#hero article h1 {
+  font: 1.7rem "Rubik Wet Paint";
+  letter-spacing: 0.5rem;
+}
+#hero article p {
+  text-transform: capitalize;
+}
+#hero article video {
+  z-index: -1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 100%;
+  min-height: 100%;
+}
+
+@media (min-width: 768px) {
+  #hero article h1 {
+    font-size: 2.5rem !important;
+  }
+  #hero article p {
+    font-size: 1.7rem !important;
+  }
+}
+#photos {
+  padding: 0.7rem;
+  box-shadow: 0.0625rem 0.1875rem 0.3125rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  max-width: 90%;
+  min-width: 90%;
+  margin: auto;
+  padding: 1.5rem;
+  color: var(--TEXTII);
+  margin-bottom: 4.5rem;
+  background: rgba(0, 0, 0, 0.9058823529);
+  text-align: center;
+}
+#photos .maktownflyersphotos {
+  column-count: 1;
+}
+#photos .maktownflyersphotos .mediaimg {
+  margin-bottom: 1rem;
+}
+#photos .maktownflyersphotos .mediaimg img {
+  cursor: pointer;
+  transition: all 0.5s;
+  width: inherit;
+}
+#photos .maktownflyersphotos .mediaimg img:hover {
+  transform: scale(1.1);
+}
+
+@media (min-width: 576px) {
+  #photos .maktownflyersphotos {
+    column-count: 2;
+  }
+}
+@media (min-width: 768px) {
+  #photos .maktownflyersphotos {
+    column-count: 4;
+  }
+}
+@media (min-width: 992px) {
+  #photos .maktownflyersphotos {
+    column-count: 5;
+  }
+}
+#teampost {
+  max-width: 90%;
+  min-width: 90%;
+  margin: auto;
+  color: var(--BRANDIII);
+  margin-bottom: 4.5rem;
+}
+#teampost h2 {
+  font-size: 2.5rem;
+  color: var(--TEXTII);
+}
+#teampost article {
+  display: grid;
+  place-content: center start;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 2rem;
+  width: 100%;
+  padding: 1rem;
+}
+#teampost article .teampost {
+  padding: 0.7rem;
+  box-shadow: 0.0625rem 0.1875rem 0.3125rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  background: var(--BRANDII);
+  text-align: left;
+  width: inherit;
+}
+#teampost article .teampost .teampostphoto {
+  width: inherit;
+}
+#teampost article .teampost .teampostphoto img {
+  width: 100%;
+  height: 21rem !important;
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+#teampost article .teampost .teampostphoto a {
+  color: var(--BRANDIII);
+}
+#teampost article .teampost .teampostphoto a:hover {
+  text-decoration: underline;
+}
+#teampost .teampostlink {
+  text-align: center;
+}
+#teampost .teampostlink .link {
+  border: 0.05rem groove var(--BRANDIV);
+}
+
+@media (min-width: 768px) {
+  #teampost article {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 992px) {
+  #teampost article {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+#teamvalues {
+  max-width: 90%;
+  min-width: 90%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 7rem;
+  padding: 1.5rem;
+  color: var(--TEXTII);
+  margin-bottom: 4.5rem;
+  background: var(--BRANDII);
+  text-align: center;
+}
+#teamvalues .teamvalueicons, #teamvalues .teamvalueour {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+#teamvalues .teamvalueicons div, #teamvalues .teamvalueour div {
+  padding: 0.7rem;
+  box-shadow: 0.0625rem 0.1875rem 0.3125rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+#teamvalues .teamvalueicons div .icon, #teamvalues .teamvalueour div .icon {
+  color: var(--BRANDIII);
+}
+#teamvalues .teamvalueour {
+  gap: 1rem;
+}
+#teamvalues .teamvalueour div {
+  text-align: left;
+  box-shadow: 1rem 0.1rem 1.5rem var(--BRANDIII);
+}
+#teamvalues .teamvalueour div .our {
+  color: var(--BRANDIII);
+}
+
+@media (min-width: 768px) {
+  #teamvalues .teamvalueicons, #teamvalues .teamvalueour {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}
+#watch {
+  max-width: 90%;
+  min-width: 90%;
+  margin: auto;
+  margin-bottom: 4.5rem;
+  text-align: center;
+}
+#watch h2 {
+  font-size: 2.5rem;
+  color: var(--BRANDIII);
+  text-align: left;
+}
+#watch article {
+  display: grid;
+  place-content: center start;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1.5rem;
+  width: 100%;
+  padding: 1rem;
+}
+#watch article .watchvideo {
+  padding: 0.7rem;
+  box-shadow: 0.0625rem 0.1875rem 0.3125rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  background: var(--BRANDII);
+  width: inherit;
+  text-align: left;
+}
+#watch article .watchvideo video {
+  aspect-ratio: 16/9;
+  width: 100%;
+  border-radius: 0.5rem 0.5rem 0rem 0rem;
+}
+#watch .link {
+  border: 0.05rem groove var(--BRANDIV);
+}
+
+@media (min-width: 768px) {
+  #watch article {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 992px) {
+  #watch article {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+#connect {
+  max-width: 90%;
+  min-width: 90%;
+  margin: auto;
+  padding: 0.7rem;
+  box-shadow: 0.0625rem 0.1875rem 0.3125rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  color: var(--BRANDII);
+  background: var(--BRANDI);
+  padding: 1rem 1.5rem;
+  margin-bottom: 2rem;
+}
+#connect h3 {
+  font-size: 2.5rem;
+}
+#connect form {
+  padding: 0.7rem;
+  box-shadow: 0.0625rem 0.1875rem 0.3125rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+#connect form article {
+  display: flex;
+  flex-direction: column;
+  gap: 7rem;
+}
+#connect form article .input {
+  background: transparent;
+  border-color: transparent;
+  color: var(--BRANDII);
+  border-bottom: 0.2rem groove var(--BRANDII);
+  border-radius: 0rem;
+  width: 100%;
+  padding-bottom: 1rem;
+  font-size: 1.2rem;
+  transition: all 0.8s;
+}
+#connect form article textarea {
+  resize: none;
+}
+#connect form article .input:focus {
+  outline: none;
+  background: transparent;
+  border-color: transparent;
+  box-shadow: none;
+  color: var(--BRANDII);
+  border-bottom: 0.2rem groove var(--BRANDIII);
+}
+#connect form article .label {
+  color: var(--BRANDIII);
+  display: block;
+  margin-top: -4.5rem;
+  margin-left: 0rem;
+  font-size: 1.2rem;
+  transition: all 0.8s;
+}
+#connect form article .textarealabel {
+  margin-top: -6rem;
+}
+#connect form article .input:placeholder-shown + .label {
+  transform: translate(1.25rem, 1.25rem);
+  opacity: 0;
+  visibility: hidden;
+}
+#connect form .send {
+  margin: 1rem 0rem;
+}
+#connect form .send .sendbtn {
+  background: var(--BRANDII);
+  color: var(--BRANDI);
+  border: none;
+  border-radius: 0.25rem;
+  font-size: 0.8rem;
+  font-weight: bold;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  padding: 0.4rem 0.7rem;
+  transition: all 0.5s;
+  padding: 0.4rem 1.5rem;
+  background: var(--BRANDIV);
+  color: var(--BRANDII);
+  font-size: 1.2rem;
+}
+#connect form .send input:hover {
+  color: var(--BRANDII);
+  transform: translateY(-0.27rem);
+  background: var(--BRANDIII);
+}
+
+@media (min-width: 768px) {
+  #connect {
+    flex-direction: row !important;
+    justify-content: space-between !important;
+  }
+  #connect form {
+    width: 60%;
+  }
+}
+#donation {
+  max-width: 90%;
+  min-width: 90%;
+  margin: auto;
+  padding: 0.7rem;
+  box-shadow: 0.0625rem 0.1875rem 0.3125rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 2rem;
+  color: var(--TEXTII);
+  padding: 4rem 1rem;
+  background: var(--BRANDII);
+}
+#donation h1 {
+  font-size: 1.7rem;
+  color: var(--BRANDIII);
+}
+#donation .donating {
+  width: 100%;
+  padding: 1.5rem 1rem;
+}
+#donation .donating article {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: inherit;
+}
+#donation .donating article input[type=number] {
+  margin: 1rem 0rem 0rem 0rem;
+}
+#donation .donating article #donatebutton {
+  background: var(--BRANDII);
+  color: var(--BRANDI);
+  border: none;
+  border-radius: 0.25rem;
+  font-size: 0.8rem;
+  font-weight: bold;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  padding: 0.4rem 0.7rem;
+  transition: all 0.5s;
+  padding: 0.4rem 1.5rem;
+  background: var(--BRANDIV);
+  color: var(--BRANDII);
+  font-size: 1.2rem;
+  background: var(--DOLLAR);
+}
+#donation .donating article #donatebutton:hover {
+  color: var(--BRANDII);
+  transform: translateY(-0.27rem);
+  background: var(--BRANDIII);
+  background: var(--NAIRAI);
+}
+#donation .donating #errormessage {
+  margin-top: 0.7rem;
+  color: var(--BRANDIII);
+  font-size: 1.7rem;
+}
+
+@media (min-width: 768px) {
+  #donation h1 {
+    font-size: 2.5rem;
+  }
+  #donation .donating {
+    width: 45% !important;
+    padding: 4rem 1rem;
+  }
+  #donation .donating input[type=number] {
+    margin: 1rem !important;
+  }
+}
+#history {
+  padding: 0.7rem;
+  box-shadow: 0.0625rem 0.1875rem 0.3125rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  max-width: 90%;
+  min-width: 90%;
+  margin: auto;
+}
+#history h1 {
+  font-size: 2.5rem;
+  color: var(--BRANDIV);
+}
+#history article {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+#history article .franchisehistory {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+#history article .aboutimg {
+  padding: 0.7rem;
+  box-shadow: 0.0625rem 0.1875rem 0.3125rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+}
+#history article .aboutimg img {
+  border-radius: 0.5rem 0.5rem 0 0;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  #history article {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  #history article .franchisehistory {
+    width: 70%;
+  }
+}
+#player {
+  max-width: 90%;
+  min-width: 90%;
+  margin: auto;
+  color: var(--TEXTII);
+  background: var(--BRANDII);
+}
+#player .link {
+  border: 0.05rem groove var(--BRANDIV);
+  margin-bottom: 1.5rem;
+}
+#player .player {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+}
+#player .player strong {
+  color: var(--BRANDI);
+}
+#player .player .playerdetails, #player .player .coachnotes {
+  padding: 0.7rem;
+  box-shadow: 0.0625rem 0.1875rem 0.3125rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+}
+#player .player .playerdetails .details, #player .player .coachnotes .details {
+  text-align: center;
+}
+#player .player .playerdetails .details img, #player .player .coachnotes .details img {
+  padding: 0.7rem;
+  box-shadow: 0.0625rem 0.1875rem 0.3125rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+}
+#player .player .playerdetails .ahp, #player .player .coachnotes .ahp {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  justify-content: center;
+  gap: 2rem;
+}
+#player .player .coachnotes {
+  gap: 1rem;
+  padding: 0rem;
+}
+#player .player .coachnotes h2 {
+  background: var(--BRANDIV);
+  color: var(--BRANDII);
+  border-radius: 0.5rem 0.5rem 0rem 0rem;
+  padding: 0.4rem;
+}
+#player .player .coachnotes div {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 0.4rem;
+}
+#player .player .coachnotes div .coachname {
+  color: var(--TEXTIII);
+}
+
+@media (min-width: 768px) {
+  #player .player .playerdetails, #player .player .coachnotes {
+    width: 40% !important;
+  }
+  #player .player .coachnotes {
+    width: 50% !important;
+  }
+}
+@media (min-width: 992px) {
+  #player .player .playerdetails, #player .player .coachnotes {
+    width: 35% !important;
+  }
+  #player .player .coachnotes {
+    width: 55% !important;
+  }
+}
+.teamrosterhead {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-top: 7rem;
+}
+
+#teamroster {
+  padding: 0.7rem;
+  box-shadow: 0.0625rem 0.1875rem 0.3125rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  max-width: 90%;
+  min-width: 90%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+  padding: 4rem 1.5rem;
+  color: var(--TEXTII);
+  margin-bottom: 2rem;
+  background: var(--WHITE);
+}
+#teamroster article {
+  padding: 0.7rem;
+  box-shadow: 0.0625rem 0.1875rem 0.3125rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 0;
+  border-radius: 1rem;
+  height: 20rem;
+}
+#teamroster article .playerimg img {
+  border-radius: 1rem 0 0 0;
+  height: 15rem;
+}
+#teamroster article .playerimg figcaption {
+  color: var(--BRANDI);
+  margin-left: 1rem;
+}
+#teamroster article .playerimg figcaption .link {
+  border: 0.05rem groove var(--BRANDIV);
+  margin: 0.7rem 0rem;
+}
+#teamroster article .playerinfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 0 1rem 1rem 0;
+  height: inherit;
+  background-color: var(--BRANDIV);
+  color: var(--BRANDII);
+  text-align: center;
+}
+#teamroster article .playerinfo .dv {
+  padding: 0.4rem;
+}
+#teamroster article .playerinfo .dv span {
+  font-weight: bold;
+}
+#teamroster article .playerinfo .number {
+  padding: 1.5rem;
+  background-color: var(--BRANDI);
+  color: var(--BRANDII);
+  font-weight: bold;
+  border-radius: 0 1rem 0 0;
+  width: 100%;
+}
+
+#teamstaff {
+  max-width: 90%;
+  min-width: 90%;
+  margin: auto;
+  margin-top: 4.5rem;
+  margin-bottom: 4.5rem;
+}
+#teamstaff h2 {
+  color: var(--BRANDII);
+  background-color: var(--BRANDI);
+  padding: 1rem;
+}
+#teamstaff section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+  padding: 4rem 1.5rem;
+  color: var(--TEXTII);
+  margin-bottom: 2rem;
+  background: var(--WHITE);
+}
+#teamstaff section article {
+  padding: 0.7rem;
+  box-shadow: 0.0625rem 0.1875rem 0.3125rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  background: var(--BRANDI);
+  padding: 0;
+  border-radius: 1rem;
+  height: 20rem;
+}
+#teamstaff section article .staffimg {
+  color: var(--BRANDII);
+}
+#teamstaff section article .staffimg img {
+  border-radius: 1rem 1rem 0 0;
+  height: 15rem;
+}
+#teamstaff section article .staffimg figcaption {
+  margin-left: 0.5rem;
+}
+#teamstaff section article .staffimg figcaption h4 {
+  color: var(--BRANDIV);
+  margin-bottom: 1rem;
+}
+#teamstaff section article .staffimg figcaption small {
+  padding: 0.4rem;
+  border: 0.01rem solid var(--BRANDIV);
+}
+
+#oneteampost {
+  max-width: 90%;
+  min-width: 90%;
+  margin: auto;
+  padding: 0.7rem;
+  box-shadow: 0.0625rem 0.1875rem 0.3125rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  color: var(--TEXTII);
+  margin-bottom: 2rem;
+  background: var(--BRANDII);
+}
+#oneteampost .link {
+  border: 0.05rem groove var(--BRANDIV);
+  margin-bottom: 1.5rem;
+}
+#oneteampost h1 {
+  font-size: 4rem;
+  color: var(--BRANDIII);
+}
+#oneteampost article {
+  border: 0.2rem groove var(--BRANDIV);
+  padding: 0.7rem;
+  box-shadow: 0.0625rem 0.1875rem 0.3125rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+}
+#oneteampost article .teampost {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+#oneteampost article .teampost .teampostphoto {
+  width: inherit !important;
+}
+#oneteampost article .teampost .teampostphoto img {
+  width: 100%;
+}
+#oneteampost article .teampost .teampostbody {
+  color: var(--BRANDI);
+}
+
+@media (min-width: 768px) {
+  #oneteampost article .teampost {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  #oneteampost article .teampost .teampostphoto {
+    width: 40% !important;
+  }
+  #oneteampost article .teampost .teampostbody {
+    width: 55% !important;
+  }
+}
+
+/*# sourceMappingURL=index.css.map */

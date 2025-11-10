@@ -1,0 +1,47 @@
+#teamvalues {
+    @include center;
+    @include flexcolumn;
+    gap: 7rem;
+    padding: $paddinglg;
+    color: var(--TEXTII);
+    margin-bottom: $marginxxl;
+    background: var(--BRANDII);
+    text-align: center;
+
+    .teamvalueicons {
+        @include flexcolumn;
+        gap: 1.5rem;
+
+        div {
+            @include card;
+            @include flexcolumn;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+
+            .icon { color: var(--BRANDIII); }
+
+        }
+
+    }
+
+    .teamvalueour {
+        @extend .teamvalueicons;
+        gap: 1rem;
+
+        div {
+            text-align: left;
+            box-shadow: $box-shadowi;
+
+            .our { color: var(--BRANDIII); }
+
+        }
+
+    }
+
+}
+
+//! Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+    #teamvalues .teamvalueicons, #teamvalues .teamvalueour { @include flexrow; flex-direction: row; align-items: flex-start; }
+}

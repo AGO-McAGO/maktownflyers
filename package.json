@@ -1,0 +1,52 @@
+{
+  "name": "maktownflyers",
+  "version": "1.0.0",
+  "description": "Official Website of Maktown Flyers By AGO SOO McAGO",
+  "main": "app.js",
+  "scripts": {
+    "sass": "sass -w public/scss/:public/css",
+    "start": "node --env-file=.env app.js",
+    "server": "run-p sass start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AGO-McAGO/maktownflyers.git"
+  },
+  "keywords": [
+    "Maktown",
+    "Flyers",
+    "Mani",
+    "Mo",
+    "AGO",
+    "SOO",
+    "McAGO"
+  ],
+  "author": "AGO SOO McAGO",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AGO-McAGO/maktownflyers/issues"
+  },
+  "homepage": "https://github.com/AGO-McAGO/maktownflyers#readme",
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "connect-flash": "^0.1.1",
+    "connect-mongodb-session": "^5.0.0",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "express-ejs-layouts": "^2.5.1",
+    "express-fileupload": "^1.5.2",
+    "express-session": "^1.18.2",
+    "helmet": "^8.1.0",
+    "joi": "^18.0.1",
+    "jsonwebtoken": "^9.0.2",
+    "method-override": "^3.0.0",
+    "mongoose": "^8.18.1",
+    "multer": "^2.0.2",
+    "nodemailer": "^7.0.6",
+    "npm-run-all": "^4.1.5",
+    "sass": "^1.92.1",
+    "stripe": "^18.5.0"
+  }
+}
