@@ -12,7 +12,9 @@ router.get("/player/:id", pagesController.playerpage);
 router.get("/team", pagesController.teampage);
 router.get("/media", pagesController.mediapage);
 router.get("/history", pagesController.historypage);
+
 router.get("/connect", pagesController.connectpage);
+router.post("/connectsendemail", pagesController.connectSendEmail);
 
 router.get("/donation", pagesController.donationpage);
 // router.post("/create-checkout-session", pagesController.donation);

@@ -7,6 +7,7 @@ const Player = require("../models/Player");
 const Staff = require("../models/Staff");
 const Teampost = require("../models/Teampost");
 const Video = require("../models/Video");
+const transport = require("../middlewares/sendMail");
 
 //! "homepage", get method
 exports.homepage = async (request, response) => {
@@ -139,6 +140,46 @@ exports.connectpage = async (request, response) => {
   } catch (error) {
     console.log(error);
   }
+};
+
+// Connect and Contact email send
+exports.connectSendEmail = (request, response) => {
+  const { fullname, emailaddress, usermessage } = request.body; // get contact form data
+
+  try {
+    if ( !fullname || !emailaddress || !usermessage ) { // validate the data
+      return response.render("connect"); // re-render page if error
+    }
+    
+    const sendHtml = `
+      <div style="background: black; border-radius: 0.4rem; padding: 0.5rem; font-size: 1.1rem;">
+        <p style="color: white;"> <strong style="color: red;"> Name: </strong> ${fullname} </p>
+        <p style="color: white;"> <strong style="color: red;"> Email: </strong> ${emailaddress} </p>
+        <p style="color: white;"> <strong style="color: red;"> Message: </strong> ${usermessage} </p>
+      </div>
+    `;
+
+    // Define the email options
+    const mailOptions = {
+        from: emailaddress,
+        to: process.env.NODE_CODE_SENDING_EMAIL_ADDRESS,
+        subject: "Message From Maktown Flyers Website Connect",
+        html: sendHtml
+    };
+
+    transport.sendMail(mailOptions, (error, info) => {
+      if (error) {
+        response.status(500).send("Internal Server Error");
+      } else {
+        console.log("Email sent: " + info.response);
+        return response.status(200).render("connect");
+      }
+    } );
+  
+  } catch (error) {
+    console.log(error);
+  }
+
 };
 
 //! Donation page
