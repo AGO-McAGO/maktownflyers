@@ -6,8 +6,7 @@
   "scripts": {
     "sass": "sass -w public/scss/:public/css",
     "start": "node --env-file=.env app.js",
-    "dev": "node --watch --trace-warnings --env-file=.env app.js",
-    "server": "run-p sass dev"
+    "server": "run-p sass start"
   },
   "repository": {
     "type": "git",
